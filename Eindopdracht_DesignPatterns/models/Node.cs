@@ -8,5 +8,6 @@ namespace Eindopdracht_DesignPatterns.models
 {
     public class Node
     {
+        public int Id { get; set; }
     }
 }

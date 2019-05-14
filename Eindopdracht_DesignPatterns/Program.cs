@@ -7,6 +7,7 @@ using System.Net.Mime;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using Eindopdracht_DesignPatterns.controllers;
 
 namespace Eindopdracht_DesignPatterns
 {
@@ -14,30 +15,22 @@ namespace Eindopdracht_DesignPatterns
     {
         static void Main(string[] args)
         {
-            bool NoChosenFile = true;
+            bool noChosenFile = true;
             string chosenFile = "";
 
-            while (NoChosenFile)
+            while (noChosenFile)
             {
                 Console.WriteLine("Choose a circuit (1, 2, 3, 4)");
                 chosenFile = ChooseFile();
 
-                if (chosenFile != "No file selected") NoChosenFile = false;
+                if (chosenFile != "No file selected") noChosenFile = false;
             }
 
             Console.WriteLine("You chose:" + chosenFile);
-            PrintFile(chosenFile);
-        }
 
-        private static void PrintFile(string file)
-        {
-            string path = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location),
-                @"data\" + file);
-
-            string[] files = File.ReadAllLines(path);
-            foreach (var f in files) Console.WriteLine(f);
-
-            Console.ReadKey();
+            FileReader fileReader = new FileReader();
+            string[] fileByLine = fileReader.Readfile(chosenFile);
+            CircuitParser parser = new CircuitParser(fileByLine);
         }
 
         private static string ChooseFile()

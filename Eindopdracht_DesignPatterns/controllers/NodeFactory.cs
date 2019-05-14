@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Eindopdracht_DesignPatterns.controllers
 {
-    class NodeFactory
+    public class NodeFactory
     {
     }
 }
