@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Eindopdracht_DesignPatterns.models
+namespace Eindopdracht_DesignPatterns.models.interfaces
 {
-    public class Xor : Inode
+    public interface INode: IMediator
     {
+       string Identifier { get; set; }
     }
 }

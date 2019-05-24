@@ -47,14 +47,16 @@
     <Compile Include="controllers\CircuitParser.cs" />
     <Compile Include="controllers\FileReader.cs" />
     <Compile Include="controllers\NodeFactory.cs" />
-    <Compile Include="models\And.cs" />
-    <Compile Include="models\Inode.cs" />
-    <Compile Include="models\Nand.cs" />
-    <Compile Include="models\Node.cs" />
-    <Compile Include="models\Nor.cs" />
-    <Compile Include="models\Not.cs" />
-    <Compile Include="models\Or.cs" />
-    <Compile Include="models\Xor.cs" />
+    <Compile Include="models\Nodes\Input.cs" />
+    <Compile Include="models\interfaces\IInput.cs" />
+    <Compile Include="controllers\Mediator.cs" />
+    <Compile Include="models\Nodes\And.cs" />
+    <Compile Include="models\interfaces\IEdge.cs" />
+    <Compile Include="models\interfaces\IMediator.cs" />
+    <Compile Include="models\interfaces\INode.cs" />
+    <Compile Include="models\Nodes\Not.cs" />
+    <Compile Include="models\Nodes\Or.cs" />
+    <Compile Include="models\Nodes\Probe.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

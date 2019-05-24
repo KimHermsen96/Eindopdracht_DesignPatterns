@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Eindopdracht_DesignPatterns.models
+namespace Eindopdracht_DesignPatterns.models.interfaces
 {
-    public class Or :Inode
+    public interface IInput
     {
     }
 }
