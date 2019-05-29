@@ -11,11 +11,14 @@ namespace Eindopdracht_DesignPatterns.controllers
     {
         private  Dictionary<string, INode> allElements;
 
-        private int startValue { get; set; }
-
         public Mediator()
         {
-            allElements= new Dictionary<string, INode>();
+            allElements = new Dictionary<string, INode>();
+        }
+
+        public void Notify(INode sender, int value)
+        {
+            
         }
 
         public void AddElement(INode node, string identifier)
@@ -27,14 +30,6 @@ namespace Eindopdracht_DesignPatterns.controllers
         {
             INode item = allElements[nodeIdentifier];
             item.TargetIdentifieers.Add(edgeIdentifier);
-
-            Console.WriteLine("iten:" + item + "target: " + edgeIdentifier);
-            Console.ReadKey();
-        }
-
-        public void Notify(INode sender, int message)
-        {
-            throw new NotImplementedException();
         }
     }
 }

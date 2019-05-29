@@ -8,6 +8,6 @@ namespace Eindopdracht_DesignPatterns.models.interfaces
 {
     public interface IMediator
     {
-        void Notify(INode sender, int message);
+        void Notify(IMediator sender, int message);
     }
 }

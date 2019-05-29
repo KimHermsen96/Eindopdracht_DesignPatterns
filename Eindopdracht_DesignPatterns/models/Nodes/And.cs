@@ -9,9 +9,17 @@ namespace Eindopdracht_DesignPatterns.models.Nodes
 {
     public class And : INode
     {
-        public void Notify(INode sender, int message)
+
+        public int? firstValue { get; set; }
+
+        public void Notify(INode sender, int value)
         {
-            throw new NotImplementedException();
+            
+            if (firstValue == null)
+            {
+
+            }
+
         }
 
         public string Identifier { get; set; }
