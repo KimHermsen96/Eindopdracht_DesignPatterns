@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Eindopdracht_DesignPatterns.models.interfaces
 {
-    public abstract class INode : IMediator
+    public abstract class INode
     {
         public string Identifier { get; set; }
         public int Value { get; set; }
@@ -16,10 +16,6 @@ namespace Eindopdracht_DesignPatterns.models.interfaces
         {
             TargetIdentifieers = new List<string>();
         }
-
-        public void Notify(INode sender, int message)
-        {
-            throw new NotImplementedException();
-        }
+        public void calculateOutput(int value) { }
     }
 }

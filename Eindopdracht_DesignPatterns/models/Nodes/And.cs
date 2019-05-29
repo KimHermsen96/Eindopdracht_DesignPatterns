@@ -13,18 +13,12 @@ namespace Eindopdracht_DesignPatterns.models.Nodes
         public string Identifier { get; set; }
         public List<string> TargetIdentifieers { get; set; }
 
-        public void Notify(INode sender, int value)
+        public void calculateOutput(int value)
         {
             if (firstValue == null)
             {
                 firstValue = value;
             }
-            calculateOutput();
-        }
-
-        private void calculateOutput()
-        {
-
         }
 
     }
