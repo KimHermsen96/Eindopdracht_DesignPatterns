@@ -7,9 +7,11 @@ using Eindopdracht_DesignPatterns.models.interfaces;
 
 namespace Eindopdracht_DesignPatterns.controllers
 {
-    public class Mediator : IMediator
+    public class Mediator : IMediator 
     {
         private  Dictionary<string, INode> allElements;
+
+        private int startValue { get; set; }
 
         public Mediator()
         {
@@ -23,14 +25,16 @@ namespace Eindopdracht_DesignPatterns.controllers
 
         public void AddEdge(string nodeIdentifier, string edgeIdentifier)
         {
-            var item = allElements.First(el => el.Key == nodeIdentifier);
-            IEdge edge = item.Value as IEdge;
-            edge.TargetIdentifieers.Add(edgeIdentifier);
+            INode item = allElements[nodeIdentifier];
+            item.TargetIdentifieers.Add(edgeIdentifier);
+
+            Console.WriteLine("iten:" + item + "target: " + edgeIdentifier);
+            Console.ReadKey();
         }
 
-        public void Notify(INode sender, string message)
+        public void Notify(INode sender, int message)
         {
-            
+            throw new NotImplementedException();
         }
     }
 }

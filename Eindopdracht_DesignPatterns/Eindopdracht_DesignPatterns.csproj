@@ -51,7 +51,6 @@
     <Compile Include="models\interfaces\IInput.cs" />
     <Compile Include="controllers\Mediator.cs" />
     <Compile Include="models\Nodes\And.cs" />
-    <Compile Include="models\interfaces\IEdge.cs" />
     <Compile Include="models\interfaces\IMediator.cs" />
     <Compile Include="models\interfaces\INode.cs" />
     <Compile Include="models\Nodes\Not.cs" />

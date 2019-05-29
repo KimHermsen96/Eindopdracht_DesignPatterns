@@ -74,7 +74,7 @@ namespace Eindopdracht_DesignPatterns.controllers
                 if (beforeColon.Success && afterColon.Success)
                 {
                     nodeFactory.CreateCircuit(beforeColon.ToString(), afterColon.ToString().Trim());
-                    Console.WriteLine(beforeColon + ": " + afterColon);
+//                    Console.WriteLine(beforeColon + ": " + afterColon);
                 }
                 position++;
             }

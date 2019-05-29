@@ -9,15 +9,12 @@ namespace Eindopdracht_DesignPatterns.models.Nodes
 {
     public class Probe : INode
     {
-        public string Identifier { get; set; }
-        public string[] TargetIdentifieers { get; set; }
-
-
-        public void Notify(INode sender, string message)
+        public void Notify(INode sender, int message)
         {
             throw new NotImplementedException();
         }
 
-       
+        public string Identifier { get; set; }
+        public List<string> TargetIdentifieers { get; set; }
     }
 }

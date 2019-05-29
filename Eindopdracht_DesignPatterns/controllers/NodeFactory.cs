@@ -18,64 +18,24 @@ namespace Eindopdracht_DesignPatterns.controllers
         public NodeFactory(Mediator mediator)
         {
             this.mediator = mediator;
-            _types = new Dictionary<string, Type>();
-        }
-
-        public void CreateCircuit(string identifier, String descriptor)
-        {
-            var value = "";
-            if (descriptor == "INPUT_HIGH" || descriptor == "INPUT_LOW")
+            _types = new Dictionary<string, Type>()
             {
-                value = descriptor; //?hoe deze value nog toeveogen??
-                descriptor = "Input";
-            }
-            CreateNodes(identifier, descriptor, value);
+                { "AND", typeof(And) },
+                { "OR", typeof(Or)  },
+                { "NOT", typeof(Not) },
+                { "INPUT_HIGH", typeof(Input) },
+                { "INPUT_LOW",typeof(Input) },
+                { "PROBE", typeof(Probe) }
+            };
         }
 
-        public void CreateNodes(string identifier, string descriptor, string value)
+        public void CreateCircuit(string identifier, string descriptor)
         {
-            string sub  = descriptor.Substring(0, 1).ToUpper() + descriptor.Substring(1).ToLower();
-            Type t = Type.GetType("Eindopdracht_DesignPatterns.models.Nodes." + sub);
+            Type t = _types[descriptor];
             INode node = (INode) Activator.CreateInstance(t);
             node.Identifier = identifier;
+            
             mediator.AddElement(node, identifier);
         }
     }
 }
-//
-//switch (descriptor)
-//{
-//case "AND":
-//new And()
-//{
-//Identifier = identifier
-//};
-//
-//break;
-//case "NOT":
-//new Not()
-//{
-//Identifier = identifier
-//};
-//break;
-//case "OR":
-//new Or()
-//{
-//Identifier = identifier
-//};
-//break;
-//case "INPUT_LOW": 
-//case "INPUT_HIGH":
-//new Input()
-//{
-//Identifier = identifier,
-//Descriptor = descriptor
-//};
-//break;
-//case "PROBE":
-//Console.WriteLine("Case 2");
-//break;
-//default:
-//Console.WriteLine("Default case");
-//break;
-//}

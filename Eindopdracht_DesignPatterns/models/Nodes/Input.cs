@@ -7,17 +7,14 @@ using Eindopdracht_DesignPatterns.models.interfaces;
 
 namespace Eindopdracht_DesignPatterns.models.Nodes
 {
-    public class Input : INode, IEdge
+    public class Input : INode
     {
-        public string Identifier { get; set; }
-        public List<string> TargetIdentifieers { get; set; }
-
-        //descriptor = input_high or input_low 
-        public string Value { get; set; }
-
-        public void Notify(INode sender, string message)
+        public void Notify(INode sender, int message)
         {
             throw new NotImplementedException();
         }
+
+        public string Identifier { get; set; }
+        public List<string> TargetIdentifieers { get; set; }
     }
 }
