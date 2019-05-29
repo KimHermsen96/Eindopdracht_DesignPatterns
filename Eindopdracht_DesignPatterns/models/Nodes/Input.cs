@@ -14,7 +14,7 @@ namespace Eindopdracht_DesignPatterns.models.Nodes
             throw new NotImplementedException();
         }
 
-        public string Identifier { get; set; }
+        public string Descriptor { get; set; }
         public List<string> TargetIdentifieers { get; set; }
     }
 }

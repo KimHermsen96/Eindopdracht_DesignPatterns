@@ -34,7 +34,13 @@ namespace Eindopdracht_DesignPatterns.controllers
             Type t = _types[descriptor];
             INode node = (INode) Activator.CreateInstance(t);
             node.Identifier = identifier;
-            
+
+            if (t == typeof(Input))
+            {
+                int value = (descriptor == "INPUT_HIGH") ? 1 : 0; 
+                node.Value = value;
+            }
+
             mediator.AddElement(node, identifier);
         }
     }

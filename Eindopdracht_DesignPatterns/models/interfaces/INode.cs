@@ -9,7 +9,7 @@ namespace Eindopdracht_DesignPatterns.models.interfaces
     public abstract class INode : IMediator
     {
         public string Identifier { get; set; }
-
+        public string Value { get; set; }
         public List<string> TargetIdentifieers { get; set; }
 
         public INode()

@@ -9,20 +9,23 @@ namespace Eindopdracht_DesignPatterns.models.Nodes
 {
     public class And : INode
     {
-
         public int? firstValue { get; set; }
+        public string Identifier { get; set; }
+        public List<string> TargetIdentifieers { get; set; }
 
         public void Notify(INode sender, int value)
         {
-            
             if (firstValue == null)
             {
-
+                firstValue = value;
             }
+            calculateOutput();
+        }
+
+        private void calculateOutput()
+        {
 
         }
 
-        public string Identifier { get; set; }
-        public List<string> TargetIdentifieers { get; set; }
     }
 }
