@@ -10,6 +10,20 @@ namespace Eindopdracht_DesignPatterns.controllers
     public class Mediator : IMediator 
     {
         private  Dictionary<string, INode> allElements;
+        private static Mediator _instance;
+
+        public static Mediator instance
+        {
+            get
+            {
+                if (_instance == null)
+                {
+                    _instance = new Mediator();
+                }
+
+                return _instance;
+            }
+        }
 
         public Mediator()
         {
@@ -22,7 +36,7 @@ namespace Eindopdracht_DesignPatterns.controllers
 
             foreach (var element in allElements)
             {
-
+                Console.WriteLine(element);
 
             }
         }

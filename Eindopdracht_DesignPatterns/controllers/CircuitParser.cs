@@ -16,12 +16,12 @@ namespace Eindopdracht_DesignPatterns.controllers
         private string matchBefore = @"\w+(?=:)";
         private string matchAfter = @"(?<=:).*\w+(?=;)";
 
-
         private Mediator mediator;
 
         public CircuitParser(string[] fileByLine)
         {
-            mediator = new Mediator();
+
+            mediator = Mediator.instance;
 
             for (int i = 0; i < fileByLine.Length; i++)
             {

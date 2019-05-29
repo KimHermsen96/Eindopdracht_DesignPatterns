@@ -15,9 +15,8 @@ namespace Eindopdracht_DesignPatterns.controllers
             string path = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location),
                 @"data\" + file);
             string[] files = File.ReadAllLines(path);
-//            foreach (var f in files) Console.WriteLine(f);
-//            Console.ReadKey();
             return files;
+
         }
     }
 }

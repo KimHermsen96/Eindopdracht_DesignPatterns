@@ -15,6 +15,9 @@ namespace Eindopdracht_DesignPatterns
     {
         static void Main(string[] args)
         {
+
+            Mediator mediator =  Mediator.instance; 
+
             bool noChosenFile = true;
             string chosenFile = "";
 
@@ -32,6 +35,9 @@ namespace Eindopdracht_DesignPatterns
             string[] fileByLine = fileReader.Readfile(chosenFile);
             CircuitParser parser = new CircuitParser(fileByLine);
 
+            
+            mediator.Execute();
+            
             Console.ReadKey();
         }
 
