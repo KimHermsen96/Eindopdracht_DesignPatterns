@@ -14,11 +14,23 @@ namespace Eindopdracht_DesignPatterns.controllers
         public Mediator()
         {
             allElements = new Dictionary<string, INode>();
+
+        }
+
+        public void Execute()
+        {
+
+            foreach (var element in allElements)
+            {
+
+
+            }
         }
 
         public void Notify(INode sender, int value)
         {
             
+
         }
 
         public void AddElement(INode node, string identifier)
