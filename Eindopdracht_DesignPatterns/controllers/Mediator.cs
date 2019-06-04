@@ -9,7 +9,7 @@ namespace Eindopdracht_DesignPatterns.controllers
 {
     public class Mediator : IMediator 
     {
-        private  Dictionary<string, INode> allElements;
+        private Dictionary<INode, List<INode>> allElements;
         private static Mediator _instance;
 
         public static Mediator instance
@@ -27,33 +27,60 @@ namespace Eindopdracht_DesignPatterns.controllers
 
         public Mediator()
         {
-            allElements = new Dictionary<string, INode>();
+            allElements = new Dictionary<INode, List<INode>>();
 
         }
 
         public void Execute()
         {
 
-            foreach (var element in allElements)
+            foreach (var el in allElements)
             {
-                Notify(element.Value, element.Value.Value);
+                Console.WriteLine("key" + el.Key.Identifier);
+
+                foreach (var a in el.Value)
+                {
+                    Console.WriteLine("value " +  a.Identifier);
+
+                    Notify(a, a.Value);
+                }
+
             }
+//            foreach (var element in allElements)
+//            {
+//                Notify(element.Value, element.Value.Value);
+//            }
         }
 
         public void Notify(INode sender, int value)
         {
-            sender.calculateOutput(value);
+            sender.CalculateOutput(value);
         }
 
-        public void AddElement(INode node, string identifier)
+        public void AddElement(INode node)
         {
-            allElements.Add(identifier, node);
+            allElements.Add(node, new List<INode>());
         }
 
         public void AddEdge(string nodeIdentifier, string edgeIdentifier)
         {
-            INode item = allElements[nodeIdentifier];
-            item.TargetIdentifieers.Add(edgeIdentifier);
+
+            foreach (var el in allElements)
+            {
+                if (el.Key.Identifier == nodeIdentifier)
+                {
+                    foreach (var a in allElements)
+                    {
+                        if (a.Key.Identifier == edgeIdentifier)
+                        {
+                            allElements[el.Key].Add(a.Key);
+                        }
+                    }
+                }
+            }
         }
+
+
+
     }
 }

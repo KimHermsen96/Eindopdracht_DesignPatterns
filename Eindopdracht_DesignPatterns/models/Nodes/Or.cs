@@ -9,15 +9,13 @@ namespace Eindopdracht_DesignPatterns.models.Nodes
 {
     public class Or :  INode
     {
-        public int? firstValue { get; set; }
+        public int? secondValue { get; set; }
         public string Identifier { get; set; }
-        public List<string> TargetIdentifieers { get; set; }
-        public void calculateOutput(int value)
+        public int Value { get; set; }
+
+        public void CalculateOutput(int value)
         {
-            if (firstValue == null)
-            {
-                firstValue = value;
-            }
+           
         }
     }
 }

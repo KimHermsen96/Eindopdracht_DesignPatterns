@@ -10,10 +10,11 @@ namespace Eindopdracht_DesignPatterns.models.Nodes
     public class Not : INode
     {
         public string Identifier { get; set; }
-        public List<string> TargetIdentifieers { get; set; }
-        public void calculateOutput(int value)
+        public int Value { get; set; }
+
+        public void CalculateOutput(int value)
         {
-            
+            throw new NotImplementedException();
         }
     }
 }
