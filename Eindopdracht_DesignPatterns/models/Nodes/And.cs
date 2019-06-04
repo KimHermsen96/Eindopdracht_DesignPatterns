@@ -11,6 +11,7 @@ namespace Eindopdracht_DesignPatterns.models.Nodes
     {
         private int? _firstValue { get; set; }
         public string Identifier { get; set; }
+
         public int Value { get; set; }
 
         public void CalculateOutput(int value)
@@ -19,6 +20,15 @@ namespace Eindopdracht_DesignPatterns.models.Nodes
             if (_firstValue == null)
             {
                 _firstValue = Value;
+            }
+
+            if (_firstValue == 1 && value == 1)
+            {
+                Value = 1;
+            }
+            else
+            {
+                Value = 0;
             }
         }
 

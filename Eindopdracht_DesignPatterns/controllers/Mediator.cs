@@ -4,12 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Eindopdracht_DesignPatterns.models.interfaces;
+using Eindopdracht_DesignPatterns.models.Nodes;
 
 namespace Eindopdracht_DesignPatterns.controllers
 {
     public class Mediator : IMediator 
     {
-        private Dictionary<INode, List<INode>> allElements;
+        private Dictionary<INode, List<INode>> edges;
+        private Dictionary<string, INode> allElements;
         private static Mediator _instance;
 
         public static Mediator instance
@@ -27,29 +29,26 @@ namespace Eindopdracht_DesignPatterns.controllers
 
         public Mediator()
         {
-            allElements = new Dictionary<INode, List<INode>>();
-
+            allElements = new Dictionary<string, INode>();
+            edges = new Dictionary<INode, List<INode>>();
         }
 
         public void Execute()
         {
 
-            foreach (var el in allElements)
+            foreach (var node in edges)
             {
-                Console.WriteLine("key" + el.Key.Identifier);
+                
 
-                foreach (var a in el.Value)
+                foreach (var connectedNode in node.Value)
                 {
-                    Console.WriteLine("value " +  a.Identifier);
+//                    Console.WriteLine("value " +  connectedNode.Identifier);
 
-                    Notify(a, a.Value);
+                    Notify(connectedNode, node.Key.Value);
                 }
 
+                Console.WriteLine("key" + node.Key.Identifier +  " value " + node.Key.Value);
             }
-//            foreach (var element in allElements)
-//            {
-//                Notify(element.Value, element.Value.Value);
-//            }
         }
 
         public void Notify(INode sender, int value)
@@ -57,30 +56,25 @@ namespace Eindopdracht_DesignPatterns.controllers
             sender.CalculateOutput(value);
         }
 
-        public void AddElement(INode node)
+        public void AddElement(string descriptor, INode node )
         {
-            allElements.Add(node, new List<INode>());
+           allElements.Add(descriptor, node);
         }
+        
 
         public void AddEdge(string nodeIdentifier, string edgeIdentifier)
         {
+            INode node = allElements[nodeIdentifier];
+            INode targetNode = allElements[edgeIdentifier];
 
-            foreach (var el in allElements)
+            if (!edges.ContainsKey(node))
             {
-                if (el.Key.Identifier == nodeIdentifier)
-                {
-                    foreach (var a in allElements)
-                    {
-                        if (a.Key.Identifier == edgeIdentifier)
-                        {
-                            allElements[el.Key].Add(a.Key);
-                        }
-                    }
-                }
+                edges.Add(node, new List<INode>());
             }
+
+            List<INode> targetList = edges[node];
+            targetList.Add(targetNode);
+            
         }
-
-
-
     }
 }

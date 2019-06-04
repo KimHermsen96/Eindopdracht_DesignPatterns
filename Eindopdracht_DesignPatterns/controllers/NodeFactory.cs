@@ -41,7 +41,7 @@ namespace Eindopdracht_DesignPatterns.controllers
                 node.Value = value;
             }
 
-            mediator.AddElement(node);
+            mediator.AddElement(identifier, node);
         }
     }
 }

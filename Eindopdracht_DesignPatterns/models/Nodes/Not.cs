@@ -14,7 +14,14 @@ namespace Eindopdracht_DesignPatterns.models.Nodes
 
         public void CalculateOutput(int value)
         {
-            throw new NotImplementedException();
+            if (value == 1)
+            {
+                Value = 0;
+            }
+            else
+            {
+                Value = 1;
+            }
         }
     }
 }
