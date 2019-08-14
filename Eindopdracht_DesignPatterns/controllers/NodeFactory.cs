@@ -13,11 +13,9 @@ namespace Eindopdracht_DesignPatterns.controllers
     public class NodeFactory
     {
         private Dictionary<string, Type> _types;
-        private Mediator mediator;
 
-        public NodeFactory(Mediator mediator)
+        public NodeFactory()
         {
-            this.mediator = mediator;
             _types = new Dictionary<string, Type>()
             {
                 { "AND", typeof(And) },
@@ -29,7 +27,7 @@ namespace Eindopdracht_DesignPatterns.controllers
             };
         }
 
-        public void CreateCircuit(string identifier, string descriptor)
+        public INode CreateNode(string identifier, string descriptor)
         {
             Type t = _types[descriptor];
             INode node = (INode) Activator.CreateInstance(t);
@@ -40,8 +38,7 @@ namespace Eindopdracht_DesignPatterns.controllers
                 int value = (descriptor == "INPUT_HIGH") ? 1 : 0; 
                 node.Value = value;
             }
-
-            mediator.AddElement(identifier, node);
+            return node;
         }
     }
 }

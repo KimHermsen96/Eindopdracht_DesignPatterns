@@ -10,44 +10,43 @@ namespace Eindopdracht_DesignPatterns.controllers
 {
     public class Mediator : IMediator 
     {
-        private Dictionary<INode, List<INode>> edges;
-        private Dictionary<string, INode> allElements;
-        private static Mediator _instance;
+        public Dictionary<INode, List<INode>> Circuit { get; set; } //lijst met nodes een edges
+        public Dictionary<string, INode> AllNodes { get; set; } //lijst van naam met bijbehorend type
 
-        public static Mediator instance
-        {
-            get
-            {
-                if (_instance == null)
-                {
-                    _instance = new Mediator();
-                }
 
-                return _instance;
-            }
-        }
+//        private static Mediator _instance;
+
+//        public static Mediator instance
+//        {
+//            get
+//            {
+//                if (_instance == null)
+//                { 
+//                    _instance = new Mediator();
+//                }
+//
+//                return _instance;
+//            }
+//        }
 
         public Mediator()
         {
-            allElements = new Dictionary<string, INode>();
-            edges = new Dictionary<INode, List<INode>>();
+            AllNodes = new Dictionary<string, INode>();
+            Circuit = new Dictionary<INode, List<INode>>();
         }
 
         public void Execute()
         {
 
-            foreach (var node in edges)
+            foreach (var node in Circuit)
             {
-                
-
                 foreach (var connectedNode in node.Value)
                 {
-//                    Console.WriteLine("value " +  connectedNode.Identifier);
-
+                    Console.WriteLine("value " +  connectedNode.Identifier);
                     Notify(connectedNode, node.Key.Value);
                 }
 
-                Console.WriteLine("key" + node.Key.Identifier +  " value " + node.Key.Value);
+                Console.WriteLine("key " + node.Key.Identifier +  " value " + node.Key.Value);
             }
         }
 
@@ -56,25 +55,40 @@ namespace Eindopdracht_DesignPatterns.controllers
             sender.CalculateOutput(value);
         }
 
-        public void AddElement(string descriptor, INode node )
+        public bool CheckIfValid()
         {
-           allElements.Add(descriptor, node);
-        }
-        
-
-        public void AddEdge(string nodeIdentifier, string edgeIdentifier)
-        {
-            INode node = allElements[nodeIdentifier];
-            INode targetNode = allElements[edgeIdentifier];
-
-            if (!edges.ContainsKey(node))
+            if (!Connected())
             {
-                edges.Add(node, new List<INode>());
-            }
 
-            List<INode> targetList = edges[node];
-            targetList.Add(targetNode);
-            
+                Console.WriteLine("Circuit is not connected");
+                return Connected();
+
+            }
+            return true; 
+        }
+
+        private bool Connected()
+        {
+            foreach (var element in AllNodes)
+            {
+
+                /// if false.. returned false als het element niet connected is. 
+                if (!CheckOneElement(element.Key, element.Value)) return false;
+            }
+            return true;
+        }
+
+        public bool CheckOneElement(string key, INode value)
+        {
+            foreach (var edge in Circuit)
+            {
+                //hier check ik of de huidige nodes wel in de lijst voorkomen. 
+                if (edge.Key.Identifier == key || value is Probe)    return true;
+                
+            }
+            //als niet beide keys in de lijst voorkomen betekend dit dat de er een node niet verbonden is. 
+            //dus is de ding fout. 
+            return false;
         }
     }
 }

@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="controllers\CircuitBuilder.cs" />
     <Compile Include="controllers\CircuitParser.cs" />
+    <Compile Include="controllers\Director.cs" />
     <Compile Include="controllers\FileReader.cs" />
     <Compile Include="controllers\NodeFactory.cs" />
     <Compile Include="models\Nodes\Input.cs" />

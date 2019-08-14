@@ -13,15 +13,13 @@ namespace Eindopdracht_DesignPatterns.controllers
 {
     public class CircuitParser
     {
-        private string matchBefore = @"\w+(?=:)";
-        private string matchAfter = @"(?<=:).*\w+(?=;)";
-
-        private Mediator mediator;
+        public Dictionary<string, string> Nodes { get; set; }
+        public Dictionary<string, List<string>> Edges { get; set; }
 
         public CircuitParser(string[] fileByLine)
         {
-
-            mediator = Mediator.instance;
+            Nodes = new Dictionary<string, string>();
+            Edges = new Dictionary<string, List<string>>();
 
             for (int i = 0; i < fileByLine.Length; i++)
             {
@@ -29,7 +27,7 @@ namespace Eindopdracht_DesignPatterns.controllers
 
                 if (fileByLine[i].Equals("# Description of all the nodes")) newPostion = CreateNodes(fileByLine, i);
                 i = newPostion;
-                
+
                 if (fileByLine[i].Equals("# Description of all the edges")) newPostion = CreateEdges(fileByLine, i);
                 i = newPostion;
             }
@@ -37,10 +35,11 @@ namespace Eindopdracht_DesignPatterns.controllers
 
         private int CreateEdges(string[] lines, int position)
         {
-
-           
             for (int i = position; i < lines.Length; i++)
             {
+                string matchBefore = @"\w+(?=:)";
+                string matchAfter = @"(?<=:).*\w+(?=;)";
+
                 Match beforeColon = Regex.Match(lines[i], matchBefore);
                 Match afterColon = Regex.Match(lines[i], matchAfter);
 
@@ -48,36 +47,40 @@ namespace Eindopdracht_DesignPatterns.controllers
                 {
                     string[] allEdges = afterColon.ToString().Split(',');
                     List<string> trimmedEdges = new List<string>();
-                  
+
+                    Edges.Add(beforeColon.ToString(), new List<string>());
+
                     foreach (var e in allEdges)
                     {
                         string edge = e.Trim();
                         trimmedEdges.Add(edge);
-
-                        mediator.AddEdge(beforeColon.ToString(), edge);                       
-//                        Console.WriteLine(beforeColon + ": " + edge);
+                        List<string> targetList = Edges[beforeColon.ToString()];
+                        targetList.Add(edge);
                     }
                 }
             }
-            return lines.Length; 
+
+            return lines.Length;
         }
 
         private int CreateNodes(string[] lines, int position)
         {
-
-            NodeFactory nodeFactory = new NodeFactory(mediator);
-            while(!lines[position].Equals("")){
+            while (!lines[position].Equals(""))
+            {
+                string matchBefore = @"\w+(?=:)";
+                string matchAfter = @"(?<=:).*\w+(?=;)";
 
                 Match beforeColon = Regex.Match(lines[position], matchBefore);
                 Match afterColon = Regex.Match(lines[position], matchAfter);
 
                 if (beforeColon.Success && afterColon.Success)
                 {
-                    nodeFactory.CreateCircuit(beforeColon.ToString(), afterColon.ToString().Trim());
-//                    Console.WriteLine(beforeColon + ": " + afterColon);
+                    Nodes.Add(beforeColon.ToString(), afterColon.ToString().Trim());
                 }
+
                 position++;
             }
+
             return position;
         }
     }

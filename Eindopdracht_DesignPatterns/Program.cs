@@ -15,15 +15,12 @@ namespace Eindopdracht_DesignPatterns
     {
         static void Main(string[] args)
         {
-
-            Mediator mediator =  Mediator.instance; 
-
             bool noChosenFile = true;
             string chosenFile = "";
 
             while (noChosenFile)
             {
-                Console.WriteLine("Choose a circuit (1, 2, 3, 4)");
+                Console.WriteLine("Choose a circuit (1, 2, 3, 4, 5)");
                 chosenFile = ChooseFile();
 
                 if (chosenFile != "No file selected") noChosenFile = false;
@@ -31,13 +28,27 @@ namespace Eindopdracht_DesignPatterns
 
             Console.WriteLine("You chose:" + chosenFile);
 
-            FileReader fileReader = new FileReader();
-            string[] fileByLine = fileReader.Readfile(chosenFile);
-            CircuitParser parser = new CircuitParser(fileByLine);
+            Director director = new Director(chosenFile);
+            director.ReadFile();
 
-            
-            mediator.Execute();
-            
+    
+
+
+//            FileReader fileReader = new FileReader();
+//            string[] fileByLine = fileReader.Readfile(chosenFile);
+//            CircuitParser parser = new CircuitParser(fileByLine);
+//
+//   
+//
+//            if (mediator.CheckIfValid())
+//            {
+//                mediator.Execute();
+//            }
+//            else
+//            {
+//                Console.WriteLine("Circuit is not valid");
+//            }
+
             Console.ReadKey();
         }
 
@@ -57,9 +68,9 @@ namespace Eindopdracht_DesignPatterns
                     case 3:
                         return file = "Circuit3_Encoder.txt";
                     case 4:
-                        return file = "Circuit2_InfiniteLoop.txt";
+                        return file = "Circuit4_InfiniteLoop.txt";
                     case 5:
-                        return file = "Circuit2_NotConnected.txt";
+                        return file = "Circuit5_NotConnected.txt";
                     default:
                         return file = "Circuit1_FullAdder.txt";
                 }
