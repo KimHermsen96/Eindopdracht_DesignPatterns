@@ -50,6 +50,7 @@ namespace Eindopdracht_DesignPatterns.controllers
                 node.Value = value;
             }
             return node; 
+            //mediator.AddElement(node, identifier);
         }
     }
 }

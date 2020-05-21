@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Text.RegularExpressions;
 using Eindopdracht_DesignPatterns.models;
+using Eindopdracht_DesignPatterns.models.interfaces;
 
 namespace Eindopdracht_DesignPatterns.controllers
 {
@@ -17,6 +18,8 @@ namespace Eindopdracht_DesignPatterns.controllers
         private string matchAfter = @"(?<=:).*\w+(?=;)";
 
         private Mediator mediator;
+        NodeFactory nodeFactory = new NodeFactory();
+
 
         public CircuitParser(string[] fileByLine)
         {
@@ -65,7 +68,7 @@ namespace Eindopdracht_DesignPatterns.controllers
         private int CreateNodes(string[] lines, int position)
         {
 
-            NodeFactory nodeFactory = new NodeFactory(mediator);
+            NodeFactory nodeFactory = new NodeFactory();
             while(!lines[position].Equals("")){
 
                 Match beforeColon = Regex.Match(lines[position], matchBefore);
@@ -73,8 +76,11 @@ namespace Eindopdracht_DesignPatterns.controllers
 
                 if (beforeColon.Success && afterColon.Success)
                 {
-                    nodeFactory.CreateCircuit(beforeColon.ToString(), afterColon.ToString().Trim());
-//                    Console.WriteLine(beforeColon + ": " + afterColon);
+                  INode createdNode =  nodeFactory.CreateCircuit(beforeColon.ToString(), afterColon.ToString().Trim());
+                  Console.WriteLine(beforeColon + ": " + afterColon);
+                  mediator.AddElement(createdNode, createdNode.Identifier);
+
+
                 }
                 position++;
             }

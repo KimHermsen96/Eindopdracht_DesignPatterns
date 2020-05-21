@@ -34,7 +34,8 @@ namespace Eindopdracht_DesignPatterns
             FileReader fileReader = new FileReader();
             string[] fileByLine = fileReader.Readfile(chosenFile);
             CircuitParser parser = new CircuitParser(fileByLine);
-
+      
+       
             
             mediator.Execute();
             
