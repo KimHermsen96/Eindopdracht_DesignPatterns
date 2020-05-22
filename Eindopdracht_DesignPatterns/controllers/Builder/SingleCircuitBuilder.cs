@@ -1,4 +1,5 @@
-﻿using Eindopdracht_DesignPatterns.models.interfaces;
+﻿using Eindopdracht_DesignPatterns.models;
+using Eindopdracht_DesignPatterns.models.interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,70 +11,89 @@ namespace Eindopdracht_DesignPatterns.controllers
 {
     public class SingleCircuitBuilder : CircuitBuilder
     {
+        private int FilePosition { get; set; } = 0;
+        private string[] FileByLine { get; set; }
+        private NodeFactory NodeFactory { get; set; }
+        public SingleCircuit Circuit { get; set; }
 
-        private string matchBefore = @"\w+(?=:)";
-        private string matchAfter = @"(?<=:).*\w+(?=;)";
+        private Regex MatchBefore { get; }
+        private Regex MatchAfter { get; }
 
-        public override int CreateEdges(string[] lines, int position)
+
+        public SingleCircuitBuilder(string[] fileByLine) {
+            FileByLine = fileByLine;
+
+            MatchBefore = new Regex(@"\w+(?=:)");
+            MatchAfter = new Regex(@"(?<=:).*\w+(?=;)");
+            NodeFactory = new NodeFactory();
+            Circuit = new SingleCircuit();
+        }
+
+
+        public override void ConstructCircuit()
         {
-            for (int i = position; i < lines.Length; i++)
+            CreateNodes();
+            CreateEdges();
+        }
+
+        public override void CreateNodes()
+        {
+            for (int i = 0; i < FileByLine.Length; i++)
             {
-                Match beforeColon = Regex.Match(lines[i], matchBefore);
-                Match afterColon = Regex.Match(lines[i], matchAfter);
+                var regex = new Regex(@"\d+");
+                Match containsNodes = regex.Match(FileByLine[i]);
 
-                if (beforeColon.Success && afterColon.Success)
+                if (containsNodes.Success)
                 {
-                    string[] allEdges = afterColon.ToString().Split(',');
-                    List<string> trimmedEdges = new List<string>();
+                    Match beforeColon = MatchBefore.Match(FileByLine[i]);
+                    Match afterColon = MatchAfter.Match(FileByLine[i]);
 
-                    foreach (var e in allEdges)
+                    if (beforeColon.Success && afterColon.Success)
                     {
-                        string edge = e.Trim();
-                        trimmedEdges.Add(edge);
-
-                        //mediator.AddEdge(beforeColon.ToString(), edge);
-
-                        INode item = Circuit[beforeColon.ToString()];
-                        item.TargetIdentifieers.Add(edge);
-                        //                        Console.WriteLine(beforeColon + ": " + edge);
+                        INode createdNode = NodeFactory.CreateNode(beforeColon.ToString(), afterColon.ToString().Trim());
+                        //add INode to list of all nodes. 
+                        Circuit.AllNodes.Add(createdNode.Identifier, createdNode);
+                        Console.WriteLine(beforeColon + ": " + afterColon);
                     }
                 }
+                if (FileByLine[i].Equals("# Description of all the edges")) break;
             }
-            return lines.Length;
         }
 
-        public override int CreateNodes(string[] lines, int position)
+
+        public override void CreateEdges()
         {
-            throw new NotImplementedException();
+
+            Console.WriteLine(" ----------  nu de edges -------");
+            for (int i = FilePosition; i < FileByLine.Length; i++)
+            {
+                var regex = new Regex(@"\d+");
+                Match containsNodes = regex.Match(FileByLine[i]);
+
+                if (containsNodes.Success)
+                {
+                    Match beforeColon = MatchBefore.Match(FileByLine[i]);
+                    Match afterColon = MatchAfter.Match(FileByLine[i]);
+
+                    if (beforeColon.Success && afterColon.Success)
+                    {
+                        string[] allEdges = afterColon.ToString().Split(',');
+                        List<string> trimmedEdges = new List<string>();
+
+                        foreach (var e in allEdges)
+                        {
+                            string edge = e.Trim();
+                            trimmedEdges.Add(edge);
+                            INode item = Circuit.AllNodes[beforeColon.ToString()];
+                            item.TargetIdentifieers.Add(edge);
+                            Console.WriteLine(beforeColon + ": " + edge);
+                        }
+                    }
+                }
+
+            }
         }
-
-        //    public void AddEdge(string nodeIdentifier, string edgeIdentifier)
-        //    {
-        //        INode item = allElements[nodeIdentifier];
-        //        item.TargetIdentifieers.Add(edgeIdentifier);
-        //    }
-
-        //    public override int CreateNodes(string[] lines, int position)
-        //    {
-        //        NodeFactory nodeFactory = new NodeFactory();
-        //        while (!lines[position].Equals(""))
-        //        {
-
-        //            Match beforeColon = Regex.Match(lines[position], matchBefore);
-        //            Match afterColon = Regex.Match(lines[position], matchAfter);
-
-        //            if (beforeColon.Success && afterColon.Success)
-        //            {
-        //                INode createdNode = nodeFactory.CreateCircuit(beforeColon.ToString(), afterColon.ToString().Trim());
-        //                Console.WriteLine(beforeColon + ": " + afterColon);
-        //                mediator.AddElement(createdNode, createdNode.Identifier);
-
-
-        //            }
-        //            position++;
-        //        }
-        //        return position;
-        //    }
-        //}
     }
 }
+
+

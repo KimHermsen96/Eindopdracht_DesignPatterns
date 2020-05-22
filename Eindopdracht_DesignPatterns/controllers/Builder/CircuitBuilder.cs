@@ -19,8 +19,9 @@ namespace Eindopdracht_DesignPatterns.controllers
             return Circuit;
         }
 
-        public abstract int CreateNodes(string[] lines, int position);
-        public abstract int CreateEdges(string[] lines, int position);
+        public abstract void CreateNodes();
+        public abstract void CreateEdges();
+        public abstract void ConstructCircuit();
 
 
     }

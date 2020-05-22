@@ -34,27 +34,17 @@ namespace Eindopdracht_DesignPatterns
             FileReader fileReader = new FileReader();
             string[] fileByLine = fileReader.Readfile(chosenFile);
 
-
-            
-            FileParser parser = new FileParser(fileByLine);
-            parser.NodeReader();
-
-   
-            
+            Director director = new Director();
+            SingleCircuitBuilder singleCircuitBuilder = new SingleCircuitBuilder(fileByLine);
+            director.SetCircuitBuilder(singleCircuitBuilder);
+            director.ConstructCircuit();
 
 
 
 
-            //Director director = new Director();
-            //SingleCircuitBuilder singleCircuitBuilder = new SingleCircuitBuilder();
-            //director.SetCircuitBuilder(singleCircuitBuilder);
 
-
-      
-       
-            
             //mediator.Execute();
-            
+
             Console.ReadKey();
         }
 

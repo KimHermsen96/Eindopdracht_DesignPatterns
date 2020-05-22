@@ -23,9 +23,9 @@ namespace Eindopdracht_DesignPatterns.controllers
         }
 
 
-        //public void ConstructCircuit()
-        //{
-        //    CircuitBuilder.
-        //}
+        public void ConstructCircuit()
+        {
+            CircuitBuilder.ConstructCircuit();
+        }
     }
 }

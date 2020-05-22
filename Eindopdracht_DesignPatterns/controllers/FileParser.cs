@@ -21,6 +21,8 @@ namespace Eindopdracht_DesignPatterns.controllers
 
         private SingleCircuit Circuit { get; set; }
 
+
+
         private Regex MatchBefore { get; }
         private Regex MatchAfter { get; }
 
@@ -50,7 +52,6 @@ namespace Eindopdracht_DesignPatterns.controllers
                     if (beforeColon.Success && afterColon.Success)
                     {
                         INode createdNode = NodeFactory.CreateNode(beforeColon.ToString(), afterColon.ToString().Trim());
-                     
                         //add INode to list of all nodes. 
                         Circuit.AllNodes.Add(createdNode.Identifier, createdNode);
                         Console.WriteLine(beforeColon + ": " + afterColon);
@@ -61,18 +62,38 @@ namespace Eindopdracht_DesignPatterns.controllers
         }
 
 
-        //public void CircuitReader()
-        //{
-        //    for (int i = FilePosition; i < FileByLine.Length; i++)
-        //    {
-        //        FilePosition = i;
 
-        //        if (FileByLine[i].Equals("# Description of all the edges")) FilePosition = CreateEdges(fileByLine, i);
-        //        i = FilePosition;
-        //    }
+        public void EdgeReader()
+        {
 
 
-        //}
+
+
+
+
+            //            for (int i = position; i<lines.Length; i++)
+            //            {
+            //                Match beforeColon = Regex.Match(lines[i], matchBefore);
+            //                 Match afterColon = Regex.Match(lines[i], matchAfter);
+
+            //                if (beforeColon.Success && afterColon.Success)
+            //                {
+            //                    string[] allEdges = afterColon.ToString().Split(',');
+            //                    List<string> trimmedEdges = new List<string>();
+
+            //                    foreach (var e in allEdges)
+            //                    {
+            //                        string edge = e.Trim();
+            //                        trimmedEdges.Add(edge);
+
+            //                        mediator.AddEdge(beforeColon.ToString(), edge);
+            //                        //Console.WriteLine(beforeColon + ": " + edge);
+            //                    }
+            //}
+            //            }
+            //return lines.Length;
+        }
+
 
 
         //private int CreateNodes(string[] lines, int position)
@@ -98,32 +119,6 @@ namespace Eindopdracht_DesignPatterns.controllers
         //}
 
 
-        //private int CreateEdges(string[] lines, int position)
-        //{
-
-
-        //    for (int i = position; i < lines.Length; i++)
-        //    {
-        //        Match beforeColon = Regex.Match(lines[i], matchBefore);
-        //        Match afterColon = Regex.Match(lines[i], matchAfter);
-
-        //        if (beforeColon.Success && afterColon.Success)
-        //        {
-        //            string[] allEdges = afterColon.ToString().Split(',');
-        //            List<string> trimmedEdges = new List<string>();
-
-        //            foreach (var e in allEdges)
-        //            {
-        //                string edge = e.Trim();
-        //                trimmedEdges.Add(edge);
-
-        //                mediator.AddEdge(beforeColon.ToString(), edge);
-        //                //                        Console.WriteLine(beforeColon + ": " + edge);
-        //            }
-        //        }
-        //    }
-        //    return lines.Length;
-        //}
 
 
     }
