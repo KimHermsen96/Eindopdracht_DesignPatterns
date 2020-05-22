@@ -42,32 +42,38 @@ namespace Eindopdracht_DesignPatterns.controllers
             return lines.Length;
         }
 
-        public void AddEdge(string nodeIdentifier, string edgeIdentifier)
-        {
-            INode item = allElements[nodeIdentifier];
-            item.TargetIdentifieers.Add(edgeIdentifier);
-        }
-
         public override int CreateNodes(string[] lines, int position)
         {
-            NodeFactory nodeFactory = new NodeFactory();
-            while (!lines[position].Equals(""))
-            {
-
-                Match beforeColon = Regex.Match(lines[position], matchBefore);
-                Match afterColon = Regex.Match(lines[position], matchAfter);
-
-                if (beforeColon.Success && afterColon.Success)
-                {
-                    INode createdNode = nodeFactory.CreateCircuit(beforeColon.ToString(), afterColon.ToString().Trim());
-                    Console.WriteLine(beforeColon + ": " + afterColon);
-                    mediator.AddElement(createdNode, createdNode.Identifier);
-
-
-                }
-                position++;
-            }
-            return position;
+            throw new NotImplementedException();
         }
+
+        //    public void AddEdge(string nodeIdentifier, string edgeIdentifier)
+        //    {
+        //        INode item = allElements[nodeIdentifier];
+        //        item.TargetIdentifieers.Add(edgeIdentifier);
+        //    }
+
+        //    public override int CreateNodes(string[] lines, int position)
+        //    {
+        //        NodeFactory nodeFactory = new NodeFactory();
+        //        while (!lines[position].Equals(""))
+        //        {
+
+        //            Match beforeColon = Regex.Match(lines[position], matchBefore);
+        //            Match afterColon = Regex.Match(lines[position], matchAfter);
+
+        //            if (beforeColon.Success && afterColon.Success)
+        //            {
+        //                INode createdNode = nodeFactory.CreateCircuit(beforeColon.ToString(), afterColon.ToString().Trim());
+        //                Console.WriteLine(beforeColon + ": " + afterColon);
+        //                mediator.AddElement(createdNode, createdNode.Identifier);
+
+
+        //            }
+        //            position++;
+        //        }
+        //        return position;
+        //    }
+        //}
     }
 }

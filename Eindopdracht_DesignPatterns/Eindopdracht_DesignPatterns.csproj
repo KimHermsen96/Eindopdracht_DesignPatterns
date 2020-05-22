@@ -44,13 +44,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="controllers\CircuitBuilder.cs" />
-    <Compile Include="controllers\CircuitParser.cs" />
+    <Compile Include="controllers\Builder\CircuitBuilder.cs" />
+    <Compile Include="controllers\FileParser.cs" />
+    <Compile Include="controllers\Builder\Director.cs" />
     <Compile Include="controllers\FileReader.cs" />
+    <Compile Include="controllers\Mediator.cs" />
     <Compile Include="controllers\NodeFactory.cs" />
+    <Compile Include="controllers\Builder\SingleCircuitBuilder.cs" />
+    <Compile Include="models\Circuit.cs" />
+    <Compile Include="models\SingleCircuit.cs" />
     <Compile Include="models\Nodes\Input.cs" />
     <Compile Include="models\interfaces\IInput.cs" />
-    <Compile Include="controllers\Mediator.cs" />
     <Compile Include="models\Nodes\And.cs" />
     <Compile Include="models\interfaces\IMediator.cs" />
     <Compile Include="models\interfaces\INode.cs" />

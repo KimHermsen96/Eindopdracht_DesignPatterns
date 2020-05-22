@@ -10,3 +10,15 @@ D:\Jaar2-Projecten\DesignPatterns\Eindopdracht_DesignPatterns\Eindopdracht_Desig
 D:\Jaar2-Projecten\DesignPatterns\Eindopdracht_DesignPatterns\Eindopdracht_DesignPatterns\bin\Debug\data\Circuit3_Encoder.txt
 D:\Jaar2-Projecten\DesignPatterns\Eindopdracht_DesignPatterns\Eindopdracht_DesignPatterns\bin\Debug\data\Circuit4_InfiniteLoop.txt
 D:\Jaar2-Projecten\DesignPatterns\Eindopdracht_DesignPatterns\Eindopdracht_DesignPatterns\bin\Debug\data\Circuit5_NotConnected.txt
+C:\Projects\Eindopdracht_DesignPatterns\Eindopdracht_DesignPatterns\obj\Debug\Eindopdracht_DesignPatterns.csprojAssemblyReference.cache
+C:\Projects\Eindopdracht_DesignPatterns\Eindopdracht_DesignPatterns\obj\Debug\Eindopdracht_DesignPatterns.csproj.CoreCompileInputs.cache
+C:\Projects\Eindopdracht_DesignPatterns\Eindopdracht_DesignPatterns\obj\Debug\Eindopdracht_DesignPatterns.exe
+C:\Projects\Eindopdracht_DesignPatterns\Eindopdracht_DesignPatterns\obj\Debug\Eindopdracht_DesignPatterns.pdb
+C:\Projects\Eindopdracht_DesignPatterns\Eindopdracht_DesignPatterns\bin\Debug\data\Circuit1_FullAdder.txt
+C:\Projects\Eindopdracht_DesignPatterns\Eindopdracht_DesignPatterns\bin\Debug\data\Circuit2_Decoder.txt
+C:\Projects\Eindopdracht_DesignPatterns\Eindopdracht_DesignPatterns\bin\Debug\data\Circuit3_Encoder.txt
+C:\Projects\Eindopdracht_DesignPatterns\Eindopdracht_DesignPatterns\bin\Debug\data\Circuit4_InfiniteLoop.txt
+C:\Projects\Eindopdracht_DesignPatterns\Eindopdracht_DesignPatterns\bin\Debug\data\Circuit5_NotConnected.txt
+C:\Projects\Eindopdracht_DesignPatterns\Eindopdracht_DesignPatterns\bin\Debug\Eindopdracht_DesignPatterns.exe.config
+C:\Projects\Eindopdracht_DesignPatterns\Eindopdracht_DesignPatterns\bin\Debug\Eindopdracht_DesignPatterns.exe
+C:\Projects\Eindopdracht_DesignPatterns\Eindopdracht_DesignPatterns\bin\Debug\Eindopdracht_DesignPatterns.pdb

@@ -38,7 +38,7 @@ namespace Eindopdracht_DesignPatterns.controllers
             };
         }
 
-        public INode CreateCircuit(string identifier, string descriptor)
+        public INode CreateNode(string identifier, string descriptor)
         {
             Type t = _types[descriptor];
             INode node = (INode) Activator.CreateInstance(t);
