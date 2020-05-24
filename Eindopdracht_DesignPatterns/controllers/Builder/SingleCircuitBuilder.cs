@@ -40,10 +40,10 @@ namespace Eindopdracht_DesignPatterns.controllers
         {
             for (int i = 0; i < FileByLine.Length; i++)
             {
-                var regex = new Regex(@"\d+");
-                Match containsNodes = regex.Match(FileByLine[i]);
+                var hashtagReg = new Regex(@"^#.*");
+                Match startsWithHashtag = hashtagReg.Match(FileByLine[i]);
 
-                if (containsNodes.Success)
+                if (!startsWithHashtag.Success)
                 {
                     Match beforeColon = MatchBefore.Match(FileByLine[i]);
                     Match afterColon = MatchAfter.Match(FileByLine[i]);
@@ -56,7 +56,11 @@ namespace Eindopdracht_DesignPatterns.controllers
                         Console.WriteLine(beforeColon + ": " + afterColon);
                     }
                 }
-                if (FileByLine[i].Equals("# Description of all the edges")) break;
+
+                if (FileByLine[i].Equals("# Description of all the edges")) {
+                    FilePosition = i;
+                    break;
+                }
             }
         }
 
@@ -93,6 +97,7 @@ namespace Eindopdracht_DesignPatterns.controllers
 
             }
         }
+
     }
 }
 
