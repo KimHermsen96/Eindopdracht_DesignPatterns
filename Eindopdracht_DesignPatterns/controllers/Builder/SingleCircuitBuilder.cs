@@ -15,6 +15,7 @@ namespace Eindopdracht_DesignPatterns.controllers
         private string[] FileByLine { get; set; }
         private NodeFactory NodeFactory { get; set; }
         //public SingleCircuit Circuit { get; set; }
+        public Dictionary<string, List<string>> Edges { get; set; }
 
         private Regex MatchBefore { get; }
         private Regex MatchAfter { get; }
@@ -27,6 +28,7 @@ namespace Eindopdracht_DesignPatterns.controllers
             MatchAfter = new Regex(@"(?<=:).*\w+(?=;)");
             NodeFactory = new NodeFactory();
             Circuit = new SingleCircuit();
+            Edges = new Dictionary<string, List<string>>();
         }
 
 
@@ -50,7 +52,7 @@ namespace Eindopdracht_DesignPatterns.controllers
 
                     if (beforeColon.Success && afterColon.Success)
                     {
-                        INodeasdfds createdNode = NodeFactory.CreateNode(beforeColon.ToString(), afterColon.ToString().Trim());
+                        INode createdNode = NodeFactory.CreateNode(beforeColon.ToString(), afterColon.ToString().Trim());
                         //add INode to list of all nodes. 
                         Circuit.AllNodes.Add(createdNode.Identifier, createdNode);
                         Console.WriteLine(beforeColon + ": " + afterColon);
@@ -84,12 +86,18 @@ namespace Eindopdracht_DesignPatterns.controllers
                         string[] allEdges = afterColon.ToString().Split(',');
                         List<string> trimmedEdges = new List<string>();
 
+                        Edges.Add(beforeColon.ToString(), new List<string>());
+
+
                         foreach (var e in allEdges)
                         {
                             string edge = e.Trim();
                             trimmedEdges.Add(edge);
-                            INodeasdfds item = Circuit.AllNodes[beforeColon.ToString()];
-                            item.TargetIdentifieers.Add(edge);
+                            INode item = Circuit.AllNodes[beforeColon.ToString()];
+                            //item.TargetIdentifieers.Add(edge);
+
+                            List<string> targetList = Edges[beforeColon.ToString()];
+                            targetList.Add(edge);
                             Console.WriteLine(beforeColon + ": " + edge);
                         }
                     }

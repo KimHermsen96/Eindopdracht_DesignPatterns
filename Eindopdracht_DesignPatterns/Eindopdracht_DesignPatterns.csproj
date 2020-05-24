@@ -51,12 +51,12 @@
     <Compile Include="controllers\NodeFactory.cs" />
     <Compile Include="controllers\Builder\SingleCircuitBuilder.cs" />
     <Compile Include="models\Circuit.cs" />
+    <Compile Include="models\interfaces\INode.cs" />
     <Compile Include="models\SingleCircuit.cs" />
     <Compile Include="models\Nodes\Input.cs" />
     <Compile Include="models\interfaces\IInput.cs" />
     <Compile Include="models\Nodes\And.cs" />
     <Compile Include="models\interfaces\IMediator.cs" />
-    <Compile Include="models\interfaces\INode.cs" />
     <Compile Include="models\Nodes\Not.cs" />
     <Compile Include="models\Nodes\Or.cs" />
     <Compile Include="models\Nodes\Probe.cs" />

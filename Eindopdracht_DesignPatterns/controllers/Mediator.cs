@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Eindopdracht_DesignPatterns.models.interfaces;
+using Eindopdracht_DesignPatterns.models.Nodes;
 
 namespace Eindopdracht_DesignPatterns.controllers
 {
@@ -41,6 +42,7 @@ namespace Eindopdracht_DesignPatterns.controllers
             sender.CalculateOutput(value);
         }
 
+   
         public bool CheckIfValid()
         {
             if (!Connected())
@@ -77,7 +79,6 @@ namespace Eindopdracht_DesignPatterns.controllers
             return false;
         }
 
-
-
+      
     }
 }

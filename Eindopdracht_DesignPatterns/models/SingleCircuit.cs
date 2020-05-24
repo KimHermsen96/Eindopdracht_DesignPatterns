@@ -10,13 +10,13 @@ namespace Eindopdracht_DesignPatterns.models
     public class SingleCircuit : Circuit
     {
        
-        public override Dictionary<string, INodeasdfds> AllNodes { get; set; }
-        public override Dictionary<string, INodeasdfds> CurrentCircuit { get; set; }
+        public override Dictionary<string, INode> AllNodes { get; set; }
+        public override Dictionary<string, INode> CurrentCircuit { get; set; }
 
         public SingleCircuit()
         {
-            AllNodes = new Dictionary<string, INodeasdfds>();
-            CurrentCircuit = new Dictionary<string, INodeasdfds>();
+            AllNodes = new Dictionary<string, INode>();
+            CurrentCircuit = new Dictionary<string, INode>();
         }
     }
 }

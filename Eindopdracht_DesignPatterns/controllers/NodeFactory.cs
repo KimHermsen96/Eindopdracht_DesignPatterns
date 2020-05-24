@@ -38,10 +38,10 @@ namespace Eindopdracht_DesignPatterns.controllers
             };
         }
 
-        public INodeasdfds CreateNode(string identifier, string descriptor)
+        public INode CreateNode(string identifier, string descriptor)
         {
             Type t = _types[descriptor];
-            INodeasdfds node = (INodeasdfds) Activator.CreateInstance(t);
+            INode node = (INode) Activator.CreateInstance(t);
             node.Identifier = identifier;
 
             if (t == typeof(Input))

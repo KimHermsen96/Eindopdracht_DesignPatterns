@@ -17,7 +17,7 @@ namespace Eindopdracht_DesignPatterns
         static void Main(string[] args)
         {
 
-            Mediator mediator =  Mediator.instance; 
+            //Mediator mediator =  Mediator.instance; 
 
             bool noChosenFile = true;
             string chosenFile = "";
