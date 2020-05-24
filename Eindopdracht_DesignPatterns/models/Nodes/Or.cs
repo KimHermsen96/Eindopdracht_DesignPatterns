@@ -9,12 +9,17 @@ namespace Eindopdracht_DesignPatterns.models.Nodes
 {
     public class Or :  INode
     {
-        public void Notify(INode sender, int message)
-        {
-            throw new NotImplementedException();
-        }
+
 
         public string Identifier { get; set; }
-        public List<string> TargetIdentifieers { get; set; }
+        public int Value { get; set; } = 0;
+
+        public void CalculateOutput(int value)
+        {
+            if (value == 1)
+            {
+                Value = 1;
+            }
+        }
     }
 }

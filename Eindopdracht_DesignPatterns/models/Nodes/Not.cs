@@ -9,12 +9,21 @@ namespace Eindopdracht_DesignPatterns.models.Nodes
 {
     public class Not : INode
     {
-        public void Notify(INode sender, int message)
+   
+        public string Identifier { get; set; }
+        public int Value { get; set; }
+
+        public void CalculateOutput(int value)
         {
-            throw new NotImplementedException();
+            if (value == 1)
+            {
+                Value = 0;
+            }
+            else
+            {
+                Value = 1;
+            }
         }
 
-        public string Identifier { get; set; }
-        public List<string> TargetIdentifieers { get; set; }
     }
 }

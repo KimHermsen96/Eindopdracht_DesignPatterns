@@ -50,7 +50,7 @@ namespace Eindopdracht_DesignPatterns.controllers
 
                     if (beforeColon.Success && afterColon.Success)
                     {
-                        INode createdNode = NodeFactory.CreateNode(beforeColon.ToString(), afterColon.ToString().Trim());
+                        INodeasdfds createdNode = NodeFactory.CreateNode(beforeColon.ToString(), afterColon.ToString().Trim());
                         //add INode to list of all nodes. 
                         Circuit.AllNodes.Add(createdNode.Identifier, createdNode);
                         Console.WriteLine(beforeColon + ": " + afterColon);
@@ -88,7 +88,7 @@ namespace Eindopdracht_DesignPatterns.controllers
                         {
                             string edge = e.Trim();
                             trimmedEdges.Add(edge);
-                            INode item = Circuit.AllNodes[beforeColon.ToString()];
+                            INodeasdfds item = Circuit.AllNodes[beforeColon.ToString()];
                             item.TargetIdentifieers.Add(edge);
                             Console.WriteLine(beforeColon + ": " + edge);
                         }

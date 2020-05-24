@@ -9,12 +9,17 @@ namespace Eindopdracht_DesignPatterns.models.Nodes
 {
     public class Input : INode
     {
-        public void Notify(INode sender, int message)
+
+        public string Descriptor { get; set; }
+
+        public string Identifier { get; set; }
+        public int Value { get; set; }
+
+        public void CalculateOutput(int value)
         {
             throw new NotImplementedException();
         }
 
-        public string Descriptor { get; set; }
-        public List<string> TargetIdentifieers { get; set; }
+
     }
 }

@@ -11,21 +11,45 @@ namespace Eindopdracht_DesignPatterns.models.Nodes
     {
         public int? firstValue { get; set; }
         public string Identifier { get; set; }
-        public List<string> TargetIdentifieers { get; set; }
 
-        public void Notify(INode sender, int value)
+        public int Value { get; set; }
+        public List<int> Values { get; set; }
+
+        public And()
         {
-            if (firstValue == null)
+            Values = new List<int>();
+        }
+
+        public void CalculateOutput(int value)
+        {
+
+            Values.Add(value);
+            Value = GetValue();
+            //            Value = value;
+            //            if (_firstValue == null)
+            //            {
+            //                _firstValue = Value;
+            //            }
+            //
+            //            if (_firstValue == 1 && value == 1)
+            //            {
+            //                Value = 1;
+            //            }
+            //            else
+            //            {
+            //                Value = 0;
+            //            }
+        }
+        private int GetValue()
+        {
+            foreach (var v in Values)
             {
-                firstValue = value;
+                if (v == 0)
+                {
+                    return 0;
+                }
             }
-            calculateOutput();
+            return 1;
         }
-
-        private void calculateOutput()
-        {
-
-        }
-
     }
 }

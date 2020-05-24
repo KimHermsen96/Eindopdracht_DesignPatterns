@@ -6,26 +6,11 @@ using System.Threading.Tasks;
 
 namespace Eindopdracht_DesignPatterns.models.interfaces
 {
-    public abstract class INode : IMediator
+    public interface INode
     {
+        string Identifier { get; set; }
+        int Value { get; set; }
+        void CalculateOutput(int value);
 
-        public string NodeIdentifier { get; set; }
-        public string NodeDescriptor { get; set; }
-
-
-
-        public string Identifier { get; set; }
-        public int Value { get; set; }
-        public List<string> TargetIdentifieers { get; set; }
-
-        public INode()
-        {
-            TargetIdentifieers = new List<string>();
-        }
-
-        public void Notify(INode sender, int message)
-        {
-            throw new NotImplementedException();
-        }
     }
 }
