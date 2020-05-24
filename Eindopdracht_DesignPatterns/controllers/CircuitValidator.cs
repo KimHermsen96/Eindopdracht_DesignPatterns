@@ -12,17 +12,11 @@ namespace Eindopdracht_DesignPatterns.controllers
 {
     public class CircuitValidator
     {
-
         private Circuit Circuit { get; set; }
-
         public CircuitValidator(Circuit circuit)
         {
             Circuit = circuit;
         }
-
-        //hier wordt dan een bepaalde state doorgestuurd? 
-
-
 
         public IState CheckState()
         {
@@ -30,7 +24,6 @@ namespace Eindopdracht_DesignPatterns.controllers
             if (Loop()) return new Loop();
             return new ValidCircuit();
         }
-
 
        public bool Loop()
         {

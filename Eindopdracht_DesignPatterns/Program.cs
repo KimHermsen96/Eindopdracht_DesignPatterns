@@ -44,10 +44,7 @@ namespace Eindopdracht_DesignPatterns
 
 
             CircuitValidator validator = new CircuitValidator(singlecir);
-
-
             singlecir.State = validator.CheckState();
-
             singlecir.State.DoAction(singlecir);
             //mediator.Execute();
 
