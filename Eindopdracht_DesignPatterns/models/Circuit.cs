@@ -11,6 +11,6 @@ namespace Eindopdracht_DesignPatterns.models
     {
         public abstract Dictionary<string, INode> AllNodes { get; set; }
         public abstract Dictionary<INode, List<INode>> CurrentCircuit { get; set; }
-
+        public IState State { get; set; }
     }
 }

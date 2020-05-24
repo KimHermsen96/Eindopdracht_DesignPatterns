@@ -46,12 +46,17 @@
   <ItemGroup>
     <Compile Include="controllers\Builder\CircuitBuilder.cs" />
     <Compile Include="controllers\Builder\Director.cs" />
+    <Compile Include="controllers\CircuitValidator.cs" />
     <Compile Include="controllers\FileReader.cs" />
     <Compile Include="controllers\Mediator.cs" />
     <Compile Include="controllers\NodeFactory.cs" />
     <Compile Include="controllers\Builder\SingleCircuitBuilder.cs" />
+    <Compile Include="controllers\State\Loop.cs" />
+    <Compile Include="controllers\State\UnreachableProbes.cs" />
+    <Compile Include="controllers\State\ValidCircuit.cs" />
     <Compile Include="models\Circuit.cs" />
     <Compile Include="models\interfaces\INode.cs" />
+    <Compile Include="models\interfaces\IState.cs" />
     <Compile Include="models\SingleCircuit.cs" />
     <Compile Include="models\Nodes\Input.cs" />
     <Compile Include="models\interfaces\IInput.cs" />
@@ -83,5 +88,6 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

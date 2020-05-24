@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Eindopdracht_DesignPatterns.controllers;
 using Eindopdracht_DesignPatterns.models;
+using Eindopdracht_DesignPatterns.models.interfaces;
 
 namespace Eindopdracht_DesignPatterns
 {
@@ -42,8 +43,12 @@ namespace Eindopdracht_DesignPatterns
             Circuit singlecir = director.GetCircuit();
 
 
+            CircuitValidator validator = new CircuitValidator(singlecir);
 
 
+            singlecir.State = validator.CheckState();
+
+            singlecir.State.DoAction(singlecir);
             //mediator.Execute();
 
             Console.ReadKey();
@@ -65,9 +70,9 @@ namespace Eindopdracht_DesignPatterns
                     case 3:
                         return file = "Circuit3_Encoder.txt";
                     case 4:
-                        return file = "Circuit2_InfiniteLoop.txt";
+                        return file = "Circuit4_InfiniteLoop.txt";
                     case 5:
-                        return file = "Circuit2_NotConnected.txt";
+                        return file = "Circuit5_NotConnected.txt";
                     default:
                         return file = "Circuit1_FullAdder.txt";
                 }
