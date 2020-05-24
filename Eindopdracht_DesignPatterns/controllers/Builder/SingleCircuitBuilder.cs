@@ -14,7 +14,7 @@ namespace Eindopdracht_DesignPatterns.controllers
         private int FilePosition { get; set; } = 0;
         private string[] FileByLine { get; set; }
         private NodeFactory NodeFactory { get; set; }
-        public SingleCircuit Circuit { get; set; }
+        //public SingleCircuit Circuit { get; set; }
 
         private Regex MatchBefore { get; }
         private Regex MatchAfter { get; }

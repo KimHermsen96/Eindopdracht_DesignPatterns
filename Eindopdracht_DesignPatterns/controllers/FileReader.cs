@@ -16,7 +16,6 @@ namespace Eindopdracht_DesignPatterns.controllers
                 @"data\" + file);
             string[] files = File.ReadAllLines(path);
             return files;
-
         }
     }
 }

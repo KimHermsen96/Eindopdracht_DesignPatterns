@@ -9,9 +9,7 @@ namespace Eindopdracht_DesignPatterns.models
 {
     public abstract class Circuit 
     {
-
-
-        public Dictionary<string, INode> circuit;
-
+        public abstract Dictionary<string, INode> AllNodes { get; set; }
+        public abstract Dictionary<string, INode> CurrentCircuit { get; set; }
     }
 }

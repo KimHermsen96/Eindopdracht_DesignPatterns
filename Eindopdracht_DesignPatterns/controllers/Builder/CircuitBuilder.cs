@@ -1,4 +1,5 @@
-﻿using Eindopdracht_DesignPatterns.models.interfaces;
+﻿using Eindopdracht_DesignPatterns.models;
+using Eindopdracht_DesignPatterns.models.interfaces;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -12,9 +13,9 @@ namespace Eindopdracht_DesignPatterns.controllers
     public abstract class CircuitBuilder
     {
 
-        public Dictionary<string, INode> Circuit;
+        public Circuit Circuit;
 
-        public Dictionary<string, INode> GetCircuit()
+        public Circuit GetCircuit()
         {
             return Circuit;
         }

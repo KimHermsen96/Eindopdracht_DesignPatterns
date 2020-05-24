@@ -8,6 +8,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using Eindopdracht_DesignPatterns.controllers;
+using Eindopdracht_DesignPatterns.models;
 
 namespace Eindopdracht_DesignPatterns
 {
@@ -38,7 +39,7 @@ namespace Eindopdracht_DesignPatterns
             SingleCircuitBuilder singleCircuitBuilder = new SingleCircuitBuilder(fileByLine);
             director.SetCircuitBuilder(singleCircuitBuilder);
             director.ConstructCircuit();
-
+            Circuit singlecir = director.GetCircuit();
 
 
 

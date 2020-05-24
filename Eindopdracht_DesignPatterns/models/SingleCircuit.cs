@@ -7,15 +7,16 @@ using System.Threading.Tasks;
 
 namespace Eindopdracht_DesignPatterns.models
 {
-    public class SingleCircuit 
+    public class SingleCircuit : Circuit
     {
-        public Dictionary<string, INode> AllNodes{ get; set; }
-        public Dictionary<string, INode> Circuit { get; set; }
+       
+        public override Dictionary<string, INode> AllNodes { get; set; }
+        public override Dictionary<string, INode> CurrentCircuit { get; set; }
 
         public SingleCircuit()
         {
             AllNodes = new Dictionary<string, INode>();
-            Circuit = new Dictionary<string, INode>();
+            CurrentCircuit = new Dictionary<string, INode>();
         }
     }
 }
