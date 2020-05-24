@@ -11,12 +11,12 @@ namespace Eindopdracht_DesignPatterns.models
     {
        
         public override Dictionary<string, INode> AllNodes { get; set; }
-        public override Dictionary<string, INode> CurrentCircuit { get; set; }
+        public override Dictionary<INode, List<INode>> CurrentCircuit { get; set; }
 
         public SingleCircuit()
         {
             AllNodes = new Dictionary<string, INode>();
-            CurrentCircuit = new Dictionary<string, INode>();
+            CurrentCircuit = new Dictionary<INode, List<INode>>();
         }
     }
 }

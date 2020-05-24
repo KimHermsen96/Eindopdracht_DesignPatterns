@@ -21,3 +21,4 @@ C:\Projects\Eindopdracht_DesignPatterns\Eindopdracht_DesignPatterns\bin\Debug\Ei
 C:\Projects\Eindopdracht_DesignPatterns\Eindopdracht_DesignPatterns\bin\Debug\Eindopdracht_DesignPatterns.pdb
 C:\Projects\Eindopdracht_DesignPatterns\Eindopdracht_DesignPatterns\obj\Debug\Eindopdracht_DesignPatterns.exe
 C:\Projects\Eindopdracht_DesignPatterns\Eindopdracht_DesignPatterns\obj\Debug\Eindopdracht_DesignPatterns.pdb
+C:\Projects\Eindopdracht_DesignPatterns\Eindopdracht_DesignPatterns\obj\Debug\Eindopdracht_DesignPatterns.csprojAssemblyReference.cache

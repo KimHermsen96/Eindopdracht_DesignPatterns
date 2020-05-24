@@ -15,7 +15,7 @@ namespace Eindopdracht_DesignPatterns.controllers
         private string[] FileByLine { get; set; }
         private NodeFactory NodeFactory { get; set; }
         //public SingleCircuit Circuit { get; set; }
-        public Dictionary<string, List<string>> Edges { get; set; }
+        public List<INode> Edges { get; set; }
 
         private Regex MatchBefore { get; }
         private Regex MatchAfter { get; }
@@ -28,7 +28,7 @@ namespace Eindopdracht_DesignPatterns.controllers
             MatchAfter = new Regex(@"(?<=:).*\w+(?=;)");
             NodeFactory = new NodeFactory();
             Circuit = new SingleCircuit();
-            Edges = new Dictionary<string, List<string>>();
+            Edges = new List<INode>();
         }
 
 
@@ -84,22 +84,19 @@ namespace Eindopdracht_DesignPatterns.controllers
                     if (beforeColon.Success && afterColon.Success)
                     {
                         string[] allEdges = afterColon.ToString().Split(',');
-                        List<string> trimmedEdges = new List<string>();
-
-                        Edges.Add(beforeColon.ToString(), new List<string>());
-
-
+                  
                         foreach (var e in allEdges)
                         {
                             string edge = e.Trim();
-                            trimmedEdges.Add(edge);
-                            INode item = Circuit.AllNodes[beforeColon.ToString()];
-                            //item.TargetIdentifieers.Add(edge);
-
-                            List<string> targetList = Edges[beforeColon.ToString()];
-                            targetList.Add(edge);
+                            INode edgeNode = Circuit.AllNodes[edge.ToString()];
+                            Edges.Add(edgeNode);
                             Console.WriteLine(beforeColon + ": " + edge);
                         }
+
+                        //get source node 
+                        INode item = Circuit.AllNodes[beforeColon.ToString()];
+                        //add source node and node targets 
+                        Circuit.CurrentCircuit.Add(item, Edges);
                     }
                 }
 
