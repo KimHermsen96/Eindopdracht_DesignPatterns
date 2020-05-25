@@ -18,8 +18,6 @@ namespace Eindopdracht_DesignPatterns.controllers
 
         public Mediator()
         {
-            AllNodes = new Dictionary<string, INode>();
-            Circuit = new Dictionary<INode, List<INode>>();
         }
 
         public void Execute()
@@ -41,44 +39,5 @@ namespace Eindopdracht_DesignPatterns.controllers
         {
             sender.CalculateOutput(value);
         }
-
-   
-        public bool CheckIfValid()
-        {
-            if (!Connected())
-            {
-
-                Console.WriteLine("Circuit is not connected");
-                return Connected();
-
-            }
-            return true;
-        }
-
-        private bool Connected()
-        {
-            foreach (var element in AllNodes)
-            {
-
-                /// if false.. returned false als het element niet connected is. 
-                if (!CheckOneElement(element.Key, element.Value)) return false;
-            }
-            return true;
-        }
-
-        public bool CheckOneElement(string key, INode value)
-        {
-            foreach (var edge in Circuit)
-            {
-                //hier check ik of de huidige nodes wel in de lijst voorkomen. 
-                if (edge.Key.Identifier == key || value is Probe) return true;
-
-            }
-            //als niet beide keys in de lijst voorkomen betekend dit dat de er een node niet verbonden is. 
-            //dus is de ding fout. 
-            return false;
-        }
-
-      
     }
 }
