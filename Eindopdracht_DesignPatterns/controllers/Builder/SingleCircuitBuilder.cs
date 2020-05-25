@@ -26,7 +26,7 @@ namespace Eindopdracht_DesignPatterns.controllers
 
             MatchBefore = new Regex(@"\w+(?=:)");
             MatchAfter = new Regex(@"(?<=:).*\w+(?=;)");
-            NodeFactory = new NodeFactory();
+            NodeFactory = NodeFactory.Instance;
             Circuit = new SingleCircuit();
         }
 

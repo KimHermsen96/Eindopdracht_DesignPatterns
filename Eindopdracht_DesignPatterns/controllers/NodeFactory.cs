@@ -15,7 +15,7 @@ namespace Eindopdracht_DesignPatterns.controllers
         private Dictionary<string, Type> _types;
         private static NodeFactory _instance;
 
-        public static NodeFactory instance
+        public static NodeFactory Instance
         {
             get
             {
