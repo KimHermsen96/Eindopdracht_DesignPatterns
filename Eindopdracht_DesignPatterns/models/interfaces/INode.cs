@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace Eindopdracht_DesignPatterns.models.interfaces
 {
-    public interface INode
+    public interface INode : IStrategy
     {
         string Identifier { get; set; }
         int Value { get; set; }
-        void CalculateOutput(int value);
+        //void CalculateOutput(int value);
 
     }
 }

@@ -12,6 +12,7 @@ namespace Eindopdracht_DesignPatterns.controllers.State
     {
         public void DoAction(Circuit circuit)
         {
+            Console.WriteLine("Invalid Circuit due to loop"); 
         }
     }
 }

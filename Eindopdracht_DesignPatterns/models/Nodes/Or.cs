@@ -9,8 +9,6 @@ namespace Eindopdracht_DesignPatterns.models.Nodes
 {
     public class Or :  INode
     {
-
-
         public string Identifier { get; set; }
         public int Value { get; set; } = 0;
 

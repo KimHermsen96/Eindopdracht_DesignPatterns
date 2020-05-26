@@ -57,6 +57,9 @@
     <Compile Include="models\Circuit.cs" />
     <Compile Include="models\interfaces\INode.cs" />
     <Compile Include="models\interfaces\IState.cs" />
+    <Compile Include="models\interfaces\IStrategy.cs" />
+    <Compile Include="models\Nodes\Nand.cs" />
+    <Compile Include="models\Nodes\Nor.cs" />
     <Compile Include="models\SingleCircuit.cs" />
     <Compile Include="models\Nodes\Input.cs" />
     <Compile Include="models\interfaces\IInput.cs" />

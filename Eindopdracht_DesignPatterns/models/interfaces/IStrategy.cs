@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace Eindopdracht_DesignPatterns.models.interfaces
 {
-    public interface IMediator
+    public interface IStrategy
     {
-        void Notify(IStrategy sender, int value);
+        void CalculateOutput(int value);
     }
 }

@@ -12,7 +12,8 @@ namespace Eindopdracht_DesignPatterns.controllers.State
     {
         public void DoAction(Circuit circuit)
         {
-
+            Mediator mediator = new Mediator(circuit);
+            mediator.Execute();
         }
     }
 }
