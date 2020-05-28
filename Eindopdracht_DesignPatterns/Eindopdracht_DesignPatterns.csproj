@@ -71,6 +71,8 @@
     <Compile Include="controllers\Builder\CircuitBuilder.cs" />
     <Compile Include="controllers\Builder\Director.cs" />
     <Compile Include="controllers\CircuitValidator.cs" />
+    <Compile Include="controllers\Decorator\StateDecorator.cs" />
+    <Compile Include="controllers\Decorator\ValidStateDecorator.cs" />
     <Compile Include="controllers\FileReader.cs" />
     <Compile Include="controllers\Graphviz\DotCompiler.cs" />
     <Compile Include="controllers\Graphviz\Experiment2.cs" />

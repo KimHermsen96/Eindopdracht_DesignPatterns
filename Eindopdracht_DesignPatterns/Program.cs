@@ -77,23 +77,5 @@ namespace Eindopdracht_DesignPatterns
                 return "No file selected";
             }
         }
-
-
-        private bool UseDefaults()
-        {
-            Console.WriteLine("Do you want to use default input ? Enter y for yes, n = no ");
-            Console.WriteLine("Enter y for yes");
-            Console.WriteLine("Enter n for no");
-
-
-            return true;
-        }
-        private int AskInput()
-        {
-            var input = Console.ReadLine();
-            Console.WriteLine("Choose the your input (1, 2, 3, 4)");
-
-            return 0; 
-        }
     }
 }
