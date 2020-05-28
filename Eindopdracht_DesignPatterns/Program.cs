@@ -8,6 +8,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using Eindopdracht_DesignPatterns.controllers;
+using Eindopdracht_DesignPatterns.controllers.Graphviz;
 using Eindopdracht_DesignPatterns.models;
 using Eindopdracht_DesignPatterns.models.interfaces;
 
@@ -18,6 +19,9 @@ namespace Eindopdracht_DesignPatterns
         static void Main(string[] args)
         {
 
+
+            DotCompiler bla = new DotCompiler();
+            bla.bla();
             //Mediator mediator =  Mediator.instance; 
 
             bool noChosenFile = true;

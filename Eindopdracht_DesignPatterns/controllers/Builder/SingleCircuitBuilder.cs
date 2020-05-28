@@ -1,4 +1,5 @@
-﻿using Eindopdracht_DesignPatterns.models;
+﻿using Eindopdracht_DesignPatterns.controllers.Graphviz;
+using Eindopdracht_DesignPatterns.models;
 using Eindopdracht_DesignPatterns.models.interfaces;
 using System;
 using System.Collections.Generic;
@@ -15,11 +16,13 @@ namespace Eindopdracht_DesignPatterns.controllers
         private string[] FileByLine { get; set; }
         private NodeFactory NodeFactory { get; set; }
         //public SingleCircuit Circuit { get; set; }
-     
-
+                
         private Regex MatchBefore { get; }
         private Regex MatchAfter { get; }
 
+        public DotCompiler vis { get; set; }
+
+        public Experiment2  a { get; set; }
 
         public SingleCircuitBuilder(string[] fileByLine) {
             FileByLine = fileByLine;
@@ -28,6 +31,8 @@ namespace Eindopdracht_DesignPatterns.controllers
             MatchAfter = new Regex(@"(?<=:).*\w+(?=;)");
             NodeFactory = NodeFactory.Instance;
             Circuit = new SingleCircuit();
+            vis = new DotCompiler();
+            a = new Experiment2();
         }
 
 
@@ -35,6 +40,7 @@ namespace Eindopdracht_DesignPatterns.controllers
         {
             CreateNodes();
             CreateEdges();
+            a.Render();
         }
 
         public override void CreateNodes()
@@ -55,6 +61,8 @@ namespace Eindopdracht_DesignPatterns.controllers
                         //add INode to list of all nodes. 
                         Circuit.AllNodes.Add(createdNode.Identifier, createdNode);
                         //Console.WriteLine(beforeColon + ": " + afterColon);
+
+                        a.AddNode(createdNode.Identifier, createdNode.Identifier);
                     }
                 }
 
@@ -90,6 +98,8 @@ namespace Eindopdracht_DesignPatterns.controllers
                             string edge = e.Trim();
                             INode edgeNode = Circuit.AllNodes[edge.ToString()];
                             Edges.Add(edgeNode);
+
+                            a.AddEdge(beforeColon.ToString(), edge);
                             //Console.WriteLine(beforeColon + ": " + edge);
                         }
 
