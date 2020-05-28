@@ -9,7 +9,6 @@ namespace WpfApp1.ViewModels
 {
     public class MainViewModel 
     {
-        private IBidirectionalGraph<object, IEdge<object>> GraphtoVisualize { get; set; } 
 
 
         public MainViewModel()
@@ -19,10 +18,7 @@ namespace WpfApp1.ViewModels
 
         private void CreateGraph()
         {
-            //BidirectionAdapterGraph<object, IEdge<object>> g = new BidirectionalGraph<object, IEdge<object>>();
-
-
-            //g.AddEdge();     
+            
         }
     }
 }
