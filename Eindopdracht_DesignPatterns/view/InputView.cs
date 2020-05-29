@@ -38,14 +38,31 @@ namespace Eindopdracht_DesignPatterns.view
                         break;
                 }
             }
-
             return true;
         }
-        public int AskInput()
+        public int AskInput(string _nodeName)
         {
-            Console.WriteLine("Choose the your input (1, 2, 3, 4)");
+            var validInput = false;
+            Console.WriteLine("Choose the input for " + _nodeName);
             var input = Console.ReadLine();
-            return 0;
+            int number = 0; 
+            switch (input)
+            {
+                case "0":
+                    Console.WriteLine("You choose 0");
+                    number = 0; 
+                    validInput = true;
+                    break;
+                case "1":
+                    Console.WriteLine("You choose 1");
+                    number = 1;
+                    validInput = true;
+                    break;
+                default:
+                    Console.WriteLine("invalid input try again");
+                    break;
+            }
+            return number;
         }
     }
 }

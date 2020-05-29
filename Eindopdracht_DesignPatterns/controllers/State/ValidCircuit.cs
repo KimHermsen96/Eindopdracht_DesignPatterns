@@ -12,32 +12,33 @@ namespace Eindopdracht_DesignPatterns.controllers.State
 {
     public class ValidCircuit : IState
     {
+        private InputView InputView { get; set; }
         private Circuit Circuit { get; set; }
-        private List<int> AllInputs { get; set; }
-        public void DoAction(Circuit circuit)
+        public void DoAction(Circuit _circuit)
         {
-            AllInputs = new List<int>();
-            Mediator mediator = new Mediator(circuit);
+            InputView = new InputView();
+            Circuit = _circuit; 
+            UseDefaultOrInput();
+            Mediator mediator = new Mediator(_circuit);
             mediator.Execute();
         }
 
-        private void AskForInput()
+        private void UseDefaultOrInput()
         {
-            InputView inputview = new InputView();
-            var numOfInputs = 0;
-            if (inputview.UseUserInput()) numOfInputs = CheckNumOfInputs();
-
-            for (int i = 0; i < numOfInputs; i++) AllInputs.Add(inputview.AskInput());
+            if (InputView.UseUserInput()) AskInput();
         }
 
-        private int CheckNumOfInputs()
+        private void AskInput()
         {
-            var number = 0;
+            var userInput = 0; 
             foreach (var node in Circuit.AllNodes)
             {
-                if (node.Value == typeof(Input)) number++;
+                if (node.Value.GetType() == typeof(Input))
+                {
+                    userInput = InputView.AskInput(node.Key);
+                    node.Value.Value = userInput;
+                } 
             }
-            return number;
         }
     }
 }
