@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Eindopdracht_DesignPatterns.controllers.Composite_pattern;
 using Eindopdracht_DesignPatterns.models.interfaces;
 
 namespace Eindopdracht_DesignPatterns.models.Nodes
 {
-    public class Input : INode
+    public class Input : Composite, INode
     {
 
         public string Descriptor { get; set; }
@@ -15,10 +16,10 @@ namespace Eindopdracht_DesignPatterns.models.Nodes
         public string Identifier { get; set; }
         public int Value { get; set; }
 
-        public void CalculateOutput(int value)
-        {
-            throw new NotImplementedException();
-        }
+        //public void CalculateOutput(int value)
+        //{
+        //    throw new NotImplementedException();
+        //}
 
 
     }

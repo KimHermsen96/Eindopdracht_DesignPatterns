@@ -71,6 +71,9 @@
     <Compile Include="controllers\Builder\CircuitBuilder.cs" />
     <Compile Include="controllers\Builder\Director.cs" />
     <Compile Include="controllers\CircuitValidator.cs" />
+    <Compile Include="controllers\Composite_pattern\blad.cs" />
+    <Compile Include="controllers\Composite_pattern\Composite.cs" />
+    <Compile Include="controllers\Composite_pattern\IComponent.cs" />
     <Compile Include="controllers\Decorator\StateDecorator.cs" />
     <Compile Include="controllers\Decorator\ValidStateDecorator.cs" />
     <Compile Include="controllers\FileReader.cs" />
