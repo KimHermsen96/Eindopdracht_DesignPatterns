@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Eindopdracht_DesignPatterns.controllers;
 using Eindopdracht_DesignPatterns.controllers.Graphviz;
+using Eindopdracht_DesignPatterns.controllers.State;
 using Eindopdracht_DesignPatterns.models;
 using Eindopdracht_DesignPatterns.models.interfaces;
 
@@ -45,6 +46,9 @@ namespace Eindopdracht_DesignPatterns
             CircuitValidator validator = new CircuitValidator(singlecir);
             singlecir.State = validator.CheckState();
             singlecir.State.DoAction(singlecir);
+            ValidCircuit valid = new ValidCircuit();
+            valid.DoAction(singlecir);
+      
 
             Console.ReadKey();
         }

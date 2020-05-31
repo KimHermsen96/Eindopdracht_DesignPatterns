@@ -66,8 +66,8 @@ namespace Eindopdracht_DesignPatterns.controllers
                         //add INode to list of all nodes. 
                         Circuit.AllNodes.Add(createdNode.Identifier, createdNode);
                         //Console.WriteLine(beforeColon + ": " + afterColon);
-
-                        a.AddNode(createdNode.Identifier, createdNode.Identifier);
+                        //voor visualisatie
+                        //a.AddNode(createdNode.Identifier, createdNode.Identifier);
                     }
                 }
 
@@ -112,6 +112,8 @@ namespace Eindopdracht_DesignPatterns.controllers
                             //a.AddEdge(beforeColon.ToString(), edge);
 
                             IComponent edgeNode = Circuit.AllNodes[edge.ToString()];
+
+                            Circuit.ComponentList.Add(edgeNode); 
                             item.AddComposite(edgeNode);
                             //Console.WriteLine(beforeColon + ": " + edge);
                         }
@@ -127,6 +129,11 @@ namespace Eindopdracht_DesignPatterns.controllers
                 }
 
             }
+        }
+
+        public void loopthro()
+        {
+
         }
 
     }

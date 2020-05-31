@@ -1,5 +1,4 @@
-﻿;
-using Eindopdracht_DesignPatterns.controllers.Composite_pattern;
+﻿using Eindopdracht_DesignPatterns.controllers.Composite_pattern;
 using Eindopdracht_DesignPatterns.models.interfaces;
 
 namespace Eindopdracht_DesignPatterns.models.Nodes

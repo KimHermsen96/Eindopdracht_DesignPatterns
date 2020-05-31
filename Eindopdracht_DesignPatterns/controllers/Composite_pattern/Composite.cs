@@ -11,7 +11,12 @@ namespace Eindopdracht_DesignPatterns.controllers.Composite_pattern
     {
 
         public List<IComponent> ComponentList { get; set; }
-   
+
+        public Composite()
+        {
+            ComponentList = new List<IComponent>();
+        }
+
         public void AddComposite(IComponent edge)
         {
             ComponentList.Add(edge);

@@ -71,9 +71,10 @@
     <Compile Include="controllers\Builder\CircuitBuilder.cs" />
     <Compile Include="controllers\Builder\Director.cs" />
     <Compile Include="controllers\CircuitValidator.cs" />
-    <Compile Include="controllers\Composite_pattern\blad.cs" />
     <Compile Include="controllers\Composite_pattern\Composite.cs" />
-    <Compile Include="controllers\Composite_pattern\IComponent.cs" />
+    <Compile Include="controllers\CicruitIterator.cs" />
+    <Compile Include="models\interfaces\IComponent.cs" />
+    <Compile Include="controllers\Composite_pattern\Leaf.cs" />
     <Compile Include="controllers\Decorator\StateDecorator.cs" />
     <Compile Include="controllers\Decorator\ValidStateDecorator.cs" />
     <Compile Include="controllers\FileReader.cs" />
@@ -86,9 +87,11 @@
     <Compile Include="controllers\State\UnreachableProbes.cs" />
     <Compile Include="controllers\State\ValidCircuit.cs" />
     <Compile Include="models\Circuit.cs" />
+    <Compile Include="models\interfaces\IIterableCollection.cs" />
     <Compile Include="models\interfaces\INode.cs" />
     <Compile Include="models\interfaces\IState.cs" />
     <Compile Include="models\interfaces\IStrategy.cs" />
+    <Compile Include="models\interfaces\IIterator.cs" />
     <Compile Include="models\Nodes\Nand.cs" />
     <Compile Include="models\Nodes\Nor.cs" />
     <Compile Include="models\SingleCircuit.cs" />
@@ -124,6 +127,8 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="controllers\Visitor_pattern\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -18,18 +18,18 @@ namespace Eindopdracht_DesignPatterns.controllers
             Circuit = _circuit; 
         }
 
-        public void Execute()
-        {
-            foreach (var node in Circuit.CurrentCircuit)
-            {
-                foreach (var connectedNode in node.Value)
-                {
-                    Console.WriteLine("value " + connectedNode.Identifier);
-                    Notify(connectedNode, node.Key.Value);
-                }
-                Console.WriteLine("key " + node.Key.Identifier + " value " + node.Key.Value);
-            }
-        }
+        //public void Execute()
+        //{
+        //    foreach (var node in Circuit.CurrentCircuit)
+        //    {
+        //        foreach (var connectedNode in node.Value)
+        //        {
+        //            Console.WriteLine("value " + connectedNode.Identifier);
+        //            Notify(connectedNode, node.Key.Value);
+        //        }
+        //        Console.WriteLine("key " + node.Key.Identifier + " value " + node.Key.Value);
+        //    }
+        //}
 
         public void Notify(IStrategy sender, int value)
         {

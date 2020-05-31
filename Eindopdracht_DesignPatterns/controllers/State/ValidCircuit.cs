@@ -20,7 +20,9 @@ namespace Eindopdracht_DesignPatterns.controllers.State
             Circuit = _circuit; 
             UseDefaultOrInput();
             Mediator mediator = new Mediator(_circuit);
-            mediator.Execute();
+            //mediator.Execute();
+
+            //Circuit.Traverse();
         }
 
         private void UseDefaultOrInput()

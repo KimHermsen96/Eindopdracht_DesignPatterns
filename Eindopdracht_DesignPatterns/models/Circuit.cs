@@ -1,4 +1,5 @@
-﻿using Eindopdracht_DesignPatterns.models.interfaces;
+﻿using Eindopdracht_DesignPatterns.controllers.Composite_pattern;
+using Eindopdracht_DesignPatterns.models.interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,10 +8,11 @@ using System.Threading.Tasks;
 
 namespace Eindopdracht_DesignPatterns.models
 {
-    public abstract class Circuit 
-    {
+    public abstract class Circuit : Composite 
+    { 
         public abstract Dictionary<string, INode> AllNodes { get; set; }
-        public abstract Dictionary<INode, List<INode>> CurrentCircuit { get; set; }
-        public IState State { get; set; }
+        //public abstract Dictionary<INode, List<INode>> CurrentCircuit { get; set; }
+        public abstract IState State { get; set; }
+        public abstract IIterator CreateIterator();
     }
 }

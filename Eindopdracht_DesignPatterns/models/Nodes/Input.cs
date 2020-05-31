@@ -16,11 +16,10 @@ namespace Eindopdracht_DesignPatterns.models.Nodes
         public string Identifier { get; set; }
         public int Value { get; set; }
 
-        //public void CalculateOutput(int value)
-        //{
-        //    throw new NotImplementedException();
-        //}
-
+        public void CalculateOutput(int value)
+        {
+            throw new NotImplementedException();
+        }
 
     }
 }

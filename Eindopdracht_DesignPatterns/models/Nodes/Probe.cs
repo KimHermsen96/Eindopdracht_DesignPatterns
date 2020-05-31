@@ -13,6 +13,7 @@ namespace Eindopdracht_DesignPatterns.models.Nodes
   
         public string Identifier { get; set; }
         public int Value { get; set; }
+        public List<IComponent> ComponentList { get; set; }
 
         public void CalculateOutput(int value)
         {
