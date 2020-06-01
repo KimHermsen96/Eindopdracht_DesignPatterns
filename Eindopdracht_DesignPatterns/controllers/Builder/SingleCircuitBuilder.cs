@@ -8,6 +8,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Eindopdracht_DesignPatterns.controllers.Composite_pattern;
+using Eindopdracht_DesignPatterns.models.Nodes;
 
 namespace Eindopdracht_DesignPatterns.controllers
 {
@@ -34,7 +35,7 @@ namespace Eindopdracht_DesignPatterns.controllers
             NodeFactory = NodeFactory.Instance;
             Circuit = new SingleCircuit();
 
-            CompositeElement = new Composite();
+            //CompositeElement = new Composite();
 
             vis = new DotCompiler();
             a = new Experiment2();
@@ -62,12 +63,19 @@ namespace Eindopdracht_DesignPatterns.controllers
 
                     if (beforeColon.Success && afterColon.Success)
                     {
-                        INode createdNode = NodeFactory.CreateNode(beforeColon.ToString(), afterColon.ToString().Trim());
+                        Node createdNode = NodeFactory.CreateNode(beforeColon.ToString(), afterColon.ToString().Trim());
                         //add INode to list of all nodes. 
                         Circuit.AllNodes.Add(createdNode.Identifier, createdNode);
                         //Console.WriteLine(beforeColon + ": " + afterColon);
                         //voor visualisatie
                         //a.AddNode(createdNode.Identifier, createdNode.Identifier);
+
+                        if(createdNode.GetType() == typeof(Input))
+                        {
+                            Circuit.Firsts.Add(createdNode);
+                        }
+                        
+
                     }
                 }
 
@@ -100,7 +108,7 @@ namespace Eindopdracht_DesignPatterns.controllers
                     if (beforeColon.Success && afterColon.Success)
                     {
                         string[] allEdges = afterColon.ToString().Split(',');
-                        List<INode> Edges = new List<INode>();
+                        List<Node> Edges = new List<Node>();
 
                         foreach (var e in allEdges)
                         {
@@ -112,17 +120,16 @@ namespace Eindopdracht_DesignPatterns.controllers
                             //a.AddEdge(beforeColon.ToString(), edge);
 
                             IComponent edgeNode = Circuit.AllNodes[edge.ToString()];
+                            edgeNode.NumberOfInputs++;
 
-                            Circuit.ComponentList.Add(edgeNode); 
-                            item.AddComposite(edgeNode);
+                            var composite = (Composite)item;
+                            composite.AddComposite(edgeNode);
                             //Console.WriteLine(beforeColon + ": " + edge);
                         }
 
                        
                         //get source node 
                    
-
-                        
                         //add source node and node targets 
                         //Circuit.CurrentCircuit.Add(item, Edges);
                     }

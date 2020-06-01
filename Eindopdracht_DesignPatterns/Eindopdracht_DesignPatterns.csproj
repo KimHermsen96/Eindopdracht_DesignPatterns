@@ -93,6 +93,7 @@
     <Compile Include="models\interfaces\IStrategy.cs" />
     <Compile Include="models\interfaces\IIterator.cs" />
     <Compile Include="models\Nodes\Nand.cs" />
+    <Compile Include="models\Nodes\Node.cs" />
     <Compile Include="models\Nodes\Nor.cs" />
     <Compile Include="models\SingleCircuit.cs" />
     <Compile Include="models\Nodes\Input.cs" />

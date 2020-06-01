@@ -29,21 +29,7 @@ namespace Eindopdracht_DesignPatterns.controllers
        public bool Loop()
         {
 
-            //Circuit.CreateIterator();
 
-
-            foreach(var el in Circuit.ComponentList)
-            {
-
-            }
-       
-            //foreach (var element in Circuit.CurrentCircuit)
-            //{
-            //    foreach (var e in element.Value)
-            //    {
-            //        if (e is Probe && element.Value.Count() > 1) return true;
-            //    }
-            //}
             return false; 
         }
 

@@ -8,12 +8,9 @@ using Eindopdracht_DesignPatterns.models.interfaces;
 
 namespace Eindopdracht_DesignPatterns.models.Nodes
 {
-    public class And : Composite, INode
+    public class And : Composite
     {
-        public int? firstValue { get; set; }
-        public string Identifier { get; set; }
-
-        public int Value { get; set; }
+     
         public List<int> Values { get; set; }
 
         public And()
@@ -21,36 +18,27 @@ namespace Eindopdracht_DesignPatterns.models.Nodes
             Values = new List<int>();
         }
 
-        public void CalculateOutput(int value)
+        public override void CalculateOutput(int value)
         {
+            //korter circuit. 
+            if(value == 0)
+            {
+                Value = 0; 
+                Finished = true;
+                Continue();
+                return; 
+            }
 
             Values.Add(value);
-            Value = GetValue();
-            //            Value = value;
-            //            if (_firstValue == null)
-            //            {
-            //                _firstValue = Value;
-            //            }
-            //
-            //            if (_firstValue == 1 && value == 1)
-            //            {
-            //                Value = 1;
-            //            }
-            //            else
-            //            {
-            //                Value = 0;
-            //            }
-        }
-        private int GetValue()
-        {
-            foreach (var v in Values)
+            
+            //als er twee waardes binnen zijn gekomen en ze niet in de 0 ding zijn gekomen dan zijn ze dus beide 1. 
+            if (Values.Count == NumberOfInputs)
             {
-                if (v == 0)
-                {
-                    return 0;
-                }
+                Value = 1;
+                Finished = true;
+                Continue();
+                return;
             }
-            return 1;
         }
     }
 }

@@ -8,6 +8,8 @@ namespace Eindopdracht_DesignPatterns.models.interfaces
 {
     public interface IComponent
     {
-        void AddComposite(IComponent edge);
+
+        List<IComponent> ComponentList { get; set; }
+        int NumberOfInputs { get; set; }
     }
 }

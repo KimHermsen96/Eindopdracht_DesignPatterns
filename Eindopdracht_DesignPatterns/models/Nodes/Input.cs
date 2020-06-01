@@ -8,18 +8,29 @@ using Eindopdracht_DesignPatterns.models.interfaces;
 
 namespace Eindopdracht_DesignPatterns.models.Nodes
 {
-    public class Input : Composite, INode
+    public class Input : Composite
     {
 
-        public string Descriptor { get; set; }
 
-        public string Identifier { get; set; }
-        public int Value { get; set; }
+        //public string Identifier { get; set; }
+        //public int Value { get; set; }
 
-        public void CalculateOutput(int value)
+        public Input() : base()
         {
-            throw new NotImplementedException();
         }
 
+        public override void CalculateOutput(int value)
+        {
+            Finished = true;
+            Continue();
+        }
+        //protected void Continue()
+        //{
+        //    foreach (var node in ComponentList)
+        //    {
+        //        var n = (Node)node;
+        //        n.Run(Value);
+        //    }
+        //}
     }
 }

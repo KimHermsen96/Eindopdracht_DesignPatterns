@@ -16,10 +16,10 @@ namespace Eindopdracht_DesignPatterns.controllers.State
         private Circuit Circuit { get; set; }
         public void DoAction(Circuit _circuit)
         {
-            InputView = new InputView();
-            Circuit = _circuit; 
-            UseDefaultOrInput();
-            Mediator mediator = new Mediator(_circuit);
+            //InputView = new InputView();
+            //Circuit = _circuit; 
+            //UseDefaultOrInput();
+            //Mediator mediator = new Mediator(_circuit);
             //mediator.Execute();
 
             //Circuit.Traverse();
@@ -38,7 +38,7 @@ namespace Eindopdracht_DesignPatterns.controllers.State
                 if (node.Value.GetType() == typeof(Input))
                 {
                     userInput = InputView.AskInput(node.Key);
-                    node.Value.Value = userInput;
+                    //node.Value.Value = userInput;
                 } 
             }
         }

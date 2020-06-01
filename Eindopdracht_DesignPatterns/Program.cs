@@ -43,11 +43,15 @@ namespace Eindopdracht_DesignPatterns
             Circuit singlecir = director.GetCircuit();
 
 
-            CircuitValidator validator = new CircuitValidator(singlecir);
-            singlecir.State = validator.CheckState();
-            singlecir.State.DoAction(singlecir);
-            ValidCircuit valid = new ValidCircuit();
-            valid.DoAction(singlecir);
+            CicruitIterator circuitIterator = new CicruitIterator(singlecir.Firsts);
+
+            circuitIterator.Run();
+
+            //CircuitValidator validator = new CircuitValidator(singlecir);
+            //singlecir.State = validator.CheckState();
+            //singlecir.State.DoAction(singlecir);
+            //ValidCircuit valid = new ValidCircuit();
+            //valid.DoAction(singlecir);
       
 
             Console.ReadKey();

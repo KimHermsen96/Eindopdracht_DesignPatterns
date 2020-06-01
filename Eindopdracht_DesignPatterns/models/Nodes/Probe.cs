@@ -10,7 +10,7 @@ namespace Eindopdracht_DesignPatterns.models.Nodes
 {
     public class Probe : Leaf, INode
     {
-  
+
         public string Identifier { get; set; }
         public int Value { get; set; }
         public List<IComponent> ComponentList { get; set; }

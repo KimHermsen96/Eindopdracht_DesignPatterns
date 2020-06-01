@@ -7,10 +7,10 @@ namespace Eindopdracht_DesignPatterns.models.Nodes
     public class Not : Composite, INode
     {
    
-        public string Identifier { get; set; }
-        public int Value { get; set; }
+        //public string Identifier { get; set; }
+        //public int Value { get; set; }
 
-        public void CalculateOutput(int value)
+        public override void CalculateOutput(int value)
         {
             if (value == 1)
             {
@@ -20,6 +20,10 @@ namespace Eindopdracht_DesignPatterns.models.Nodes
             {
                 Value = 1;
             }
+
+            Finished = true;
+            Continue();
+            return;
         }
 
     }

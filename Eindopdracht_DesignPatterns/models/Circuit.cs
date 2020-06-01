@@ -10,9 +10,9 @@ namespace Eindopdracht_DesignPatterns.models
 {
     public abstract class Circuit : Composite 
     { 
-        public abstract Dictionary<string, INode> AllNodes { get; set; }
-        //public abstract Dictionary<INode, List<INode>> CurrentCircuit { get; set; }
+        public abstract Dictionary<string, IComponent> AllNodes { get; set; }
+        public abstract List<IComponent> Firsts { get; set; }
+        public abstract Dictionary<INode, List<INode>> CurrentCircuit { get; set; }
         public abstract IState State { get; set; }
-        public abstract IIterator CreateIterator();
     }
 }

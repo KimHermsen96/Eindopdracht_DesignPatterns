@@ -9,24 +9,22 @@ using System.Threading.Tasks;
 
 namespace Eindopdracht_DesignPatterns.controllers
 {
-    public class CicruitIterator : IIterator
+    public class CicruitIterator
     {
 
-        public  Composite Composite{ get; set; }
-
-        public CicruitIterator(Composite _composite)
+        private List<IComponent>  InitNodes { get; set; }
+        public CicruitIterator(List<IComponent> _initNodes)
         {
-            Composite = _composite;
-            GetNext();
+            InitNodes = _initNodes;
         }
-        public void GetNext()
-        {
-            foreach(var edge in Composite.ComponentList)
-            {
-                Console.WriteLine(edge);
 
-                var x = (INode)edge;
-                Console.WriteLine(x.Identifier );
+        public void Run()
+        {
+            foreach (var node in InitNodes)
+            {
+                var n = (Node)node;
+                Console.WriteLine(n.Identifier);
+                n.Run(n.Value);
             }
         }
     }
