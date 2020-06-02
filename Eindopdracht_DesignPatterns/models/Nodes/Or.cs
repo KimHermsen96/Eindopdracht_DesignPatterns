@@ -6,12 +6,7 @@ namespace Eindopdracht_DesignPatterns.models.Nodes
 {
     public class Or : Composite
     {
-        public string Identifier { get; set; }
-        public int Value { get; set; } = 0;
-
         private List<int> InputValues { get; set; }
-
-
         public Or()
         {
             InputValues = new List<int>();
@@ -19,7 +14,7 @@ namespace Eindopdracht_DesignPatterns.models.Nodes
 
         public override void CalculateOutput(int value)
         {
-            //wordt gecheckt of er een input 1 is dan is de uitkomst altijd 1. short circuit
+            //short circuit if the value is 1 the outcome is always 1 
             if (value == 1)
             {
                 Value = 1;

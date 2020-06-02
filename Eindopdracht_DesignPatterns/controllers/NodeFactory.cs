@@ -26,7 +26,6 @@ namespace Eindopdracht_DesignPatterns.controllers
 
         public NodeFactory( )
         {
-      
             _types = new Dictionary<string, Type>()
             {
                 { "AND", typeof(And) },
@@ -50,7 +49,6 @@ namespace Eindopdracht_DesignPatterns.controllers
                 node.Value = value;
             }
             return node; 
-            //mediator.AddElement(node, identifier);
         }
     }
 }

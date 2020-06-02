@@ -10,12 +10,6 @@ namespace Eindopdracht_DesignPatterns.controllers.Composite_pattern
 {
     public class Leaf : Node, IComponent
     {
-        public List<IComponent> ComponentList { get; set; }
-
-        public void AddComposite(IComponent edge)
-        {
-        }
-
         public override void CalculateOutput(int value)
         {
         }

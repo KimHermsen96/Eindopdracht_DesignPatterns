@@ -75,8 +75,6 @@
     <Compile Include="controllers\CicruitIterator.cs" />
     <Compile Include="models\interfaces\IComponent.cs" />
     <Compile Include="controllers\Composite_pattern\Leaf.cs" />
-    <Compile Include="controllers\Decorator\StateDecorator.cs" />
-    <Compile Include="controllers\Decorator\ValidStateDecorator.cs" />
     <Compile Include="controllers\FileReader.cs" />
     <Compile Include="controllers\Graphviz\DotCompiler.cs" />
     <Compile Include="controllers\Graphviz\Experiment2.cs" />
@@ -87,17 +85,13 @@
     <Compile Include="controllers\State\UnreachableProbes.cs" />
     <Compile Include="controllers\State\ValidCircuit.cs" />
     <Compile Include="models\Circuit.cs" />
-    <Compile Include="models\interfaces\IIterableCollection.cs" />
-    <Compile Include="models\interfaces\INode.cs" />
     <Compile Include="models\interfaces\IState.cs" />
     <Compile Include="models\interfaces\IStrategy.cs" />
-    <Compile Include="models\interfaces\IIterator.cs" />
     <Compile Include="models\Nodes\Nand.cs" />
     <Compile Include="models\Nodes\Node.cs" />
     <Compile Include="models\Nodes\Nor.cs" />
     <Compile Include="models\SingleCircuit.cs" />
     <Compile Include="models\Nodes\Input.cs" />
-    <Compile Include="models\interfaces\IInput.cs" />
     <Compile Include="models\Nodes\And.cs" />
     <Compile Include="models\interfaces\IMediator.cs" />
     <Compile Include="models\Nodes\Not.cs" />

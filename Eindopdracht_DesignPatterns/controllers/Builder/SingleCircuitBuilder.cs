@@ -1,12 +1,8 @@
-﻿using Eindopdracht_DesignPatterns.controllers.Graphviz;
-using Eindopdracht_DesignPatterns.models;
+﻿using Eindopdracht_DesignPatterns.models;
 using Eindopdracht_DesignPatterns.models.interfaces;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using Eindopdracht_DesignPatterns.controllers.Composite_pattern;
 using Eindopdracht_DesignPatterns.models.Nodes;
 
@@ -17,15 +13,9 @@ namespace Eindopdracht_DesignPatterns.controllers
         private int FilePosition { get; set; } = 0;
         private string[] FileByLine { get; set; }
         private NodeFactory NodeFactory { get; set; }
-        //public SingleCircuit Circuit { get; set; }
                 
         private Regex MatchBefore { get; }
         private Regex MatchAfter { get; }
-
-        public DotCompiler vis { get; set; }
-
-        public Experiment2  a { get; set; }
-        public Composite CompositeElement { get; set; }
 
         public SingleCircuitBuilder(string[] fileByLine) {
             FileByLine = fileByLine;
@@ -34,19 +24,12 @@ namespace Eindopdracht_DesignPatterns.controllers
             MatchAfter = new Regex(@"(?<=:).*\w+(?=;)");
             NodeFactory = NodeFactory.Instance;
             Circuit = new SingleCircuit();
-
-            //CompositeElement = new Composite();
-
-            vis = new DotCompiler();
-            a = new Experiment2();
         }
-
 
         public override void ConstructCircuit()
         {
             CreateNodes();
             CreateEdges();
-            a.Render();
         }
 
         public override void CreateNodes()
@@ -66,16 +49,9 @@ namespace Eindopdracht_DesignPatterns.controllers
                         Node createdNode = NodeFactory.CreateNode(beforeColon.ToString(), afterColon.ToString().Trim());
                         //add INode to list of all nodes. 
                         Circuit.AllNodes.Add(createdNode.Identifier, createdNode);
-                        //Console.WriteLine(beforeColon + ": " + afterColon);
                         //voor visualisatie
                         //a.AddNode(createdNode.Identifier, createdNode.Identifier);
-
-                        if(createdNode.GetType() == typeof(Input))
-                        {
-                            Circuit.Firsts.Add(createdNode);
-                        }
-                        
-
+                        if(createdNode.GetType() == typeof(Input)) Circuit.Firsts.Add(createdNode);
                     }
                 }
 
@@ -104,7 +80,6 @@ namespace Eindopdracht_DesignPatterns.controllers
                     //get sourece node.
                     IComponent item = Circuit.AllNodes[beforeColon.ToString()];
 
-
                     if (beforeColon.Success && afterColon.Success)
                     {
                         string[] allEdges = afterColon.ToString().Split(',');
@@ -113,9 +88,6 @@ namespace Eindopdracht_DesignPatterns.controllers
                         foreach (var e in allEdges)
                         {
                             string edge = e.Trim();
-                            //INode edgeNode = Circuit.AllNodes[edge.ToString()];
-                            //Edges.Add(edgeNode);
-
                             //dit is code voor de visualisatie
                             //a.AddEdge(beforeColon.ToString(), edge);
 
@@ -124,25 +96,13 @@ namespace Eindopdracht_DesignPatterns.controllers
 
                             var composite = (Composite)item;
                             composite.AddComposite(edgeNode);
-                            //Console.WriteLine(beforeColon + ": " + edge);
                         }
-
-                       
-                        //get source node 
-                   
-                        //add source node and node targets 
-                        //Circuit.CurrentCircuit.Add(item, Edges);
                     }
                 }
 
             }
         }
-
-        public void loopthro()
-        {
-
-        }
-
+    
     }
 }
 

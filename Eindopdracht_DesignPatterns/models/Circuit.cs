@@ -12,7 +12,6 @@ namespace Eindopdracht_DesignPatterns.models
     { 
         public abstract Dictionary<string, IComponent> AllNodes { get; set; }
         public abstract List<IComponent> Firsts { get; set; }
-        public abstract Dictionary<INode, List<INode>> CurrentCircuit { get; set; }
         public abstract IState State { get; set; }
     }
 }

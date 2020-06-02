@@ -15,17 +15,12 @@ namespace Eindopdracht_DesignPatterns.models
 
         public override Dictionary<string, IComponent> AllNodes { get; set; }
         public override List<IComponent> Firsts { get; set; }
-        //public override List<IComponent> Next { get; set; }
-
-
-        public override Dictionary<INode, List<INode>> CurrentCircuit { get; set; }
         public override IState State { get; set; }
 
         public SingleCircuit()
         {
             AllNodes = new Dictionary<string, IComponent>();
             Firsts = new List<IComponent>();
-            CurrentCircuit = new Dictionary<INode, List<INode>>();
             State = null;
         }
 
@@ -36,7 +31,6 @@ namespace Eindopdracht_DesignPatterns.models
 
         public override void CalculateOutput(int value)
         {
-            throw new NotImplementedException();
         }
     }
 }

@@ -4,12 +4,8 @@ using Eindopdracht_DesignPatterns.models.interfaces;
 
 namespace Eindopdracht_DesignPatterns.models.Nodes
 {
-    public class Not : Composite, INode
+    public class Not : Composite
     {
-   
-        //public string Identifier { get; set; }
-        //public int Value { get; set; }
-
         public override void CalculateOutput(int value)
         {
             if (value == 1)
@@ -25,6 +21,5 @@ namespace Eindopdracht_DesignPatterns.models.Nodes
             Continue();
             return;
         }
-
     }
 }
