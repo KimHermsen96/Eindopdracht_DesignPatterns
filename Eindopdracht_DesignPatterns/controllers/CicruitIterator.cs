@@ -12,8 +12,8 @@ namespace Eindopdracht_DesignPatterns.controllers
     public class CicruitIterator
     {
 
-        private List<IComponent>  InitNodes { get; set; }
-        public CicruitIterator(List<IComponent> _initNodes)
+        private List<Node>  InitNodes { get; set; }
+        public CicruitIterator(List<Node> _initNodes)
         {
             InitNodes = _initNodes;
         }

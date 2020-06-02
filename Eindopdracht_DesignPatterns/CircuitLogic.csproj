@@ -40,6 +40,9 @@
     <Reference Include="Graphviz, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Graphviz.2.38.0.2\lib\Graphviz.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="QuickGraph, Version=3.6.61114.0, Culture=neutral, PublicKeyToken=f3fb40175eec2af3, processorArchitecture=MSIL">
       <HintPath>..\packages\QuickGraph.3.6.61119.7\lib\net4\QuickGraph.dll</HintPath>
     </Reference>
@@ -68,25 +71,32 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="controllers\Builder\CircuitBuilder.cs" />
-    <Compile Include="controllers\Builder\Director.cs" />
+    <Compile Include="App.cs" />
+    <Compile Include="controllers\Adapter_pattern\JsonToListAdapter.cs" />
+    <Compile Include="controllers\Adapter_pattern\JsonToTextAdapter.cs" />
+    <Compile Include="controllers\Builder_pattern\CircuitBuilder.cs" />
+    <Compile Include="controllers\Builder_pattern\Director.cs" />
+    <Compile Include="controllers\ViewDataProvider.cs" />
+    <Compile Include="controllers\CircuitMaker.cs" />
     <Compile Include="controllers\CircuitValidator.cs" />
     <Compile Include="controllers\Composite_pattern\Composite.cs" />
     <Compile Include="controllers\CicruitIterator.cs" />
+    <Compile Include="models\CircuitFile.cs" />
     <Compile Include="models\interfaces\IComponent.cs" />
     <Compile Include="controllers\Composite_pattern\Leaf.cs" />
-    <Compile Include="controllers\FileReader.cs" />
+    <Compile Include="controllers\CircuitFileReader.cs" />
     <Compile Include="controllers\Graphviz\DotCompiler.cs" />
     <Compile Include="controllers\Graphviz\Experiment2.cs" />
     <Compile Include="controllers\Mediator.cs" />
     <Compile Include="controllers\NodeFactory.cs" />
-    <Compile Include="controllers\Builder\SingleCircuitBuilder.cs" />
-    <Compile Include="controllers\State\Loop.cs" />
-    <Compile Include="controllers\State\UnreachableProbes.cs" />
-    <Compile Include="controllers\State\ValidCircuit.cs" />
+    <Compile Include="controllers\Builder_pattern\SingleCircuitBuilder.cs" />
+    <Compile Include="controllers\State_pattern\Loop.cs" />
+    <Compile Include="controllers\State_pattern\UnreachableProbes.cs" />
+    <Compile Include="controllers\State_pattern\ValidCircuit.cs" />
     <Compile Include="models\Circuit.cs" />
     <Compile Include="models\interfaces\IState.cs" />
     <Compile Include="models\interfaces\IStrategy.cs" />
+    <Compile Include="models\interfaces\IToTextAdapter.cs" />
     <Compile Include="models\Nodes\Nand.cs" />
     <Compile Include="models\Nodes\Node.cs" />
     <Compile Include="models\Nodes\Nor.cs" />
@@ -100,9 +110,11 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="view\InputView.cs" />
+    <Compile Include="Window.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="data\CircuitNames.json" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

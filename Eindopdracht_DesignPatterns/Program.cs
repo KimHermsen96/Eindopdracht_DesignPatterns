@@ -19,7 +19,7 @@ namespace Eindopdracht_DesignPatterns
     {
         static void Main(string[] args)
         {
-           
+
             bool noChosenFile = true;
             string chosenFile = "";
 
@@ -33,26 +33,19 @@ namespace Eindopdracht_DesignPatterns
 
             Console.WriteLine("You chose:" + chosenFile);
 
-            FileReader fileReader = new FileReader();
-            string[] fileByLine = fileReader.Readfile(chosenFile);
-
-            Director director = new Director();
-            SingleCircuitBuilder singleCircuitBuilder = new SingleCircuitBuilder(fileByLine);
-            director.SetCircuitBuilder(singleCircuitBuilder);
-            director.ConstructCircuit();
-            Circuit singlecir = director.GetCircuit();
+            CircuitMaker circuitMaker = new CircuitMaker(chosenFile);
+            Circuit singlecir = circuitMaker.MakeCircuit();
 
 
             CicruitIterator circuitIterator = new CicruitIterator(singlecir.Firsts);
-
             circuitIterator.Run();
 
+
+            ViewDataProvider provider = new ViewDataProvider();
+            var x = provider.GetFileNames();
             //CircuitValidator validator = new CircuitValidator(singlecir);
             //singlecir.State = validator.CheckState();
             //singlecir.State.DoAction(singlecir);
-            //ValidCircuit valid = new ValidCircuit();
-            //valid.DoAction(singlecir);
-      
 
             Console.ReadKey();
         }

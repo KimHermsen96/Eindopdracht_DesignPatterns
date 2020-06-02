@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.329
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eindopdracht_DesignPatterns", "Eindopdracht_DesignPatterns\Eindopdracht_DesignPatterns.csproj", "{279507D8-5857-4BE2-9FE3-05452D37D398}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CircuitLogic", "Eindopdracht_DesignPatterns\CircuitLogic.csproj", "{279507D8-5857-4BE2-9FE3-05452D37D398}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CuircuitVisualizer", "CuircuitVisualizer\CuircuitVisualizer.csproj", "{C528BF39-CE7B-4A24-9C73-F53B6EA0819F}"
 EndProject

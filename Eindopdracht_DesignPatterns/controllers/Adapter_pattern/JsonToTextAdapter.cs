@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CuircuitVisualizer.ViewModels
+namespace Eindopdracht_DesignPatterns.controllers.Adapter_pattern
 {
-    public class MainViewModel : ViewModelBase
+    public class JsonToTextAdapter 
     {
 
 

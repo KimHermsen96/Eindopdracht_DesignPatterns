@@ -1,0 +1,22 @@
+[
+  {
+    "Name": "file 1",
+    "Location": "Circuit1_FullAdder.txt"
+  },
+  {
+    "Name": "file 2",
+    "Location": "Circuit2_Decoder.txt"
+  },
+  {
+    "Name": "file 3",
+    "Location": "Circuit3_Encoder.txt"
+  },
+  {
+    "Name": "file 4",
+    "Location": "Circuit4_InfiniteLoop.txt"
+  },
+  {
+    "Name": "file 5",
+    "Location": "Circuit5_NotConnected.txt"
+  }
+]

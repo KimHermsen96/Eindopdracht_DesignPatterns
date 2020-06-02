@@ -14,13 +14,13 @@ namespace Eindopdracht_DesignPatterns.models
     {
 
         public override Dictionary<string, IComponent> AllNodes { get; set; }
-        public override List<IComponent> Firsts { get; set; }
+        public override List<Node> Firsts { get; set; }
         public override IState State { get; set; }
 
         public SingleCircuit()
         {
             AllNodes = new Dictionary<string, IComponent>();
-            Firsts = new List<IComponent>();
+            Firsts = new List<Node>();
             State = null;
         }
 

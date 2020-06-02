@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Eindopdracht_DesignPatterns.controllers
 {
-    class FileReader
+    public class CircuitFileReader
     {
         public string[] Readfile(string file)
         {
