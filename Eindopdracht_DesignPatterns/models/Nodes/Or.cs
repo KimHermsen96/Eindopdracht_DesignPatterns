@@ -25,7 +25,7 @@ namespace Eindopdracht_DesignPatterns.models.Nodes
 
             InputValues.Add(value);
 
-            if (InputValues.Count == NumberOfInputs)
+            if (InputValues.Count == NumberOfInputNodes)
             {
                 Finished = true;
                 Continue();
@@ -33,6 +33,10 @@ namespace Eindopdracht_DesignPatterns.models.Nodes
             }
 
         }
-       
+
+        public override bool ValidNode()
+        {
+            return NumberOfInputNodes >= 2;
+        }
     }
 }

@@ -45,7 +45,7 @@ namespace Eindopdracht_DesignPatterns
             var x = provider.GetFileNames();
             //CircuitValidator validator = new CircuitValidator(singlecir);
             //singlecir.State = validator.CheckState();
-            //singlecir.State.DoAction(singlecir);
+            //singlecir.State.DoAction(singlecir);  
 
             Console.ReadKey();
         }

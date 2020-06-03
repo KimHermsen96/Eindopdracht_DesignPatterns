@@ -13,13 +13,13 @@ namespace Eindopdracht_DesignPatterns.models
     public class SingleCircuit : Circuit
     {
 
-        public override Dictionary<string, IComponent> AllNodes { get; set; }
+        public override Dictionary<string, Node> AllNodes { get; set; }
         public override List<Node> Firsts { get; set; }
         public override IState State { get; set; }
 
         public SingleCircuit()
         {
-            AllNodes = new Dictionary<string, IComponent>();
+            AllNodes = new Dictionary<string, Node>();
             Firsts = new List<Node>();
             State = null;
         }
@@ -31,6 +31,11 @@ namespace Eindopdracht_DesignPatterns.models
 
         public override void CalculateOutput(int value)
         {
+        }
+
+        public override bool ValidNode()
+        {
+            return true;
         }
     }
 }

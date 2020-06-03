@@ -92,7 +92,7 @@ namespace Eindopdracht_DesignPatterns.controllers
                             //a.AddEdge(beforeColon.ToString(), edge);
 
                             IComponent edgeNode = Circuit.AllNodes[edge.ToString()];
-                            edgeNode.NumberOfInputs++;
+                            edgeNode.NumberOfInputNodes++;
 
                             var composite = (Composite)item;
                             composite.AddComposite(edgeNode);

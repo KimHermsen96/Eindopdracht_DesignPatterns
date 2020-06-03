@@ -20,6 +20,7 @@ namespace Eindopdracht_DesignPatterns.models.Nodes
 
         public override void CalculateOutput(int value)
         {
+
             //short circuit
             if(value == 0)
             {
@@ -31,13 +32,18 @@ namespace Eindopdracht_DesignPatterns.models.Nodes
 
             Values.Add(value);
             //if two values came in and they were both not 0 then they were 1. 
-            if (Values.Count == NumberOfInputs)
+            if (Values.Count == NumberOfInputNodes)
             {
                 Value = 1;
                 Finished = true;
                 Continue();
                 return;
             }
+        }
+
+        public override bool ValidNode()
+        {
+            return NumberOfInputNodes >= 2;
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Eindopdracht_DesignPatterns.controllers;
+using Eindopdracht_DesignPatterns.controllers.State;
 using Eindopdracht_DesignPatterns.models;
 using System;
 using System.Collections.Generic;
@@ -20,17 +21,22 @@ namespace CircuitConsoleVisualizer
             CircuitMaker circuitMaker = new CircuitMaker(ChooseFileView.ChosenFile);
             Circuit singlecir = circuitMaker.MakeCircuit();
 
-
-
-
             CircuitValidator validator = new CircuitValidator(singlecir);
             singlecir.State = validator.CheckState();
+
+
+            //Ask input 
+            if (singlecir.State is ValidCircuit)
+            {
+
+                ChooseInputValues chooseInputValues = new ChooseInputValues();
+                if (!chooseInputValues.UseDefault())
+                    singlecir.Firsts.ForEach(n => chooseInputValues.SetInput(n));
+            }
+            //Run circuit
             singlecir.State.DoAction(singlecir);
-            CicruitIterator circuitIterator = new CicruitIterator(singlecir.Firsts);
-            circuitIterator.Run();
 
-
-
+            Console.ReadKey();
 
         }
     }

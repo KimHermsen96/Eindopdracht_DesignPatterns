@@ -9,6 +9,6 @@ namespace Eindopdracht_DesignPatterns.models.interfaces
     public interface IComponent
     {
         List<IComponent> ComponentList { get; set; }
-        int NumberOfInputs { get; set; }
+        int NumberOfInputNodes { get; set; }
     }
 }

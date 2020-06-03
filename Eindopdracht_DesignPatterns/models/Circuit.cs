@@ -11,7 +11,7 @@ namespace Eindopdracht_DesignPatterns.models
 {
     public abstract class Circuit : Composite 
     { 
-        public abstract Dictionary<string, IComponent> AllNodes { get; set; }
+        public abstract Dictionary<string, Node> AllNodes { get; set; }
         public abstract List<Node> Firsts { get; set; }
         public abstract IState State { get; set; }
     }

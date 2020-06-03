@@ -14,10 +14,15 @@ namespace Eindopdracht_DesignPatterns.models.Nodes
         public string Identifier { get; set; }
         public int Value { get; set; }
         public  bool Finished { get; set; } = false;
-        public int NumberOfInputs { get; set; }
+        public int NumberOfInputNodes { get; set; }
 
         public abstract void CalculateOutput(int value);
+        public abstract bool ValidNode();
       
+        public Node()
+        {
+            Console.WriteLine(Identifier);
+        }
         public void Run(int input)
         {
             if (Finished) return;

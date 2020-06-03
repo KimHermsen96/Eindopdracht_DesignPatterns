@@ -15,5 +15,10 @@ namespace Eindopdracht_DesignPatterns.models.Nodes
             Finished = true;
             Continue();
         }
+
+        public override bool ValidNode()
+        {
+            return true;
+        }
     }
 }

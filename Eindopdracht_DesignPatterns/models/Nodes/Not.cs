@@ -21,5 +21,10 @@ namespace Eindopdracht_DesignPatterns.models.Nodes
             Continue();
             return;
         }
+        public override bool ValidNode()
+        {
+            return NumberOfInputNodes == 1;
+        }
+
     }
 }
