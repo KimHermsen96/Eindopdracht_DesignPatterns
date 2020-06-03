@@ -18,6 +18,10 @@ namespace CuircuitVisualizer.ViewModel
         public ObservableCollection<FileViewModel> Files { get; set; }
         public ObservableCollection<NodeViewModel> Inputs { get; set; }
 
+        public ObservableCollection<NodeViewModel> Firsts { get; set; }
+
+        public CircuitViewModel Circuitvm { get; set; }
+
         public MainViewModel()
         {
 
@@ -27,20 +31,19 @@ namespace CuircuitVisualizer.ViewModel
             ChooseFileCommand = new RelayCommand(ChooseFile);
             ViewDataProvider provider = new ViewDataProvider();
 
-
             //get file names. 
             Files = new ObservableCollection<FileViewModel>();
             provider.GetFileNames().ForEach(n => Files.Add(new FileViewModel(n)));
-
 
             //Create circuit 
             CircuitMaker circuitMaker = new CircuitMaker("Circuit1_FullAdder.txt");
             Circuit singlecir = circuitMaker.MakeCircuit();
 
             //get InputNodes
-            Inputs = new ObservableCollection<NodeViewModel>();
-            singlecir.Firsts.ForEach(n => Inputs.Add(new NodeViewModel(n)));
+            //Circuitvm = new CircuitViewModel(singlecir);
 
+            Firsts = new ObservableCollection<NodeViewModel>();
+            singlecir.Firsts.ForEach(n => Firsts.Add(new NodeViewModel(n)));
 
         }
 

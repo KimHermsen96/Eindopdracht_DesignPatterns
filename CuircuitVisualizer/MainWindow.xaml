@@ -32,7 +32,7 @@
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-        <ListBox Grid.Column="1" Grid.Row="1" x:Name="Input" ItemsSource="{Binding Inputs}" >
+        <ListBox Grid.Column="1" Grid.Row="1" x:Name="Firsts" ItemsSource="{Binding Firsts}" >
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal" Margin="2">

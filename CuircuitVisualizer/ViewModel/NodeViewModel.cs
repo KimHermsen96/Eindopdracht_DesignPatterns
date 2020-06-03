@@ -12,10 +12,14 @@ namespace CuircuitVisualizer.ViewModel
     {
         public string Identifier { get; set; }
         public int Value { get; set; }
+
         public NodeViewModel(Node _node)
         {
             Identifier = _node.Identifier;
             Value = _node.Value;
         }
+
+       
+        
     }
 }
