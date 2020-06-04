@@ -1,7 +1,6 @@
 ﻿using Eindopdracht_DesignPatterns.models;
 using Eindopdracht_DesignPatterns.models.interfaces;
 using Eindopdracht_DesignPatterns.models.Nodes;
-using Eindopdracht_DesignPatterns.view;
 using System;
 using System.Collections.Generic;
 using System.Linq;

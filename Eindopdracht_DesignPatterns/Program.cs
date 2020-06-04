@@ -19,64 +19,6 @@ namespace Eindopdracht_DesignPatterns
     {
         static void Main(string[] args)
         {
-
-            bool noChosenFile = true;
-            string chosenFile = "";
-
-            while (noChosenFile)
-            {
-                Console.WriteLine("Choose a circuit (1, 2, 3, 4)");
-                chosenFile = ChooseFile();
-
-                if (chosenFile != "No file selected") noChosenFile = false;
-            }
-
-            Console.WriteLine("You chose:" + chosenFile);
-
-            CircuitMaker circuitMaker = new CircuitMaker(chosenFile);
-            Circuit singlecir = circuitMaker.MakeCircuit();
-
-
-            CicruitIterator circuitIterator = new CicruitIterator(singlecir.Firsts);
-            circuitIterator.Run();
-
-
-            ViewDataProvider provider = new ViewDataProvider();
-            var x = provider.GetFileNames();
-            //CircuitValidator validator = new CircuitValidator(singlecir);
-            //singlecir.State = validator.CheckState();
-            //singlecir.State.DoAction(singlecir);  
-
-            Console.ReadKey();
-        }
-
-        private static string ChooseFile()
-        {
-            string file;
-            var choice = Console.ReadLine();
-            try
-            {
-                int i = System.Convert.ToInt32(choice);
-                switch (i)
-                {
-                    case 1:
-                        return file = "Circuit1_FullAdder.txt";
-                    case 2:
-                        return file = "Circuit2_Decoder.txt";
-                    case 3:
-                        return file = "Circuit3_Encoder.txt";
-                    case 4:
-                        return file = "Circuit4_InfiniteLoop.txt";
-                    case 5:
-                        return file = "Circuit5_NotConnected.txt";
-                    default:
-                        return file = "Circuit1_FullAdder.txt";
-                }
-            }
-            catch (FormatException)
-            {
-                return "No file selected";
-            }
         }
     }
 }

@@ -6,17 +6,9 @@ namespace Eindopdracht_DesignPatterns.models.Nodes
 {
     public class Not : Composite
     {
-        public override void CalculateOutput(int value)
+        public override void CalculateOutput(int _value)
         {
-            if (value == 1)
-            {
-                Value = 0;
-            }
-            else
-            {
-                Value = 1;
-            }
-
+            Value = _value == 1 ? 0 : 1; 
             Finished = true;
             Continue();
             return;

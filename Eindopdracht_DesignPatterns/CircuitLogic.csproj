@@ -71,7 +71,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="App.cs" />
     <Compile Include="controllers\Adapter_pattern\JsonToListAdapter.cs" />
     <Compile Include="controllers\Adapter_pattern\JsonToTextAdapter.cs" />
     <Compile Include="controllers\Builder_pattern\CircuitBuilder.cs" />
@@ -87,7 +86,6 @@
     <Compile Include="controllers\CircuitFileReader.cs" />
     <Compile Include="controllers\Graphviz\DotCompiler.cs" />
     <Compile Include="controllers\Graphviz\Experiment2.cs" />
-    <Compile Include="controllers\Mediator.cs" />
     <Compile Include="controllers\NodeFactory.cs" />
     <Compile Include="controllers\Builder_pattern\SingleCircuitBuilder.cs" />
     <Compile Include="controllers\State_pattern\Loop.cs" />
@@ -100,6 +98,7 @@
     <Compile Include="models\Nodes\Nand.cs" />
     <Compile Include="models\Nodes\Node.cs" />
     <Compile Include="models\Nodes\Nor.cs" />
+    <Compile Include="models\Nodes\Xor.cs" />
     <Compile Include="models\SingleCircuit.cs" />
     <Compile Include="models\Nodes\Input.cs" />
     <Compile Include="models\Nodes\And.cs" />
@@ -109,8 +108,6 @@
     <Compile Include="models\Nodes\Probe.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="view\InputView.cs" />
-    <Compile Include="Window.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -134,8 +131,6 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="controllers\Visitor_pattern\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

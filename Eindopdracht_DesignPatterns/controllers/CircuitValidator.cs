@@ -28,11 +28,8 @@ namespace Eindopdracht_DesignPatterns.controllers
 
        public bool Loop()
         {
-
-
             return false; 
         }
-
 
         private bool UnreachableNodes()
         {
@@ -40,9 +37,7 @@ namespace Eindopdracht_DesignPatterns.controllers
             {
                 if (!circuit.Value.ValidNode()) return true;
             }
-
             return false;
         }
-
     }
 }

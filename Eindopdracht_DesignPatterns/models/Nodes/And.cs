@@ -10,19 +10,12 @@ namespace Eindopdracht_DesignPatterns.models.Nodes
 {
     public class And : Composite
     {
-     
-        public List<int> Values { get; set; }
 
-        public And()
-        {
-            Values = new List<int>();
-        }
-
-        public override void CalculateOutput(int value)
+        public override void CalculateOutput(int _value)
         {
 
             //short circuit
-            if(value == 0)
+            if(_value == 0)
             {
                 Value = 0; 
                 Finished = true;
@@ -30,9 +23,9 @@ namespace Eindopdracht_DesignPatterns.models.Nodes
                 return; 
             }
 
-            Values.Add(value);
+            SavedValues.Add(_value);
             //if two values came in and they were both not 0 then they were 1. 
-            if (Values.Count == NumberOfInputNodes)
+            if (SavedValues.Count == NumberOfInputNodes)
             {
                 Value = 1;
                 Finished = true;
@@ -43,7 +36,7 @@ namespace Eindopdracht_DesignPatterns.models.Nodes
 
         public override bool ValidNode()
         {
-            return NumberOfInputNodes >= 2;
+            return NumberOfInputNodes == 2;
         }
     }
 }

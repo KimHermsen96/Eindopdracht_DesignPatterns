@@ -13,11 +13,12 @@ namespace Eindopdracht_DesignPatterns.controllers
         private int FilePosition { get; set; } = 0;
         private string[] FileByLine { get; set; }
         private NodeFactory NodeFactory { get; set; }
-                
+
         private Regex MatchBefore { get; }
         private Regex MatchAfter { get; }
 
-        public SingleCircuitBuilder(string[] fileByLine) {
+        public SingleCircuitBuilder(string[] fileByLine)
+        {
             FileByLine = fileByLine;
 
             MatchBefore = new Regex(@"\w+(?=:)");
@@ -51,11 +52,12 @@ namespace Eindopdracht_DesignPatterns.controllers
                         Circuit.AllNodes.Add(createdNode.Identifier, createdNode);
                         //voor visualisatie
                         //a.AddNode(createdNode.Identifier, createdNode.Identifier);
-                        if(createdNode.GetType() == typeof(Input)) Circuit.Firsts.Add(createdNode);
+                        if (createdNode.GetType() == typeof(Input)) Circuit.Firsts.Add(createdNode);
                     }
                 }
 
-                if (FileByLine[i].Equals("# Description of all the edges")) {
+                if (FileByLine[i].Equals("# Description of all the edges"))
+                {
                     FilePosition = i;
                     break;
                 }
@@ -99,10 +101,8 @@ namespace Eindopdracht_DesignPatterns.controllers
                         }
                     }
                 }
-
             }
         }
-    
     }
 }
 

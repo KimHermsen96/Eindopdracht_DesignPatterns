@@ -28,9 +28,5 @@ namespace Eindopdracht_DesignPatterns.controllers
             return director.GetCircuit();
         }
 
-        public void ValidateCircuit()
-        {
-
-        }
     }
 }

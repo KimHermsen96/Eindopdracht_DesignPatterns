@@ -6,16 +6,16 @@ namespace Eindopdracht_DesignPatterns.models.Nodes
 {
     public class Or : Composite
     {
-        private List<int> InputValues { get; set; }
+        private List<int> SavedValues { get; set; }
         public Or()
         {
-            InputValues = new List<int>();
+            SavedValues = new List<int>();
         }
 
-        public override void CalculateOutput(int value)
+        public override void CalculateOutput(int _value)
         {
             //short circuit if the value is 1 the outcome is always 1 
-            if (value == 1)
+            if (_value == 1)
             {
                 Value = 1;
                 Finished = true;
@@ -23,9 +23,9 @@ namespace Eindopdracht_DesignPatterns.models.Nodes
                 return;
             }
 
-            InputValues.Add(value);
-
-            if (InputValues.Count == NumberOfInputNodes)
+            SavedValues.Add(_value);
+            //0 stays 0. 
+            if (SavedValues.Count == NumberOfInputNodes)
             {
                 Finished = true;
                 Continue();

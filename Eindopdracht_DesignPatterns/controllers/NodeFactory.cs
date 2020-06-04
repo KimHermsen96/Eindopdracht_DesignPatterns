@@ -31,6 +31,9 @@ namespace Eindopdracht_DesignPatterns.controllers
                 { "AND", typeof(And) },
                 { "OR", typeof(Or)  },
                 { "NOT", typeof(Not) },
+                { "NAND", typeof(Nand) },
+                { "NOR", typeof(Nor) },
+                { "XOR", typeof(Xor) },
                 { "INPUT_HIGH", typeof(Input) },
                 { "INPUT_LOW",typeof(Input) },
                 { "PROBE", typeof(Probe) }
