@@ -11,7 +11,6 @@ namespace Eindopdracht_DesignPatterns.controllers
 {
     public class CicruitIterator
     {
-
         private List<Node>  InitNodes { get; set; }
         public CicruitIterator(List<Node> _initNodes)
         {
@@ -22,9 +21,8 @@ namespace Eindopdracht_DesignPatterns.controllers
         {
             foreach (var node in InitNodes)
             {
-                var n = (Node)node;
-                Console.WriteLine(n.Identifier);
-                n.Run(n.Value);
+                Console.WriteLine(node.Identifier);
+                node.Run(node.Value);
             }
         }
     }

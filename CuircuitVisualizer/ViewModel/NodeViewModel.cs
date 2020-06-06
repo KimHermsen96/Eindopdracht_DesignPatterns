@@ -12,9 +12,7 @@ namespace CuircuitVisualizer.ViewModel
 {
     public class NodeViewModel : ViewModelBase
     {
-        //public ICommand ChangeInputCommand { get; set; }
         public string Identifier { get; set; }
-        //public int Value { get; set; }
         public int _value { get; set; }
         private Node Node {get; set;}
 

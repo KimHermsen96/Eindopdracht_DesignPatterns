@@ -37,5 +37,10 @@ namespace Eindopdracht_DesignPatterns.models
         {
             return true;
         }
+
+        public override void ClearCircuit()
+        {
+            foreach (var node in AllNodes) node.Value.Clear();
+        }
     }
 }

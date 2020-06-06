@@ -15,7 +15,6 @@ namespace Eindopdracht_DesignPatterns.models.Nodes
         public int Value { get; set; }
         public  bool Finished { get; set; } = false;
         public int NumberOfInputNodes { get; set; }
-
         public List<int> SavedValues { get; set; }
         public abstract void CalculateOutput(int value);
         public abstract bool ValidNode();
@@ -31,7 +30,7 @@ namespace Eindopdracht_DesignPatterns.models.Nodes
             CalculateOutput(input);
         }
 
-        protected void Continue()
+        public void Continue()
         {
             foreach (var node in ComponentList)
             {
@@ -39,6 +38,13 @@ namespace Eindopdracht_DesignPatterns.models.Nodes
                 Console.WriteLine(n.Identifier);
                 n.Run(Value);
             }
+        }
+
+        public void Clear()
+        {
+            NumberOfInputNodes = 0;
+            SavedValues.Clear();
+            Finished = false;
         }
     }
 }

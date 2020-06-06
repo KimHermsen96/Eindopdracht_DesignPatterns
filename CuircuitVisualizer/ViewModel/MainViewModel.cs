@@ -14,6 +14,7 @@ namespace CuircuitVisualizer.ViewModel
     {
         public ICommand RunCommand { get; set; }
         public ObservableCollection<NodeViewModel> Firsts { get; set; }
+        public ObservableCollection<NodeViewModel> AllNodes { get; set; }
         private CashedCircuitValidator ProxyCircuitValidator { get; set; }
         private CircuitTemplate Singlecir { get; set; }
         public MainViewModel()
@@ -25,10 +26,14 @@ namespace CuircuitVisualizer.ViewModel
             CircuitMaker circuitMaker = new CircuitMaker("Circuit1_FullAdder.txt");
             Singlecir = circuitMaker.MakeCircuit();
 
-            //get InputNodes
-            //Circuitvm = new CircuitViewModel(singlecir);
+            //Get InputNodes
             Firsts = new ObservableCollection<NodeViewModel>();
-            Singlecir.Firsts.ForEach(n => Firsts.Add(new NodeViewModel(n)));
+            Singlecir.Firsts.ForEach(el => Firsts.Add(new NodeViewModel(el)));
+
+            //Get all nodes
+            AllNodes = new ObservableCollection<NodeViewModel>();
+            foreach (var node in Singlecir.AllNodes) AllNodes.Add(new NodeViewModel(node.Value));
+         
 
             //Create validator
             ProxyCircuitValidator = new CashedCircuitValidator();
@@ -45,6 +50,13 @@ namespace CuircuitVisualizer.ViewModel
 
             //Run circuit
             Singlecir.State.DoAction(Singlecir);
+            //remove old items in list. 
+            AllNodes.Clear();
+            
+            foreach (var node in Singlecir.AllNodes) AllNodes.Add(new NodeViewModel(node.Value));
+            
+            //clear circuit 
+            Singlecir.Clear();
         }
     }
 }
