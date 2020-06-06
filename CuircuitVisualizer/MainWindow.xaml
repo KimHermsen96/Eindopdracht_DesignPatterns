@@ -14,31 +14,18 @@
         <Border Grid.Row ="0" Grid.ColumnSpan="3" Background="#1f3d7a"/>
         <Border Grid.Row ="2" Grid.ColumnSpan="3" Background=" #00cc00"/>
 
-        <TextBlock Grid.Column="0" Grid.Row="0" Text="Choose file"/>
-        <TextBlock Grid.Column="1" Grid.Row="0" Text="Choose input"/>
-        <TextBlock Grid.Column="2" Grid.Row="0" Text="Output"/>
+        <TextBlock Grid.Column="0" Grid.Row="0" Text="Choose input"/>
+        <TextBlock Grid.Column="1" Grid.Row="0" Text="Output"/>
 
         <Button  Background=" #00cc00" Grid.Row="2" Grid.ColumnSpan="3" FontSize="25" Command="{Binding RunCommand}">Run</Button>
 
-        <ListBox Grid.Column="0" Grid.Row="1" x:Name="Files" ItemsSource="{Binding Files}" >
-            <ListBox.ItemTemplate>
-                <DataTemplate>
-                    <StackPanel Orientation="Horizontal" Margin="2">
-                        <Button Background=" #00cc00" Grid.Row="2" Grid.ColumnSpan="3" 
-                                Command="{Binding ChooseFileCommand}"
-                                Content="{Binding FileName}">
-                        </Button>
-                    </StackPanel>
-                </DataTemplate>
-            </ListBox.ItemTemplate>
-        </ListBox>
-        <ListBox Grid.Column="1" Grid.Row="1" x:Name="Firsts" ItemsSource="{Binding Firsts}" >
+        <ListBox Grid.Column="0" Grid.Row="1" x:Name="Firsts" ItemsSource="{Binding Firsts}" >
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal" Margin="2">
                         <TextBlock Text="{Binding Identifier}" />
                         <Button Background=" #00cc00" Grid.Row="2" Grid.ColumnSpan="3" 
-                                Command="{Binding ChangeInput}"
+                                Command="{Binding ChangeInputCommand}"
                                 Content="{Binding Value}">
                         </Button>
                     </StackPanel>
@@ -57,7 +44,6 @@
         </ListBox>
 
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="4*"/>
             <ColumnDefinition Width="4*"/>
             <ColumnDefinition Width="4*"/>
         </Grid.ColumnDefinitions>

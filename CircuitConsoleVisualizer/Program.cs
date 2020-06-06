@@ -26,7 +26,7 @@ namespace CircuitConsoleVisualizer
 
                 //Create Circuit
                 CircuitMaker circuitMaker = new CircuitMaker(ChooseFileView.ChosenFile);
-                Circuit singlecir = circuitMaker.MakeCircuit();
+                CircuitTemplate singlecir = circuitMaker.MakeCircuit();
 
                 //Validate Circuit
                 CircuitValidator validator = new CircuitValidator(singlecir);

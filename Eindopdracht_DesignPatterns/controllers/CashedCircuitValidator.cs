@@ -11,7 +11,7 @@ namespace Eindopdracht_DesignPatterns.controllers.Proxy
 {
     public class CashedCircuitValidator : IValidator
     {
-        public Circuit Circuit { get; set; }
+        public CircuitTemplate Circuit { get; set; }
         public CircuitValidator CircuitValidator { get; set; }
         private Dictionary<string, IState> CircuitStates { get; set; }
 

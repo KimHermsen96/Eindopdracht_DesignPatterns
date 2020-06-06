@@ -6,62 +6,45 @@ using System.Windows.Input;
 using Eindopdracht_DesignPatterns.controllers;
 using System.Collections.Generic;
 using Eindopdracht_DesignPatterns.models;
+using Eindopdracht_DesignPatterns.controllers.Proxy;
 
 namespace CuircuitVisualizer.ViewModel
 {
     public class MainViewModel : ViewModelBase
     {
-        public ICommand ChooseFileCommand { get; set; }
         public ICommand RunCommand { get; set; }
-        public ICommand ChooseInputCommand { get; set; }
-
-        public ObservableCollection<FileViewModel> Files { get; set; }
-        public ObservableCollection<NodeViewModel> Inputs { get; set; }
-
         public ObservableCollection<NodeViewModel> Firsts { get; set; }
-
-        public CircuitViewModel Circuitvm { get; set; }
-
+        private CashedCircuitValidator ProxyCircuitValidator { get; set; }
+        private CircuitTemplate Singlecir { get; set; }
         public MainViewModel()
         {
-
             //ChooseFileCommand = new RelayCommand(ChooseFile);
             RunCommand = new RelayCommand(RunCircuit);
-            ChooseInputCommand = new RelayCommand(ChooseInput);
-            ChooseFileCommand = new RelayCommand(ChooseFile);
-            ViewDataProvider provider = new ViewDataProvider();
-
-            //get file names. 
-            Files = new ObservableCollection<FileViewModel>();
-            provider.GetFileNames().ForEach(n => Files.Add(new FileViewModel(n)));
 
             //Create circuit 
             CircuitMaker circuitMaker = new CircuitMaker("Circuit1_FullAdder.txt");
-            CircuitTemplate singlecir = circuitMaker.MakeCircuit();
+            Singlecir = circuitMaker.MakeCircuit();
 
             //get InputNodes
             //Circuitvm = new CircuitViewModel(singlecir);
-
             Firsts = new ObservableCollection<NodeViewModel>();
-            singlecir.Firsts.ForEach(n => Firsts.Add(new NodeViewModel(n)));
+            Singlecir.Firsts.ForEach(n => Firsts.Add(new NodeViewModel(n)));
 
-        }
-
-        private void ChooseFile()
-        {
-        }
-
-        private void ChooseInput()
-        {
-           
+            //Create validator
+            ProxyCircuitValidator = new CashedCircuitValidator();
         }
 
         private void RunCircuit()
         {
-            //CircuitFileReader fileReader = new CircuitFileReader();
-            //string[] fileByLine = fileReader.Readfile(chosenFile);
+            CircuitValidator validator = new CircuitValidator(Singlecir);
+            ProxyCircuitValidator.Circuit = Singlecir;
+            ProxyCircuitValidator.CircuitValidator = validator;
 
+            //get currentState
+            Singlecir.State = ProxyCircuitValidator.CheckState();
+
+            //Run circuit
+            Singlecir.State.DoAction(Singlecir);
         }
-
     }
 }
