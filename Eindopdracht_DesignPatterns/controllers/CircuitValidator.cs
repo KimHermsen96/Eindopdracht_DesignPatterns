@@ -13,8 +13,8 @@ namespace Eindopdracht_DesignPatterns.controllers
 {
     public class CircuitValidator :  IValidator
     {
-        private Circuit Circuit { get; set; }
-        public CircuitValidator(Circuit _circuit)    
+        private CircuitTemplate Circuit { get; set; }
+        public CircuitValidator(CircuitTemplate _circuit)    
         {
             Circuit = _circuit;
         }

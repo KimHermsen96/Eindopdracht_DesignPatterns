@@ -13,9 +13,9 @@ namespace Eindopdracht_DesignPatterns.controllers
     public abstract class CircuitBuilder
     {
 
-        public Circuit Circuit;
+        public CircuitTemplate Circuit;
 
-        public Circuit GetCircuit()
+        public CircuitTemplate GetCircuit()
         {
             return Circuit;
         }

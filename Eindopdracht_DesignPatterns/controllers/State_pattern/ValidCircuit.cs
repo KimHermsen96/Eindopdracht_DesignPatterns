@@ -11,9 +11,9 @@ namespace Eindopdracht_DesignPatterns.controllers.State
 {
     public class ValidCircuit : IState
     {
-        private Circuit Circuit { get; set; }
+        private CircuitTemplate Circuit { get; set; }
 
-        public void DoAction(Circuit _circuit)
+        public void DoAction(CircuitTemplate _circuit)
         {
             Circuit = _circuit; 
             CicruitIterator circuitIterator = new CicruitIterator(Circuit.Firsts);

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Eindopdracht_DesignPatterns.models
 {
-    public abstract class Circuit : Composite 
+    public abstract class CircuitTemplate : Composite 
     { 
         public abstract string Name { get; set; }
         public abstract Dictionary<string, Node> AllNodes { get; set; }

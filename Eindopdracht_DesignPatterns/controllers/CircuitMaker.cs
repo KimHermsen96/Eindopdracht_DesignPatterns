@@ -17,7 +17,7 @@ namespace Eindopdracht_DesignPatterns.controllers
             ChosenFile = _chosenFile;
         }
 
-        public Circuit MakeCircuit()
+        public CircuitTemplate MakeCircuit()
         {
             CircuitFileReader fileReader = new CircuitFileReader();
             string[] fileByLine = fileReader.Readfile(ChosenFile);

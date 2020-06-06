@@ -18,7 +18,7 @@ namespace Eindopdracht_DesignPatterns.controllers
             CircuitBuilder = cb; 
         }
 
-        public Circuit GetCircuit()
+        public CircuitTemplate GetCircuit()
         {
             return CircuitBuilder.GetCircuit(); 
         }

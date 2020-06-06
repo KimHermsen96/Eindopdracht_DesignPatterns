@@ -15,7 +15,7 @@ namespace CircuitConsoleVisualizer
         static void Main(string[] args)
         {
 
-            CashedCircuitValidator cashedCircuitValidator = new CashedCircuitValidator();
+            CashedCircuitValidator proxyCircuitValidator = new CashedCircuitValidator();
 
             var endProgram = false;
             while (!endProgram)
@@ -28,14 +28,13 @@ namespace CircuitConsoleVisualizer
                 CircuitMaker circuitMaker = new CircuitMaker(ChooseFileView.ChosenFile);
                 Circuit singlecir = circuitMaker.MakeCircuit();
 
-
                 //Validate Circuit
                 CircuitValidator validator = new CircuitValidator(singlecir);
-                cashedCircuitValidator.Circuit = singlecir;
-                cashedCircuitValidator.CircuitValidator = validator;
+                proxyCircuitValidator.Circuit = singlecir;
+                proxyCircuitValidator.CircuitValidator = validator;
 
                 //get currentState
-                singlecir.State = cashedCircuitValidator.CheckState();
+                singlecir.State = proxyCircuitValidator.CheckState();
                
                 //Ask input 
                 if (singlecir.State is ValidCircuit)

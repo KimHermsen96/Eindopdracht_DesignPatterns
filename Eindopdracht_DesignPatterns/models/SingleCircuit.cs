@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Eindopdracht_DesignPatterns.models
 {
-    public class SingleCircuit : Circuit
+    public class SingleCircuit : CircuitTemplate
     {
         public override Dictionary<string, Node> AllNodes { get; set; }
         public override List<Node> Firsts { get; set; }

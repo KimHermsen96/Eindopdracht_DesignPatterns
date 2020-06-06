@@ -10,7 +10,7 @@ namespace Eindopdracht_DesignPatterns.controllers.State
 {
     public class Loop : IState
     {
-        public void DoAction(Circuit circuit)
+        public void DoAction(CircuitTemplate circuit)
         {
             Console.WriteLine("Invalid Circuit due to loop"); 
         }

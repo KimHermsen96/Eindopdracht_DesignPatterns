@@ -37,7 +37,7 @@ namespace CuircuitVisualizer.ViewModel
 
             //Create circuit 
             CircuitMaker circuitMaker = new CircuitMaker("Circuit1_FullAdder.txt");
-            Circuit singlecir = circuitMaker.MakeCircuit();
+            CircuitTemplate singlecir = circuitMaker.MakeCircuit();
 
             //get InputNodes
             //Circuitvm = new CircuitViewModel(singlecir);
