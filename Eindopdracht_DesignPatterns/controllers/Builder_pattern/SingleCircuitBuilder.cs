@@ -17,14 +17,17 @@ namespace Eindopdracht_DesignPatterns.controllers
         private Regex MatchBefore { get; }
         private Regex MatchAfter { get; }
 
-        public SingleCircuitBuilder(string[] fileByLine)
+        public SingleCircuitBuilder(string[] _fileByLine, string _name)
         {
-            FileByLine = fileByLine;
+            FileByLine = _fileByLine;
 
             MatchBefore = new Regex(@"\w+(?=:)");
             MatchAfter = new Regex(@"(?<=:).*\w+(?=;)");
             NodeFactory = NodeFactory.Instance;
-            Circuit = new SingleCircuit();
+            Circuit = new SingleCircuit
+            {
+                Name = _name
+            };
         }
 
         public override void ConstructCircuit()

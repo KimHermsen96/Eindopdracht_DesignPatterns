@@ -11,12 +11,12 @@ using System.Threading.Tasks;
 
 namespace Eindopdracht_DesignPatterns.controllers
 {
-    public class CircuitValidator
+    public class CircuitValidator :  IValidator
     {
         private Circuit Circuit { get; set; }
-        public CircuitValidator(Circuit circuit)    
+        public CircuitValidator(Circuit _circuit)    
         {
-            Circuit = circuit;
+            Circuit = _circuit;
         }
 
         public IState CheckState()

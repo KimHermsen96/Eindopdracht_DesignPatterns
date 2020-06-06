@@ -22,11 +22,10 @@ namespace Eindopdracht_DesignPatterns.controllers
             CircuitFileReader fileReader = new CircuitFileReader();
             string[] fileByLine = fileReader.Readfile(ChosenFile);
             Director director = new Director();
-            SingleCircuitBuilder singleCircuitBuilder = new SingleCircuitBuilder(fileByLine);
+            SingleCircuitBuilder singleCircuitBuilder = new SingleCircuitBuilder(fileByLine, ChosenFile);
             director.SetCircuitBuilder(singleCircuitBuilder);
             director.ConstructCircuit();
             return director.GetCircuit();
         }
-
     }
 }

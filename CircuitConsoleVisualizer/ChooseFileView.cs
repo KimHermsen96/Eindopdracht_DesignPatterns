@@ -22,7 +22,6 @@ namespace CircuitConsoleVisualizer
             }
             Console.Clear();
             Console.WriteLine("You chose:" + ChosenFile);
-            Console.ReadKey();
         }
 
         private static string ChooseFile()

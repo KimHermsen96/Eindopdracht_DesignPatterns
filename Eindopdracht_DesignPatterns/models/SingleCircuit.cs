@@ -12,10 +12,10 @@ namespace Eindopdracht_DesignPatterns.models
 {
     public class SingleCircuit : Circuit
     {
-
         public override Dictionary<string, Node> AllNodes { get; set; }
         public override List<Node> Firsts { get; set; }
         public override IState State { get; set; }
+        public override string Name { get; set; }
 
         public SingleCircuit()
         {

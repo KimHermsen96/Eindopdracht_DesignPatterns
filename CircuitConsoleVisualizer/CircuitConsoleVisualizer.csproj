@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="ChooseFileView.cs" />
     <Compile Include="ChooseInputValues.cs" />
+    <Compile Include="EndCircuitView.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
