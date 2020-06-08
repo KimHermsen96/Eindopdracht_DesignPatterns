@@ -1,5 +1,4 @@
 ﻿using Eindopdracht_DesignPatterns.controllers;
-using Eindopdracht_DesignPatterns.controllers.Proxy;
 using Eindopdracht_DesignPatterns.controllers.State;
 using Eindopdracht_DesignPatterns.models;
 using System;
@@ -15,7 +14,7 @@ namespace CircuitConsoleVisualizer
         static void Main(string[] args)
         {
 
-            CashedCircuitValidator proxyCircuitValidator = new CashedCircuitValidator();
+            CachedCircuitValidator proxyCircuitValidator = new CachedCircuitValidator();
 
             var endProgram = false;
             while (!endProgram)
@@ -26,7 +25,7 @@ namespace CircuitConsoleVisualizer
 
                 //Create Circuit
                 CircuitMaker circuitMaker = new CircuitMaker(ChooseFileView.ChosenFile);
-                CircuitTemplate singlecir = circuitMaker.MakeCircuit();
+                Circuit singlecir = circuitMaker.MakeCircuit();
 
                 //Validate Circuit
                 CircuitValidator validator = new CircuitValidator(singlecir);

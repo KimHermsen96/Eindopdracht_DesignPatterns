@@ -6,7 +6,6 @@ using System.Windows.Input;
 using Eindopdracht_DesignPatterns.controllers;
 using System.Collections.Generic;
 using Eindopdracht_DesignPatterns.models;
-using Eindopdracht_DesignPatterns.controllers.Proxy;
 
 namespace CuircuitVisualizer.ViewModel
 {
@@ -15,8 +14,8 @@ namespace CuircuitVisualizer.ViewModel
         public ICommand RunCommand { get; set; }
         public ObservableCollection<NodeViewModel> Firsts { get; set; }
         public ObservableCollection<NodeViewModel> AllNodes { get; set; }
-        private CashedCircuitValidator ProxyCircuitValidator { get; set; }
-        private CircuitTemplate Singlecir { get; set; }
+        private CachedCircuitValidator ProxyCircuitValidator { get; set; }
+        private Circuit Singlecir { get; set; }
         public MainViewModel()
         {
             //ChooseFileCommand = new RelayCommand(ChooseFile);
@@ -36,7 +35,7 @@ namespace CuircuitVisualizer.ViewModel
          
 
             //Create validator
-            ProxyCircuitValidator = new CashedCircuitValidator();
+            ProxyCircuitValidator = new CachedCircuitValidator();
         }
 
         private void RunCircuit()

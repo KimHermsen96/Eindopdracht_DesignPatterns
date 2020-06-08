@@ -14,7 +14,7 @@ namespace CuircuitVisualizer.ViewModel
     {
 
         public ObservableCollection<NodeViewModel> Firsts { get; set; }
-        public CircuitViewModel(CircuitTemplate _circuit)
+        public CircuitViewModel(Circuit _circuit)
         {
             Firsts = new ObservableCollection<NodeViewModel>();
             _circuit.Firsts.ForEach(n => Firsts.Add(new NodeViewModel(n)));

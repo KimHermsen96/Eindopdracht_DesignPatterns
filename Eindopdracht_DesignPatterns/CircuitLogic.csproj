@@ -75,7 +75,7 @@
     <Compile Include="controllers\Adapter_pattern\JsonToTextAdapter.cs" />
     <Compile Include="controllers\Builder_pattern\CircuitBuilder.cs" />
     <Compile Include="controllers\Builder_pattern\Director.cs" />
-    <Compile Include="controllers\CashedCircuitValidator.cs" />
+    <Compile Include="controllers\CachedCircuitValidator.cs" />
     <Compile Include="controllers\CircuitMaker.cs" />
     <Compile Include="controllers\CircuitValidator.cs" />
     <Compile Include="controllers\Composite_pattern\Composite.cs" />
@@ -91,7 +91,7 @@
     <Compile Include="controllers\State_pattern\Loop.cs" />
     <Compile Include="controllers\State_pattern\UnreachableProbes.cs" />
     <Compile Include="controllers\State_pattern\ValidCircuit.cs" />
-    <Compile Include="models\CircuitTemplate.cs" />
+    <Compile Include="models\Circuit.cs" />
     <Compile Include="models\interfaces\IState.cs" />
     <Compile Include="models\interfaces\IStrategy.cs" />
     <Compile Include="models\interfaces\IToTextAdapter.cs" />

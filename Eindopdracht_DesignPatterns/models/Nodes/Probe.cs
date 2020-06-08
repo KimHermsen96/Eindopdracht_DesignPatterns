@@ -1,14 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Eindopdracht_DesignPatterns.controllers.Composite_pattern;
-using Eindopdracht_DesignPatterns.models.interfaces;
+﻿using Eindopdracht_DesignPatterns.controllers.Composite_pattern;
 
 namespace Eindopdracht_DesignPatterns.models.Nodes
 {
     public class Probe : Leaf
     {
+        public override void CalculateOutput(int value)
+        {
+        }
+
+        public override bool ValidNode()
+        {
+            return true;
+        }
     }
 }

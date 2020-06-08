@@ -3,10 +3,11 @@ using Eindopdracht_DesignPatterns.models.interfaces;
 using System;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
+using Eindopdracht_DesignPatterns.controllers.Builder_pattern;
 using Eindopdracht_DesignPatterns.controllers.Composite_pattern;
 using Eindopdracht_DesignPatterns.models.Nodes;
 
-namespace Eindopdracht_DesignPatterns.controllers
+namespace Eindopdracht_DesignPatterns.controllers.Builder_pattern
 {
     public class SingleCircuitBuilder : CircuitBuilder
     {
@@ -30,13 +31,8 @@ namespace Eindopdracht_DesignPatterns.controllers
             };
         }
 
-        public override void ConstructCircuit()
-        {
-            CreateNodes();
-            CreateEdges();
-        }
 
-        public override void CreateNodes()
+        protected override void CreateNodes()
         {
             for (int i = 0; i < FileByLine.Length; i++)
             {
@@ -66,9 +62,7 @@ namespace Eindopdracht_DesignPatterns.controllers
                 }
             }
         }
-
-
-        public override void CreateEdges()
+        protected override void CreateEdges()
         {
 
             Console.WriteLine(" ----------  nu de edges -------");

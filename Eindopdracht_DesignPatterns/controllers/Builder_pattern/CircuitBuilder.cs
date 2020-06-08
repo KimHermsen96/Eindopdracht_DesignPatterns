@@ -1,29 +1,24 @@
 ﻿using Eindopdracht_DesignPatterns.models;
-using Eindopdracht_DesignPatterns.models.interfaces;
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Eindopdracht_DesignPatterns.controllers
+namespace Eindopdracht_DesignPatterns.controllers.Builder_pattern
 {
     public abstract class CircuitBuilder
     {
+        public Circuit Circuit;
 
-        public CircuitTemplate Circuit;
-
-        public CircuitTemplate GetCircuit()
+        public Circuit GetCircuit()
         {
             return Circuit;
         }
       
-        public abstract void CreateNodes();
-        public abstract void CreateEdges();
-        public abstract void ConstructCircuit();
+        protected abstract void CreateNodes();
+        protected abstract void CreateEdges();
 
-
+        //Template method
+        public void ConstructCircuit()
+        {
+            CreateNodes();
+            CreateEdges();
+        }
     }
 }

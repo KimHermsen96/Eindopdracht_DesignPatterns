@@ -5,8 +5,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Eindopdracht_DesignPatterns.controllers.Builder_pattern;
 
-namespace Eindopdracht_DesignPatterns.controllers
+namespace Eindopdracht_DesignPatterns.controllers.Builder_pattern
 {
     public class Director
     {
@@ -18,7 +19,7 @@ namespace Eindopdracht_DesignPatterns.controllers
             CircuitBuilder = cb; 
         }
 
-        public CircuitTemplate GetCircuit()
+        public Circuit GetCircuit()
         {
             return CircuitBuilder.GetCircuit(); 
         }

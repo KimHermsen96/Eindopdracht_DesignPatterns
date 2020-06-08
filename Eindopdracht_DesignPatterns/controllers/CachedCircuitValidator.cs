@@ -1,16 +1,16 @@
-﻿using Eindopdracht_DesignPatterns.models;
+﻿using System.Collections.Generic;
+using Eindopdracht_DesignPatterns.models;
 using Eindopdracht_DesignPatterns.models.interfaces;
-using System.Collections.Generic;
 
-namespace Eindopdracht_DesignPatterns.controllers.Proxy
+namespace Eindopdracht_DesignPatterns.controllers
 {
-    public class CashedCircuitValidator : IValidator
+    public class CachedCircuitValidator : IValidator
     {
-        public CircuitTemplate Circuit { get; set; }
+        public Circuit Circuit { get; set; }
         public CircuitValidator CircuitValidator { get; set; }
         private Dictionary<string, IState> CircuitStates { get; set; }
        
-        public CashedCircuitValidator()
+        public CachedCircuitValidator()
         {
             CircuitStates = new Dictionary<string, IState>();
         }

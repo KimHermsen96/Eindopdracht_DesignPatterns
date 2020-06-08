@@ -8,15 +8,7 @@ using System.Threading.Tasks;
 
 namespace Eindopdracht_DesignPatterns.controllers.Composite_pattern
 {
-    public class Leaf : Node, IComponent
+    public abstract class Leaf : Node
     {
-        public override void CalculateOutput(int value)
-        {
-        }
-
-        public override bool ValidNode()
-        {
-            return NumberOfInputNodes > 0; 
-        }
     }
 }

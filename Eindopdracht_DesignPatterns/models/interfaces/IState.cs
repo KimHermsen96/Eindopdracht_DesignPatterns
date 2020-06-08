@@ -8,6 +8,6 @@ namespace Eindopdracht_DesignPatterns.models.interfaces
 {
     public interface IState
     {
-         void DoAction(CircuitTemplate circuit);
+         void DoAction(Circuit circuit);
     }
 }

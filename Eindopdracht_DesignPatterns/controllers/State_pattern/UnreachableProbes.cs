@@ -10,7 +10,7 @@ namespace Eindopdracht_DesignPatterns.controllers.State
 {
     public class UnreachableProbes : IState
     {
-        public void DoAction(CircuitTemplate circuit)
+        public void DoAction(Circuit circuit)
         {
 
             Console.WriteLine("Invalid Circuit due unreachable probes ");
