@@ -1,9 +1,5 @@
 ﻿using Eindopdracht_DesignPatterns.models.Nodes;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace CircuitConsoleVisualizer
 {
@@ -11,32 +7,28 @@ namespace CircuitConsoleVisualizer
     {
         public bool UseDefault()
         {
-            var validInput = false;
             Console.WriteLine("Do you want to use default input?");
             Console.WriteLine("Enter y for yes");
             Console.WriteLine("Enter n for no");
 
-            while (!validInput)
+            while (true)
             {
-
                 var input = Console.ReadLine();
                 switch (input)
                 {
                     case "y":
                         Console.WriteLine("You choose yes");
-                        validInput = true;
                         return true;
                     case "n":
                         Console.WriteLine("You choose no");
-                        validInput = true;
                         return false;
                     default:
                         Console.WriteLine("invalid input try again");
                         break;
                 }
             }
-            return true;
         }
+
         public void SetInput(Node node)
         {
             var validInput = false;

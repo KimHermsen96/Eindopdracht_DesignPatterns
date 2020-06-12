@@ -11,23 +11,23 @@ namespace Eindopdracht_DesignPatterns.controllers.Builder_pattern
 {
     public class SingleCircuitBuilder : CircuitBuilder
     {
-        private int FilePosition { get; set; } = 0;
-        private string[] FileByLine { get; set; }
-        private NodeFactory NodeFactory { get; set; }
+        private int FilePosition { get; set; }
+        private string[] FileByLine { get; }
+        private NodeFactory NodeFactory { get; }
 
         private Regex MatchBefore { get; }
         private Regex MatchAfter { get; }
 
-        public SingleCircuitBuilder(string[] _fileByLine, string _name)
+        public SingleCircuitBuilder(string[] fileByLine, string name)
         {
-            FileByLine = _fileByLine;
+            FileByLine = fileByLine;
 
             MatchBefore = new Regex(@"\w+(?=:)");
             MatchAfter = new Regex(@"(?<=:).*\w+(?=;)");
             NodeFactory = NodeFactory.Instance;
             Circuit = new SingleCircuit
             {
-                Name = _name
+                Name = name
             };
         }
 
@@ -64,8 +64,6 @@ namespace Eindopdracht_DesignPatterns.controllers.Builder_pattern
         }
         protected override void CreateEdges()
         {
-
-            Console.WriteLine(" ----------  nu de edges -------");
             for (int i = FilePosition; i < FileByLine.Length; i++)
             {
                 var regex = new Regex(@"\d+");

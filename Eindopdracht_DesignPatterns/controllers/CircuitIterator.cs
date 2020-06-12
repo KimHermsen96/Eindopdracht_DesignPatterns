@@ -4,13 +4,13 @@ using System.Collections.Generic;
 
 namespace Eindopdracht_DesignPatterns.controllers
 {
-    public class CicruitIterator
+    public class CircuitIterator
     {
         private List<Node> InitNodes { get; set; }
 
-        public CicruitIterator(List<Node> _initNodes)
+        public CircuitIterator(List<Node> initNodes)
         {
-            InitNodes = _initNodes;
+            InitNodes = initNodes;
         }
 
         public void Run()

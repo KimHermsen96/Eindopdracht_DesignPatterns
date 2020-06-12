@@ -1,11 +1,13 @@
-﻿namespace Eindopdracht_DesignPatterns.models.Nodes
+﻿using Eindopdracht_DesignPatterns.controllers.Composite_pattern;
+
+namespace Eindopdracht_DesignPatterns.models.Nodes
 {
-    public class Nand : Node
+    public class Nand : Composite
     {
-        public override void CalculateOutput(int _value)
+        public override void CalculateOutput(int value)
         {
             //short circuit if incoming value is 0 value is 0
-            if( _value == 0)
+            if( value == 0)
             {
                 Value = 1;
                 Finished = true;

@@ -18,11 +18,11 @@ namespace CuircuitVisualizer.ViewModel
 
         public ICommand ChangeInputCommand => new RelayCommand(() => Value = Value == 1 ? 0 : 1);
  
-        public NodeViewModel(Node _node)
+        public NodeViewModel(Node node)
         {
-            Identifier = _node.Identifier;
-            Node = _node; 
-            Value = _node.Value;
+            Identifier = node.Identifier;
+            Node = node; 
+            Value = node.Value;
         }
 
         public int Value

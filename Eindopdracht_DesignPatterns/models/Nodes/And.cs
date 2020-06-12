@@ -4,12 +4,10 @@ namespace Eindopdracht_DesignPatterns.models.Nodes
 {
     public class And : Composite
     {
-
-        public override void CalculateOutput(int _value)
+        public override void CalculateOutput(int value)
         {
-
             //short circuit
-            if(_value == 0)
+            if(value == 0)
             {
                 Value = 0; 
                 Finished = true;
@@ -17,7 +15,7 @@ namespace Eindopdracht_DesignPatterns.models.Nodes
                 return; 
             }
 
-            SavedValues.Add(_value);
+            SavedValues.Add(value);
             //if two values came in and they were both not 0 then they were 1. 
             if (SavedValues.Count == NumberOfInputNodes)
             {

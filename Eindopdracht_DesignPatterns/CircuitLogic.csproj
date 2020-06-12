@@ -79,7 +79,7 @@
     <Compile Include="controllers\CircuitMaker.cs" />
     <Compile Include="controllers\CircuitValidator.cs" />
     <Compile Include="controllers\Composite_pattern\Composite.cs" />
-    <Compile Include="controllers\CicruitIterator.cs" />
+    <Compile Include="controllers\CircuitIterator.cs" />
     <Compile Include="models\CircuitFile.cs" />
     <Compile Include="models\interfaces\IComponent.cs" />
     <Compile Include="controllers\Composite_pattern\Leaf.cs" />
@@ -103,7 +103,6 @@
     <Compile Include="models\SingleCircuit.cs" />
     <Compile Include="models\Nodes\Input.cs" />
     <Compile Include="models\Nodes\And.cs" />
-    <Compile Include="models\interfaces\IMediator.cs" />
     <Compile Include="models\Nodes\Not.cs" />
     <Compile Include="models\Nodes\Or.cs" />
     <Compile Include="models\Nodes\Probe.cs" />

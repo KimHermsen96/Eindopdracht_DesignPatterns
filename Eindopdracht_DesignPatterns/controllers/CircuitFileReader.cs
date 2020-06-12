@@ -12,7 +12,7 @@ namespace Eindopdracht_DesignPatterns.controllers
     {
         public string[] Readfile(string file)
         {
-            string path = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location),
+            var path = Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location),
                 @"data\" + file);
             string[] files = File.ReadAllLines(path);
             return files;

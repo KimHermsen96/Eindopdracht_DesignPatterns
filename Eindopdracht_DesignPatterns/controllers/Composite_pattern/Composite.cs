@@ -1,12 +1,15 @@
-﻿using Eindopdracht_DesignPatterns.models.interfaces;
+﻿using System;
+using Eindopdracht_DesignPatterns.models.interfaces;
 using System.Collections.Generic;
+using Eindopdracht_DesignPatterns.models.Nodes;
 
 namespace Eindopdracht_DesignPatterns.controllers.Composite_pattern
 {
-    public abstract class Composite : models.Nodes.Node
+    public abstract class Composite : Node
     {
+        public List<IComponent> ComponentList { get; set; }
 
-        public Composite()
+        protected Composite()
         {
             ComponentList = new List<IComponent>();
         }
@@ -14,6 +17,16 @@ namespace Eindopdracht_DesignPatterns.controllers.Composite_pattern
         public void AddComposite(IComponent edge)
         {
             ComponentList.Add(edge);
+        }
+
+        public void Continue()
+        {
+            foreach (var node in ComponentList)
+            {
+                var n = (Node)node;
+                Console.WriteLine(n.Identifier);
+                n.Run(Value);
+            }
         }
     }
 }

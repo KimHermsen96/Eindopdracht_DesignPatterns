@@ -11,23 +11,23 @@ namespace Eindopdracht_DesignPatterns.controllers.Builder_pattern
 {
     public class Director
     {
-
-        private CircuitBuilder CircuitBuilder;
+        
+        private CircuitBuilder _circuitBuilder;
 
         public void SetCircuitBuilder(CircuitBuilder cb)
         {
-            CircuitBuilder = cb; 
+            _circuitBuilder = cb; 
         }
 
         public Circuit GetCircuit()
         {
-            return CircuitBuilder.GetCircuit(); 
+            return _circuitBuilder.GetCircuit(); 
         }
 
 
         public void ConstructCircuit()
         {
-            CircuitBuilder.ConstructCircuit();
+            _circuitBuilder.ConstructCircuit();
         }
     }
 }

@@ -13,15 +13,17 @@ namespace Eindopdracht_DesignPatterns.controllers
         private string ChosenFile { get; set; }
 
         //Facade 
-        public CircuitMaker(string _chosenFile)
+        public CircuitMaker(string chosenFile)
         {
-            ChosenFile = _chosenFile;
+            ChosenFile = chosenFile;
         }
 
         public Circuit MakeCircuit()
         {
             CircuitFileReader fileReader = new CircuitFileReader();
             string[] fileByLine = fileReader.Readfile(ChosenFile);
+
+
             Director director = new Director();
             SingleCircuitBuilder singleCircuitBuilder = new SingleCircuitBuilder(fileByLine, ChosenFile);
             director.SetCircuitBuilder(singleCircuitBuilder);

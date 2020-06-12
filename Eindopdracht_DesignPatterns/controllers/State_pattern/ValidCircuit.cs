@@ -1,16 +1,16 @@
 ﻿using Eindopdracht_DesignPatterns.models;
 using Eindopdracht_DesignPatterns.models.interfaces;
 
-namespace Eindopdracht_DesignPatterns.controllers.State
+namespace Eindopdracht_DesignPatterns.controllers.State_pattern
 {
     public class ValidCircuit : IState
     {
         private Circuit Circuit { get; set; }
 
-        public void DoAction(Circuit _circuit)
+        public void DoAction(Circuit circuit)
         {
-            Circuit = _circuit; 
-            CicruitIterator circuitIterator = new CicruitIterator(Circuit.Firsts);
+            Circuit = circuit; 
+            var circuitIterator = new CircuitIterator(Circuit.Firsts);
             circuitIterator.Run();
         }
     }

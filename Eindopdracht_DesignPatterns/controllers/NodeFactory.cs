@@ -1,18 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Dynamic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Eindopdracht_DesignPatterns.models;
-using Eindopdracht_DesignPatterns.models.interfaces;
 using Eindopdracht_DesignPatterns.models.Nodes;
 
 namespace Eindopdracht_DesignPatterns.controllers
 {
     public class NodeFactory
     {
-        private Dictionary<string, Type> _types;
+        private readonly Dictionary<string, Type> _types;
         private static NodeFactory _instance;
 
         public static NodeFactory Instance

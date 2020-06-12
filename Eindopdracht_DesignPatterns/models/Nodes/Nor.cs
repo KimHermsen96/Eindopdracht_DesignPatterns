@@ -3,16 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Eindopdracht_DesignPatterns.controllers.Composite_pattern;
 
 namespace Eindopdracht_DesignPatterns.models.Nodes
 {
-    public class Nor : Node
+    public class Nor : Composite
     {
-        public override void CalculateOutput(int _value)
+        public override void CalculateOutput(int value)
         {
-            SavedValues.Add(_value);
+            SavedValues.Add(value);
             // short circuit when value is 1 input is 0 
-            if(_value == 1)
+            if(value == 1)
             {
                 Value = 0; 
                 Finished = true;

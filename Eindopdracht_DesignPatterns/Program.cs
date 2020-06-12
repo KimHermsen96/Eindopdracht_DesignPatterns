@@ -9,7 +9,6 @@ using System.Text;
 using System.Threading.Tasks;
 using Eindopdracht_DesignPatterns.controllers;
 using Eindopdracht_DesignPatterns.controllers.Graphviz;
-using Eindopdracht_DesignPatterns.controllers.State;
 using Eindopdracht_DesignPatterns.models;
 using Eindopdracht_DesignPatterns.models.interfaces;
 

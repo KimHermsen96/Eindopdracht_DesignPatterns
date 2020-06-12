@@ -1,11 +1,11 @@
 ﻿using Eindopdracht_DesignPatterns.controllers;
-using Eindopdracht_DesignPatterns.controllers.State;
 using Eindopdracht_DesignPatterns.models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Eindopdracht_DesignPatterns.controllers.State_pattern;
 
 namespace CircuitConsoleVisualizer
 {
@@ -21,11 +21,12 @@ namespace CircuitConsoleVisualizer
             {
 
                 //Choose file
-                ChooseFileView ChooseFileView = new ChooseFileView();
+                ChooseFileView chooseFileView = new ChooseFileView();
 
                 //Create Circuit
-                CircuitMaker circuitMaker = new CircuitMaker(ChooseFileView.ChosenFile);
+                CircuitMaker circuitMaker = new CircuitMaker(chooseFileView.ChosenFile);
                 Circuit singlecir = circuitMaker.MakeCircuit();
+
 
                 //Validate Circuit
                 CircuitValidator validator = new CircuitValidator(singlecir);
@@ -42,6 +43,7 @@ namespace CircuitConsoleVisualizer
                     if (!chooseInputValues.UseDefault())
                         singlecir.Firsts.ForEach(n => chooseInputValues.SetInput(n));
                 }
+                Console.Clear();
 
                 //Run circuit
                 singlecir.State.DoAction(singlecir);
