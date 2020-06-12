@@ -1,4 +1,5 @@
-﻿using Eindopdracht_DesignPatterns.controllers.Composite_pattern;
+﻿using System.Linq;
+using Eindopdracht_DesignPatterns.controllers.Composite_pattern;
 
 namespace Eindopdracht_DesignPatterns.models.Nodes
 {

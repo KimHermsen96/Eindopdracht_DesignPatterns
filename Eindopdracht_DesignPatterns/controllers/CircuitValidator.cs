@@ -8,13 +8,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Eindopdracht_DesignPatterns.controllers.State_pattern;
+using QuickGraph;
 
 namespace Eindopdracht_DesignPatterns.controllers
 {
-    public class CircuitValidator :  IValidator
+    public class CircuitValidator : IValidator
     {
         private Circuit Circuit { get; set; }
-        public CircuitValidator(Circuit circuit)    
+
+        public CircuitValidator(Circuit circuit)
         {
             Circuit = circuit;
         }
@@ -22,19 +24,27 @@ namespace Eindopdracht_DesignPatterns.controllers
         public IState CheckState()
         {
             if (UnreachableNodes()) return new UnreachableProbes();
-            //if (Loop()) return new Loop();
+            if (Loop()) return new Loop();
             return new ValidCircuit();
         }
 
-       public bool Loop()
+        public bool Loop()
         {
-            return false; 
+
+            foreach (var node in Circuit.AllNodes)
+            {
+                if (node.Value is Composite)
+                {
+                    var composite = (Composite) node.Value; 
+                    if (composite.Loop()) return true;
+                }
+            }
+            return false;
         }
 
         private bool UnreachableNodes()
         {
             return Circuit.AllNodes.Any(circuit => !circuit.Value.ValidNode());
-         
         }
     }
 }

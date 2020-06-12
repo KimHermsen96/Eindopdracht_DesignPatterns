@@ -6,7 +6,6 @@ namespace Eindopdracht_DesignPatterns.models.Nodes
 {
     public abstract class Node : IStrategy , IComponent
     {
-        /*public List<IComponent> ComponentList { get; set; }*/
         public string Identifier { get; set; }
         public int Value { get; set; }
         public  bool Finished { get; set; } = false;
