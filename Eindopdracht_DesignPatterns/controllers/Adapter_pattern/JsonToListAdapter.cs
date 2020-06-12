@@ -1,21 +1,17 @@
 ﻿using Eindopdracht_DesignPatterns.models;
 using Newtonsoft.Json;
-using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-
-using System.Threading.Tasks;
+using Eindopdracht_DesignPatterns.models.interfaces;
 
 namespace Eindopdracht_DesignPatterns.controllers.Adapter_pattern
 {
-    public class JsonToListAdapter
+    public class JsonToListAdapter : IToListAdapter
     {
         public List<CircuitFile> ToList()
         {
             List<CircuitFile> items = new List<CircuitFile>();
-            using (StreamReader r = new StreamReader(Path.Combine(Environment.CurrentDirectory, @"data\", "CircuitNames.json")))
+            using (StreamReader r = new StreamReader(Path.Combine("C:/Projects/Eindopdracht_DesignPatterns/Eindopdracht_DesignPatterns/", @"data\", "CircuitNames.json")))
             {
                 string json = r.ReadToEnd();
                 items = JsonConvert.DeserializeObject<List<CircuitFile>>(json);

@@ -72,7 +72,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="controllers\Adapter_pattern\JsonToListAdapter.cs" />
-    <Compile Include="controllers\Adapter_pattern\JsonToTextAdapter.cs" />
+    <Compile Include="controllers\Adapter_pattern\XmlToListAdapter.cs" />
     <Compile Include="controllers\Builder_pattern\CircuitBuilder.cs" />
     <Compile Include="controllers\Builder_pattern\Director.cs" />
     <Compile Include="controllers\CachedCircuitValidator.cs" />
@@ -80,6 +80,7 @@
     <Compile Include="controllers\CircuitValidator.cs" />
     <Compile Include="controllers\Composite_pattern\Composite.cs" />
     <Compile Include="controllers\CircuitIterator.cs" />
+    <Compile Include="controllers\FileNameReader.cs" />
     <Compile Include="models\CircuitFile.cs" />
     <Compile Include="models\interfaces\IComponent.cs" />
     <Compile Include="controllers\Composite_pattern\Leaf.cs" />
@@ -94,7 +95,7 @@
     <Compile Include="models\Circuit.cs" />
     <Compile Include="models\interfaces\IState.cs" />
     <Compile Include="models\interfaces\IStrategy.cs" />
-    <Compile Include="models\interfaces\IToTextAdapter.cs" />
+    <Compile Include="models\interfaces\IToListAdapter.cs" />
     <Compile Include="models\interfaces\IValidator.cs" />
     <Compile Include="models\Nodes\Nand.cs" />
     <Compile Include="models\Nodes\Node.cs" />
@@ -130,6 +131,7 @@
     <Content Include="data\Circuit5_NotConnected.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="data\CircuitNames.xml" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

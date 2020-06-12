@@ -53,9 +53,8 @@ namespace CuircuitVisualizer.ViewModel
             AllNodes.Clear();
             
             foreach (var node in Singlecir.AllNodes) AllNodes.Add(new NodeViewModel(node.Value));
-            
             //clear circuit 
-            Singlecir.Clear();
+            Singlecir.ClearCircuit();
         }
     }
 }

@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Eindopdracht_DesignPatterns.controllers.Adapter_pattern;
 using Eindopdracht_DesignPatterns.controllers.State_pattern;
 
 namespace CircuitConsoleVisualizer
@@ -19,6 +20,10 @@ namespace CircuitConsoleVisualizer
             var endProgram = false;
             while (!endProgram)
             {
+
+                var x = new JsonToListAdapter();
+                var b = x.ToList();
+
 
                 //Choose file
                 ChooseFileView chooseFileView = new ChooseFileView();

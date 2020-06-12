@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<Files>
+  <CircuitFile>
+    <Name>file 1</Name>
+    <Location>Circuit1_FullAdder.txt</Location>
+  </CircuitFile>
+  <CircuitFile>
+    <Name>file 2</Name>
+    <Location>Circuit2_Decoder.txt</Location>
+  </CircuitFile>
+  <CircuitFile>
+    <Name>file 3</Name>
+    <Location>Circuit3_Encoder.txt</Location>
+  </CircuitFile>
+  <CircuitFile>
+    <Name>file 4</Name>
+    <Location>Circuit4_InfiniteLoop.txt</Location>
+  </CircuitFile>
+  <CircuitFile>
+    <Name>file 5</Name>
+    <Location>Circuit5_NotConnected.txt</Location>
+  </CircuitFile>
+</Files>
