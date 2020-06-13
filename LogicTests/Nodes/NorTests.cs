@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Eindopdracht_DesignPatterns.controllers;
 using Eindopdracht_DesignPatterns.models.Nodes;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -62,8 +63,8 @@ namespace LogicTests.Nodes
             {
                 NumberOfInputNodes = 2
             };
-
-            Assert.AreEqual(true, nor.ValidNode());
+            ValidNodeVisitor visitor = new ValidNodeVisitor();
+            Assert.AreEqual(true, nor.Accept(visitor));
         }
     }
 }

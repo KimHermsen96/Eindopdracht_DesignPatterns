@@ -1,4 +1,5 @@
-﻿using Eindopdracht_DesignPatterns.models.Nodes;
+﻿using Eindopdracht_DesignPatterns.controllers;
+using Eindopdracht_DesignPatterns.models.Nodes;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace LogicTests.Nodes
@@ -54,7 +55,8 @@ namespace LogicTests.Nodes
             {
                 NumberOfInputNodes = 2
             };
-            Assert.AreEqual(true, xor.ValidNode());
+            ValidNodeVisitor visitor = new ValidNodeVisitor();
+            Assert.AreEqual(true, xor.Accept(visitor));
         }
         [TestMethod]
         public void XorNode_IsInValidNode()
@@ -63,7 +65,8 @@ namespace LogicTests.Nodes
             {
                 NumberOfInputNodes = 1
             };
-            Assert.AreEqual(false, xor.ValidNode());
+            ValidNodeVisitor visitor = new ValidNodeVisitor();
+            Assert.AreEqual(false, xor.Accept(visitor));
         }
     }
 }

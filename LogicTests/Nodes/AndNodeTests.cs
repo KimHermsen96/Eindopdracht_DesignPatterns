@@ -1,4 +1,5 @@
-﻿using Eindopdracht_DesignPatterns.models.Nodes;
+﻿using Eindopdracht_DesignPatterns.controllers;
+using Eindopdracht_DesignPatterns.models.Nodes;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace LogicTests.Nodes
@@ -32,8 +33,8 @@ namespace LogicTests.Nodes
 
             And and = new And();
             and.NumberOfInputNodes = 3;
-
-            Assert.AreEqual( true, and.ValidNode());
+            ValidNodeVisitor visitor = new ValidNodeVisitor();
+            Assert.AreEqual( true, and.Accept(visitor));
         }
     }
 }

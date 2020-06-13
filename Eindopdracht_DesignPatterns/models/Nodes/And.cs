@@ -1,10 +1,12 @@
 ﻿using System.Linq;
+using Eindopdracht_DesignPatterns.controllers;
 using Eindopdracht_DesignPatterns.controllers.Composite_pattern;
 
 namespace Eindopdracht_DesignPatterns.models.Nodes
 {
     public class And : Composite
     {
+
         public override void CalculateOutput(int value)
         {
             //short circuit
@@ -27,9 +29,9 @@ namespace Eindopdracht_DesignPatterns.models.Nodes
             }
         }
 
-        public override bool ValidNode()
+        public override bool Accept(ValidNodeVisitor validNodeVisitor)
         {
-            return NumberOfInputNodes >= 2;
+           return validNodeVisitor.Visit(this);
         }
     }
 }

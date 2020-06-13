@@ -1,18 +1,20 @@
-﻿using Eindopdracht_DesignPatterns.controllers.Composite_pattern;
+﻿using Eindopdracht_DesignPatterns.controllers;
+using Eindopdracht_DesignPatterns.controllers.Composite_pattern;
 
 namespace Eindopdracht_DesignPatterns.models.Nodes
 {
     public class Input : Composite
     {
+
         public override void CalculateOutput(int value)
         {
             Finished = true;
             Continue();
         }
 
-        public override bool ValidNode()
+        public override bool Accept(ValidNodeVisitor validNodeVisitor)
         {
-            return true;
+            return validNodeVisitor.Visit(this);
         }
     }
 }

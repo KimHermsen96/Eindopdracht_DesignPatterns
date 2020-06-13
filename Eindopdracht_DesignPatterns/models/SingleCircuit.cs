@@ -1,6 +1,7 @@
 ﻿using Eindopdracht_DesignPatterns.models.interfaces;
 using Eindopdracht_DesignPatterns.models.Nodes;
 using System.Collections.Generic;
+using Eindopdracht_DesignPatterns.controllers;
 
 namespace Eindopdracht_DesignPatterns.models
 {
@@ -19,13 +20,13 @@ namespace Eindopdracht_DesignPatterns.models
         }
 
 
-        public override void CalculateOutput(int value)
-        {
-        }
-
-        public override bool ValidNode()
+        public override bool Accept(ValidNodeVisitor validNodeVisitor)
         {
             return true;
+        }
+
+        public override void CalculateOutput(int value)
+        {
         }
 
         public override void ClearCircuit()

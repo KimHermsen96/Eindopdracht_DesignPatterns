@@ -3,6 +3,5 @@
     public interface IStrategy
     {
         void CalculateOutput(int value);
-        bool ValidNode();
     }
 }

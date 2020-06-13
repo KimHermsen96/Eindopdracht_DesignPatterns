@@ -1,6 +1,7 @@
 ﻿using Eindopdracht_DesignPatterns.models.interfaces;
 using System;
 using System.Collections.Generic;
+using Eindopdracht_DesignPatterns.controllers;
 
 namespace Eindopdracht_DesignPatterns.models.Nodes
 {
@@ -9,10 +10,13 @@ namespace Eindopdracht_DesignPatterns.models.Nodes
         public string Identifier { get; set; }
         public int Value { get; set; }
         public  bool Finished { get; set; } = false;
+
+        public abstract bool Accept(ValidNodeVisitor validNodeVisitor);
+
         public int NumberOfInputNodes { get; set; }
         public List<int> SavedValues { get; set; }
         public abstract void CalculateOutput(int value);
-        public abstract bool ValidNode();
+
       
         public Node()
         {
@@ -30,5 +34,7 @@ namespace Eindopdracht_DesignPatterns.models.Nodes
             SavedValues.Clear();
             Finished = false;
         }
+
+       
     }
 }

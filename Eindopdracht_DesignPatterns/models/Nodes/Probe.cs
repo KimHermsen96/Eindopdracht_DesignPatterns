@@ -1,4 +1,5 @@
-﻿using Eindopdracht_DesignPatterns.controllers.Composite_pattern;
+﻿using Eindopdracht_DesignPatterns.controllers;
+using Eindopdracht_DesignPatterns.controllers.Composite_pattern;
 
 namespace Eindopdracht_DesignPatterns.models.Nodes
 {
@@ -9,9 +10,9 @@ namespace Eindopdracht_DesignPatterns.models.Nodes
             Value = value;
         }
 
-        public override bool ValidNode()
+        public override bool Accept(ValidNodeVisitor validNodeVisitor)
         {
-            return true;
+            return validNodeVisitor.Visit(this);
         }
     }
 }

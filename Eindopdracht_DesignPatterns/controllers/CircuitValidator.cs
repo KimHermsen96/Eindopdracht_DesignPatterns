@@ -16,7 +16,6 @@ namespace Eindopdracht_DesignPatterns.controllers
             Circuit = circuit;
         }
 
-        //Template method
         public void SetState()
         {
             Circuit.State = new ValidCircuit();
@@ -41,7 +40,9 @@ namespace Eindopdracht_DesignPatterns.controllers
 
         private void UnreachableNodes()
         {
-            if (Circuit.AllNodes.Any(circuit => !circuit.Value.ValidNode()))
+            ValidNodeVisitor validNodeVisitor = new ValidNodeVisitor();
+
+            if (Circuit.AllNodes.Any(circuit => !circuit.Value.Accept(validNodeVisitor)))
             {
                 Circuit.State = new UnreachableProbes(); 
             }

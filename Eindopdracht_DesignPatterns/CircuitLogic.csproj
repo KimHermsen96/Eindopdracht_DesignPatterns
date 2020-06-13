@@ -80,6 +80,7 @@
     <Compile Include="controllers\CircuitValidator.cs" />
     <Compile Include="controllers\Composite_pattern\Composite.cs" />
     <Compile Include="controllers\CircuitIterator.cs" />
+    <Compile Include="controllers\ValidNodeVisitor.cs" />
     <Compile Include="models\CircuitFile.cs" />
     <Compile Include="models\interfaces\IComponent.cs" />
     <Compile Include="controllers\Composite_pattern\Leaf.cs" />
@@ -92,6 +93,7 @@
     <Compile Include="controllers\State_pattern\UnreachableProbes.cs" />
     <Compile Include="controllers\State_pattern\ValidCircuit.cs" />
     <Compile Include="models\Circuit.cs" />
+    <Compile Include="models\interfaces\INodeVisitor.cs" />
     <Compile Include="models\interfaces\IState.cs" />
     <Compile Include="models\interfaces\IStrategy.cs" />
     <Compile Include="models\interfaces\IToListAdapter.cs" />

@@ -1,4 +1,5 @@
 ﻿
+using Eindopdracht_DesignPatterns.controllers;
 using Eindopdracht_DesignPatterns.controllers.Composite_pattern;
 
 namespace Eindopdracht_DesignPatterns.models.Nodes
@@ -12,10 +13,10 @@ namespace Eindopdracht_DesignPatterns.models.Nodes
             Continue();
             return;
         }
-        public override bool ValidNode()
-        {
-            return NumberOfInputNodes == 1;
-        }
 
+        public override bool Accept(ValidNodeVisitor validNodeVisitor)
+        {
+            return validNodeVisitor.Visit(this);
+        }
     }
 }
