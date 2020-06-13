@@ -1,12 +1,12 @@
-﻿using Eindopdracht_DesignPatterns.models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Eindopdracht_DesignPatterns.controllers.Builder_pattern;
+using CircuitLogic.controllers.Builder_pattern;
+using CircuitLogic.models;
 
-namespace Eindopdracht_DesignPatterns.controllers
+namespace CircuitLogic.controllers
 {
     public class CircuitMaker
     {

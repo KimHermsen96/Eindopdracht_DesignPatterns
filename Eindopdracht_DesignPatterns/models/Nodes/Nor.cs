@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Eindopdracht_DesignPatterns.controllers;
-using Eindopdracht_DesignPatterns.controllers.Composite_pattern;
+using CircuitLogic.controllers;
+using CircuitLogic.controllers.Composite_pattern;
 
-namespace Eindopdracht_DesignPatterns.models.Nodes
+namespace CircuitLogic.models.Nodes
 {
     public class Nor : Composite
     {

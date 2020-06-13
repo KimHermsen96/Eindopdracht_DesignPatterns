@@ -1,10 +1,10 @@
-﻿using Eindopdracht_DesignPatterns.models;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.IO;
-using Eindopdracht_DesignPatterns.models.interfaces;
+using CircuitLogic.models;
+using CircuitLogic.models.interfaces;
 
-namespace Eindopdracht_DesignPatterns.controllers.Adapter_pattern
+namespace CircuitLogic.controllers.Adapter_pattern
 {
     public class JsonToListAdapter : IToListAdapter
     {

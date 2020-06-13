@@ -1,4 +1,4 @@
-﻿using Eindopdracht_DesignPatterns.models.Nodes;
+﻿using CircuitLogic.models.Nodes;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.Command;
 using System;

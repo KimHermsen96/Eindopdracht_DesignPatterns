@@ -1,13 +1,13 @@
-﻿using Eindopdracht_DesignPatterns.models;
-using Eindopdracht_DesignPatterns.models.interfaces;
+﻿using CircuitLogic.models.interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Eindopdracht_DesignPatterns.controllers.Builder_pattern;
+using CircuitLogic.models;
+using CircuitLogic.controllers.Builder_pattern;
 
-namespace Eindopdracht_DesignPatterns.controllers.Builder_pattern
+namespace CircuitLogic.controllers.Builder_pattern
 {
     public class Director
     {

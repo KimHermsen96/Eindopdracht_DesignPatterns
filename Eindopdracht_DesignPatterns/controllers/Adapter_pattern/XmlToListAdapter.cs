@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
-using Eindopdracht_DesignPatterns.models;
-using Eindopdracht_DesignPatterns.models.interfaces;
+using CircuitLogic.models;
+using CircuitLogic.models.interfaces;
 
-namespace Eindopdracht_DesignPatterns.controllers.Adapter_pattern
+namespace CircuitLogic.controllers.Adapter_pattern
 {
     public class XmlToListAdapter : IToListAdapter
     {

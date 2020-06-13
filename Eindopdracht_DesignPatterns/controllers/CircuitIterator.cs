@@ -1,8 +1,8 @@
-﻿using Eindopdracht_DesignPatterns.models.Nodes;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using CircuitLogic.models.Nodes;
 
-namespace Eindopdracht_DesignPatterns.controllers
+namespace CircuitLogic.controllers
 {
     public class CircuitIterator
     {

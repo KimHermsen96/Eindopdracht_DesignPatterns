@@ -1,8 +1,8 @@
 ﻿using System;
-using Eindopdracht_DesignPatterns.models;
-using Eindopdracht_DesignPatterns.models.interfaces;
+using CircuitLogic.models;
+using CircuitLogic.models.interfaces;
 
-namespace Eindopdracht_DesignPatterns.controllers.State_pattern
+namespace CircuitLogic.controllers.State_pattern
 {
     public class Loop : IState
     {

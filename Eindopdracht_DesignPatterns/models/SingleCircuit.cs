@@ -1,9 +1,9 @@
-﻿using Eindopdracht_DesignPatterns.models.interfaces;
-using Eindopdracht_DesignPatterns.models.Nodes;
-using System.Collections.Generic;
-using Eindopdracht_DesignPatterns.controllers;
+﻿using System.Collections.Generic;
+using CircuitLogic.controllers;
+using CircuitLogic.models.interfaces;
+using CircuitLogic.models.Nodes;
 
-namespace Eindopdracht_DesignPatterns.models
+namespace CircuitLogic.models
 {
     public class SingleCircuit : Circuit
     {

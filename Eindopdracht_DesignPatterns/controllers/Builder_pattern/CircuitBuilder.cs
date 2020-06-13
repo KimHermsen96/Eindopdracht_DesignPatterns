@@ -1,6 +1,6 @@
-﻿using Eindopdracht_DesignPatterns.models;
+﻿using CircuitLogic.models;
 
-namespace Eindopdracht_DesignPatterns.controllers.Builder_pattern
+namespace CircuitLogic.controllers.Builder_pattern
 {
     public abstract class CircuitBuilder
     {

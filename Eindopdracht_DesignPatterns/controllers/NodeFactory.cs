@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using Eindopdracht_DesignPatterns.models.Nodes;
+using CircuitLogic.models.Nodes;
 
-namespace Eindopdracht_DesignPatterns.controllers
+namespace CircuitLogic.controllers
 {
     public class NodeFactory
     {

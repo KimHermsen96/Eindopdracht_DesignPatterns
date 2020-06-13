@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Eindopdracht_DesignPatterns.controllers.Graphviz
+namespace CircuitLogic.controllers.Graphviz
 {
     public class Experiment2
     {

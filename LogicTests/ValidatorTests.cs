@@ -1,8 +1,8 @@
 ﻿using System;
-using Eindopdracht_DesignPatterns.controllers;
-using Eindopdracht_DesignPatterns.controllers.State_pattern;
-using Eindopdracht_DesignPatterns.models.interfaces;
-using Eindopdracht_DesignPatterns.models.Nodes;
+using CircuitLogic.controllers;
+using CircuitLogic.controllers.State_pattern;
+using CircuitLogic.models.interfaces;
+using CircuitLogic.models.Nodes;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace LogicTests

@@ -1,5 +1,5 @@
-﻿using Eindopdracht_DesignPatterns.controllers;
-using Eindopdracht_DesignPatterns.models.Nodes;
+﻿using CircuitLogic.controllers;
+using CircuitLogic.models.Nodes;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace LogicTests.Nodes

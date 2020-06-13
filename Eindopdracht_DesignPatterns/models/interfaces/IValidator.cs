@@ -1,4 +1,4 @@
-﻿namespace Eindopdracht_DesignPatterns.models.interfaces
+﻿namespace CircuitLogic.models.interfaces
 {
     public interface IValidator
     {

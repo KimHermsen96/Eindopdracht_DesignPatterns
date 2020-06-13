@@ -1,6 +1,6 @@
-﻿using Eindopdracht_DesignPatterns.controllers;
+﻿using CircuitLogic.controllers;
 
-namespace Eindopdracht_DesignPatterns.models.interfaces
+namespace CircuitLogic.models.interfaces
 {
     public interface IComponent
     {

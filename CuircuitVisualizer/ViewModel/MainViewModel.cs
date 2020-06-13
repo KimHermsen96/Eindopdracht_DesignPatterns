@@ -1,15 +1,13 @@
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.CommandWpf;
-using System;
 using System.Collections.ObjectModel;
 using System.Windows.Input;
-using Eindopdracht_DesignPatterns.controllers;
-using System.Collections.Generic;
+using CircuitLogic.controllers;
 using System.Linq;
 using CuircuitVisualizer.Services;
-using Eindopdracht_DesignPatterns.controllers.Composite_pattern;
-using Eindopdracht_DesignPatterns.models;
-using Eindopdracht_DesignPatterns.models.Nodes;
+using CircuitLogic.controllers.Composite_pattern;
+using CircuitLogic.models;
+using CircuitLogic.models.Nodes;
 
 namespace CuircuitVisualizer.ViewModel
 {

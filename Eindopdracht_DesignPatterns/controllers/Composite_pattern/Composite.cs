@@ -1,10 +1,10 @@
 ﻿using System;
-using Eindopdracht_DesignPatterns.models.interfaces;
 using System.Collections.Generic;
 using System.Linq;
-using Eindopdracht_DesignPatterns.models.Nodes;
+using CircuitLogic.models.interfaces;
+using CircuitLogic.models.Nodes;
 
-namespace Eindopdracht_DesignPatterns.controllers.Composite_pattern
+namespace CircuitLogic.controllers.Composite_pattern
 {
     public abstract class Composite : Node
     {

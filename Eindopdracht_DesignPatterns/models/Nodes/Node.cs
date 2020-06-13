@@ -1,9 +1,9 @@
-﻿using Eindopdracht_DesignPatterns.models.interfaces;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using Eindopdracht_DesignPatterns.controllers;
+using CircuitLogic.controllers;
+using CircuitLogic.models.interfaces;
 
-namespace Eindopdracht_DesignPatterns.models.Nodes
+namespace CircuitLogic.models.Nodes
 {
     public abstract class Node : IStrategy , IComponent
     {

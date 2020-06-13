@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Eindopdracht_DesignPatterns.models.interfaces
+namespace CircuitLogic.models.interfaces
 {
     interface IToListAdapter
     {

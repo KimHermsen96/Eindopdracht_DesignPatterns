@@ -1,10 +1,10 @@
-﻿using Eindopdracht_DesignPatterns.controllers.Composite_pattern;
-using Eindopdracht_DesignPatterns.models;
-using Eindopdracht_DesignPatterns.models.interfaces;
-using System.Linq;
-using Eindopdracht_DesignPatterns.controllers.State_pattern;
+﻿using System.Linq;
+using CircuitLogic.controllers.Composite_pattern;
+using CircuitLogic.controllers.State_pattern;
+using CircuitLogic.models;
+using CircuitLogic.models.interfaces;
 
-namespace Eindopdracht_DesignPatterns.controllers
+namespace CircuitLogic.controllers
 {
     public class CircuitValidator : IValidator
     {

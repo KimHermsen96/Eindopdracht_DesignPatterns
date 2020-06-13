@@ -1,6 +1,6 @@
-﻿using Eindopdracht_DesignPatterns.models.Nodes;
+﻿using CircuitLogic.models.Nodes;
 
-namespace Eindopdracht_DesignPatterns.controllers.Composite_pattern
+namespace CircuitLogic.controllers.Composite_pattern
 {
     public abstract class Leaf : Node
     {

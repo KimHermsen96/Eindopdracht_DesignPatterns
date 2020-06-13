@@ -1,4 +1,4 @@
-﻿using Eindopdracht_DesignPatterns.models.Nodes;
+﻿using CircuitLogic.models.Nodes;
 using System;
 
 namespace CircuitConsoleVisualizer

@@ -1,13 +1,13 @@
-﻿using Eindopdracht_DesignPatterns.models;
-using Eindopdracht_DesignPatterns.models.interfaces;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
-using Eindopdracht_DesignPatterns.controllers.Builder_pattern;
-using Eindopdracht_DesignPatterns.controllers.Composite_pattern;
-using Eindopdracht_DesignPatterns.models.Nodes;
+using CircuitLogic.controllers.Composite_pattern;
+using CircuitLogic.models;
+using CircuitLogic.models.interfaces;
+using CircuitLogic.models.Nodes;
+using CircuitLogic.controllers.Builder_pattern;
 
-namespace Eindopdracht_DesignPatterns.controllers.Builder_pattern
+namespace CircuitLogic.controllers.Builder_pattern
 {
     public class SingleCircuitBuilder : CircuitBuilder
     {

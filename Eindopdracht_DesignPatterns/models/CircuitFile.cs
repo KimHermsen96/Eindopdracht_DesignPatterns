@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Eindopdracht_DesignPatterns.models
+namespace CircuitLogic.models
 {
     public class CircuitFile
     {

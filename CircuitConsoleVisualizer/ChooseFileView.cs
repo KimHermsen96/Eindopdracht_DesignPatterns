@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using Eindopdracht_DesignPatterns.controllers.Adapter_pattern;
-using Eindopdracht_DesignPatterns.models;
+using CircuitLogic.controllers.Adapter_pattern;
+using CircuitLogic.models;
 
 namespace CircuitConsoleVisualizer
 {

@@ -1,8 +1,8 @@
-﻿using Eindopdracht_DesignPatterns.controllers;
-using Eindopdracht_DesignPatterns.models;
+﻿using CircuitLogic.controllers;
+using CircuitLogic.models;
 using System;
-using Eindopdracht_DesignPatterns.controllers.State_pattern;
-using Eindopdracht_DesignPatterns.models.Nodes;
+using CircuitLogic.controllers.State_pattern;
+using CircuitLogic.models.Nodes;
 
 namespace CircuitConsoleVisualizer
 {

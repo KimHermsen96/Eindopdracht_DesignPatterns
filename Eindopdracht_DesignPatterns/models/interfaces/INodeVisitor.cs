@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Eindopdracht_DesignPatterns.models.Nodes;
+using CircuitLogic.models.Nodes;
 
-namespace Eindopdracht_DesignPatterns.models.interfaces
+namespace CircuitLogic.models.interfaces
 {
     public interface INodeVisitor
     {

@@ -1,8 +1,8 @@
 ﻿
-using Eindopdracht_DesignPatterns.controllers;
-using Eindopdracht_DesignPatterns.controllers.Composite_pattern;
+using CircuitLogic.controllers;
+using CircuitLogic.controllers.Composite_pattern;
 
-namespace Eindopdracht_DesignPatterns.models.Nodes
+namespace CircuitLogic.models.Nodes
 {
     public class Not : Composite
     {

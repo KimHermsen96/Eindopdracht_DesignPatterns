@@ -1,9 +1,9 @@
-﻿using Eindopdracht_DesignPatterns.controllers.Composite_pattern;
-using Eindopdracht_DesignPatterns.models.interfaces;
-using Eindopdracht_DesignPatterns.models.Nodes;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using CircuitLogic.controllers.Composite_pattern;
+using CircuitLogic.models.interfaces;
+using CircuitLogic.models.Nodes;
 
-namespace Eindopdracht_DesignPatterns.models
+namespace CircuitLogic.models
 {
     public abstract class Circuit : Composite 
     { 

@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Eindopdracht_DesignPatterns.models.interfaces;
-using Eindopdracht_DesignPatterns.models.Nodes;
+using CircuitLogic.models.interfaces;
+using CircuitLogic.models.Nodes;
 
-namespace Eindopdracht_DesignPatterns.controllers
+namespace CircuitLogic.controllers
 {
     public class ValidNodeVisitor : INodeVisitor
     {

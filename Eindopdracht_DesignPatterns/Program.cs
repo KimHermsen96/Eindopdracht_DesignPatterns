@@ -7,12 +7,12 @@ using System.Net.Mime;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
-using Eindopdracht_DesignPatterns.controllers;
-using Eindopdracht_DesignPatterns.controllers.Graphviz;
-using Eindopdracht_DesignPatterns.models;
-using Eindopdracht_DesignPatterns.models.interfaces;
+using CircuitLogic.controllers;
+using CircuitLogic.controllers.Graphviz;
+using CircuitLogic.models;
+using CircuitLogic.models.interfaces;
 
-namespace Eindopdracht_DesignPatterns
+namespace CircuitLogic
 {
     class Program
     {
