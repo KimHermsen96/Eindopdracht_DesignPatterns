@@ -6,6 +6,7 @@ namespace Eindopdracht_DesignPatterns.models.Nodes
     {
         public override void CalculateOutput(int value)
         {
+            Value = value;
         }
 
         public override bool ValidNode()

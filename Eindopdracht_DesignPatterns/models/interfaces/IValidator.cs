@@ -2,6 +2,6 @@
 {
     public interface IValidator
     {
-        IState CheckState();
+        void SetState();
     }
 }

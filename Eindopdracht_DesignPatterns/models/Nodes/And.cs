@@ -29,7 +29,7 @@ namespace Eindopdracht_DesignPatterns.models.Nodes
 
         public override bool ValidNode()
         {
-            return NumberOfInputNodes == 2;
+            return NumberOfInputNodes >= 2;
         }
     }
 }

@@ -1,50 +1,51 @@
 ﻿using Eindopdracht_DesignPatterns.controllers.Composite_pattern;
 using Eindopdracht_DesignPatterns.models;
 using Eindopdracht_DesignPatterns.models.interfaces;
-using Eindopdracht_DesignPatterns.models.Nodes;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Eindopdracht_DesignPatterns.controllers.State_pattern;
-using QuickGraph;
 
 namespace Eindopdracht_DesignPatterns.controllers
 {
     public class CircuitValidator : IValidator
     {
         private Circuit Circuit { get; set; }
+        public IState CurrentState { get; set; }
 
         public CircuitValidator(Circuit circuit)
         {
             Circuit = circuit;
         }
 
-        public IState CheckState()
+        //Template method
+        public void SetState()
         {
-            if (UnreachableNodes()) return new UnreachableProbes();
-            if (Loop()) return new Loop();
-            return new ValidCircuit();
+            Circuit.State = new ValidCircuit();
+            UnreachableNodes();
+            Loop();
         }
 
-        public bool Loop()
+        public void Loop()
         {
-
             foreach (var node in Circuit.AllNodes)
             {
                 if (node.Value is Composite)
                 {
-                    var composite = (Composite) node.Value; 
-                    if (composite.Loop()) return true;
+                    var composite = (Composite) node.Value;
+                    if (composite.Loop())
+                    {
+                        Circuit.State = new Loop();
+                    }
                 }
             }
-            return false;
         }
 
-        private bool UnreachableNodes()
+        private void UnreachableNodes()
         {
-            return Circuit.AllNodes.Any(circuit => !circuit.Value.ValidNode());
+            if (Circuit.AllNodes.Any(circuit => !circuit.Value.ValidNode()))
+            {
+                Circuit.State = new UnreachableProbes(); 
+            }
         }
+
     }
 }

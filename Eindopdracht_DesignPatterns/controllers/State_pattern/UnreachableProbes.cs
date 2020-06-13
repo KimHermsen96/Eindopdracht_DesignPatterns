@@ -9,7 +9,7 @@ namespace Eindopdracht_DesignPatterns.controllers.State_pattern
         public void DoAction(Circuit circuit)
         {
 
-            Console.WriteLine("Invalid Circuit due unreachable probes ");
+            Console.WriteLine("Invalid Circuit due to unreachable probes ");
         }
     }
 }

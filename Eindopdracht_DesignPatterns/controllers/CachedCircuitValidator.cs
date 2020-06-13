@@ -14,16 +14,17 @@ namespace Eindopdracht_DesignPatterns.controllers
         {
             CircuitStates = new Dictionary<string, IState>();
         }
-        public IState CheckState()
+        public void SetState()
         {
             if (CircuitStates.ContainsKey(Circuit.Name))
             {
-                return CircuitStates[Circuit.Name];
+                Circuit.State = CircuitStates[Circuit.Name];
             }
-
-            IState currentState = CircuitValidator.CheckState();
-            CircuitStates.Add(Circuit.Name, currentState);
-            return CircuitValidator.CheckState();
+            else
+            {
+                CircuitValidator.SetState();
+                CircuitStates.Add(Circuit.Name, Circuit.State);
+            }
         }
     }
 }

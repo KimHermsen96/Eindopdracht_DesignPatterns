@@ -44,9 +44,6 @@ namespace CuircuitVisualizer.ViewModel
             ProxyCircuitValidator.Circuit = Singlecir;
             ProxyCircuitValidator.CircuitValidator = validator;
 
-            //get currentState
-            Singlecir.State = ProxyCircuitValidator.CheckState();
-
             //Run circuit
             Singlecir.State.DoAction(Singlecir);
             //remove old items in list. 

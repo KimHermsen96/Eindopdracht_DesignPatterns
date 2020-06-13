@@ -1,12 +1,8 @@
 ﻿using Eindopdracht_DesignPatterns.controllers;
 using Eindopdracht_DesignPatterns.models;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Eindopdracht_DesignPatterns.controllers.Adapter_pattern;
 using Eindopdracht_DesignPatterns.controllers.State_pattern;
+using Eindopdracht_DesignPatterns.models.Nodes;
 
 namespace CircuitConsoleVisualizer
 {
@@ -20,11 +16,6 @@ namespace CircuitConsoleVisualizer
             var endProgram = false;
             while (!endProgram)
             {
-
-                var x = new JsonToListAdapter();
-                var b = x.ToList();
-
-
                 //Choose file
                 ChooseFileView chooseFileView = new ChooseFileView();
 
@@ -32,15 +23,12 @@ namespace CircuitConsoleVisualizer
                 CircuitMaker circuitMaker = new CircuitMaker(chooseFileView.ChosenFile);
                 Circuit singlecir = circuitMaker.MakeCircuit();
 
-
                 //Validate Circuit
                 CircuitValidator validator = new CircuitValidator(singlecir);
                 proxyCircuitValidator.Circuit = singlecir;
                 proxyCircuitValidator.CircuitValidator = validator;
-
-                //get currentState
-                singlecir.State = proxyCircuitValidator.CheckState();
-               
+                proxyCircuitValidator.SetState();
+             
                 //Ask input 
                 if (singlecir.State is ValidCircuit)
                 {

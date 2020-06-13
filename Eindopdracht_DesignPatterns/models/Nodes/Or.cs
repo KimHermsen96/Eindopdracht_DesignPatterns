@@ -21,6 +21,7 @@ namespace Eindopdracht_DesignPatterns.models.Nodes
             //0 stays 0. 
             if (SavedValues.Count == NumberOfInputNodes)
             {
+                Value = 0;
                 Finished = true;
                 Continue();
                 return;

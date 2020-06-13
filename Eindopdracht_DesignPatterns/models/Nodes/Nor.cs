@@ -12,7 +12,7 @@ namespace Eindopdracht_DesignPatterns.models.Nodes
         public override void CalculateOutput(int value)
         {
             SavedValues.Add(value);
-            // short circuit when value is 1 input is 0 
+            // short circuit when input is 1 output is 0 
             if(value == 1)
             {
                 Value = 0; 
@@ -21,6 +21,7 @@ namespace Eindopdracht_DesignPatterns.models.Nodes
                 return;
             }
 
+            
             if(SavedValues.Count == NumberOfInputNodes)
             {
                 Value = SavedValues.Contains(1) ? 0 : 1;
