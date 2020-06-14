@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
+﻿using System.Text.RegularExpressions;
 using CircuitLogic.controllers.Builder_pattern;
 using CircuitLogic.models;
 using Eindopdracht_DesignPatterns.controllers.Strategy_pattern;
@@ -16,7 +11,7 @@ namespace CircuitLogic.controllers
         private string ChosenFile { get; set; }
         private IFileReaderStrategy CurrentStrategy { get; set; }
 
-        //Facade 
+        //Facade. View only has to call circuit maker with the right file and the right circuit wil be constructed and returned.
         public CircuitMaker(string chosenFile)
         {
             ChosenFile = chosenFile;

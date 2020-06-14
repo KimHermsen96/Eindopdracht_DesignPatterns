@@ -10,6 +10,8 @@ namespace CircuitLogic.controllers
         public CircuitValidator CircuitValidator { get; set; }
         private Dictionary<string, IState> CircuitStates { get; set; }
        
+        //Proxy. Saves the states of Circuit 
+        //ensures that a circuit doesn't have to check twice if it's runnable but can return the state immediately 
         public CachedCircuitValidator()
         {
             CircuitStates = new Dictionary<string, IState>();

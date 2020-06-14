@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using CircuitLogic.controllers.Adapter_pattern;
 using CircuitLogic.models;
 

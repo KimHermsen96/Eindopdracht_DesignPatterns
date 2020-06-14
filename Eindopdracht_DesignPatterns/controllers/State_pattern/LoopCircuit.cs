@@ -8,7 +8,9 @@ namespace CircuitLogic.controllers.State_pattern
     {
         public void DoAction(Circuit circuit)
         {
-            Console.WriteLine("Invalid Circuit due to loop"); 
+            Console.WriteLine("---------------------------");
+            Console.WriteLine("Invalid Circuit due to loop");
+            Console.WriteLine("---------------------------");
         }
     }
 }

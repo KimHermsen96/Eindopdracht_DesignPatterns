@@ -8,8 +8,9 @@ namespace CircuitLogic.controllers.State_pattern
     {
         public void DoAction(Circuit circuit)
         {
-
+            Console.WriteLine("------------------------------------------");
             Console.WriteLine("Invalid Circuit due to unreachable probes ");
+            Console.WriteLine("------------------------------------------");
         }
     }
 }

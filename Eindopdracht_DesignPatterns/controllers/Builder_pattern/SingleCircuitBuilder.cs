@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using CircuitLogic.controllers.Composite_pattern;
 using CircuitLogic.models;
 using CircuitLogic.models.interfaces;
 using CircuitLogic.models.Nodes;
-using CircuitLogic.controllers.Builder_pattern;
 
 namespace CircuitLogic.controllers.Builder_pattern
 {
@@ -74,7 +72,7 @@ namespace CircuitLogic.controllers.Builder_pattern
                     Match beforeColon = MatchBefore.Match(FileByLine[i]);
                     Match afterColon = MatchAfter.Match(FileByLine[i]);
 
-                    //get sourece node.
+                    //Get created node
                     IComponent item = Circuit.AllNodes[beforeColon.ToString()];
 
                     if (beforeColon.Success && afterColon.Success)
@@ -87,8 +85,11 @@ namespace CircuitLogic.controllers.Builder_pattern
                             string edge = e.Trim();
 
                             IComponent edgeNode = Circuit.AllNodes[edge.ToString()];
+                           
+                            //Count input nodes
                             edgeNode.NumberOfInputNodes++;
 
+                            //Add edge to composite node
                             var composite = (Composite)item;
                             composite.AddComposite(edgeNode);
                         }

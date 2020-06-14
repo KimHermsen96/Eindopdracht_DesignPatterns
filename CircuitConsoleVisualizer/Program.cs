@@ -1,7 +1,6 @@
 ﻿using CircuitLogic.controllers;
 using CircuitLogic.models;
 using System;
-using System.Collections.Generic;
 using CircuitLogic.controllers.State_pattern;
 using CircuitLogic.models.Nodes;
 
@@ -49,9 +48,10 @@ namespace CircuitConsoleVisualizer
                     }
                     Console.Clear();
 
-                    //Run circuit
                     singlecir.State.DoAction(singlecir);
-                    ShowCircuitView showoutput = new ShowCircuitView(singlecir);
+
+                    if (singlecir.State is ValidCircuit) new ShowCircuitView(singlecir);
+                  
                 }
                 //Choose another circuit or end the circuit
                 EndCircuitView endCircuitView = new EndCircuitView();

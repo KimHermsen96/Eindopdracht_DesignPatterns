@@ -30,7 +30,7 @@ namespace CircuitLogic.controllers
                 if (node.Value is Composite)
                 {
                     var composite = (Composite) node.Value;
-                    if (composite.Loop())
+                    if (composite.CheckForLoop())
                     {
                         Circuit.State = new LoopCircuit();
                     }

@@ -39,12 +39,11 @@ namespace CuircuitVisualizer.Services
 
         }
 
-        public void Render(string graphvizdir = "bin/", string outputdir = null)
+        //Save image
+        public void Render()
         {
-            var gv = new GraphViz(graphvizdir, OutputFormat.Png);
-
+            var gv = new GraphViz("bin/", OutputFormat.Png);
             string path = "currentImg" + ".png";
-            /*Guid.NewGuid().ToString()*/
         
             using (var stream = new FileStream(path, FileMode.Create))
             {

@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using CircuitLogic.models.interfaces;
 using CircuitLogic.models.Nodes;
@@ -9,7 +8,9 @@ namespace CircuitLogic.controllers.Composite_pattern
     public abstract class Composite : Node
     {
         public List<IComponent> ComponentList { get; set; }
-
+       
+        
+        //Each node that has other nodes is a composite
         protected Composite()
         {
             ComponentList = new List<IComponent>();
@@ -29,7 +30,7 @@ namespace CircuitLogic.controllers.Composite_pattern
             }
         }
 
-        public bool Loop()
+        public bool CheckForLoop()
         {
             return ComponentList.Any(el => el.GetType() == typeof(Probe) && ComponentList.Count > 1);
         }
