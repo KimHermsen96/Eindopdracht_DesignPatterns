@@ -1,11 +1,4 @@
-﻿using CircuitLogic.models.interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using CircuitLogic.models;
-using CircuitLogic.controllers.Builder_pattern;
+﻿using CircuitLogic.models;
 
 namespace CircuitLogic.controllers.Builder_pattern
 {

@@ -42,7 +42,6 @@ namespace CircuitConsoleVisualizer
 
                     //Run circuit
                     singlecir.State.DoAction(singlecir);
-
                     ShowCircuitView showoutput = new ShowCircuitView(singlecir);
                 }
                 //Choose another circuit or end the circuit

@@ -5,13 +5,13 @@ namespace CircuitLogic.controllers.State_pattern
 {
     public class ValidCircuit : IState
     {
-        private Circuit Circuit { get; set; }
 
         public void DoAction(Circuit circuit)
         {
-            Circuit = circuit; 
-            var circuitIterator = new CircuitIterator(Circuit.Firsts);
-            circuitIterator.Run();
+            foreach (var node in circuit.Firsts)
+            {
+                node.Run(node.Value);
+            }
         }
     }
 }
