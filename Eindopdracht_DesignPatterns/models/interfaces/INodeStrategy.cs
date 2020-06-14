@@ -1,6 +1,6 @@
 ﻿namespace CircuitLogic.models.interfaces
 {
-    public interface IStrategy
+    public interface INodeStrategy
     {
         void CalculateOutput(int value);
     }

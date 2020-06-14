@@ -5,7 +5,7 @@ using CircuitLogic.models.interfaces;
 
 namespace CircuitLogic.models.Nodes
 {
-    public abstract class Node : IStrategy , IComponent
+    public abstract class Node : INodeStrategy , IComponent
     {
         public string Identifier { get; set; }
         public int Value { get; set; }

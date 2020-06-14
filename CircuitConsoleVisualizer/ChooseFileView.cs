@@ -11,7 +11,6 @@ namespace CircuitConsoleVisualizer
         public string ChosenFile { get; set; }
         private List<CircuitFile> Files { get; set; }
 
-
         public ChooseFileView()
         {
             bool noChosenFile = true;

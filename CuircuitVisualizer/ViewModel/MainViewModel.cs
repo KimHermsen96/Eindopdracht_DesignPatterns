@@ -59,6 +59,7 @@ namespace CuircuitVisualizer.ViewModel
                 AllNodes.Add(new NodeViewModel(node.Value));
             }
 
+            //Create image of circuit
             visualizer.Render();
 
             //clear circuit 

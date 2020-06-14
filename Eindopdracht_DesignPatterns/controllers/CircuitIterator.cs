@@ -17,7 +17,6 @@ namespace CircuitLogic.controllers
         {
             foreach (var node in InitNodes)
             {
-                Console.WriteLine(node.Identifier);
                 node.Run(node.Value);
             }
         }

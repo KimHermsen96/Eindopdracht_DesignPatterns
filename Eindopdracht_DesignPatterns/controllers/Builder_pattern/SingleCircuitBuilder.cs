@@ -47,10 +47,10 @@ namespace CircuitLogic.controllers.Builder_pattern
                     if (beforeColon.Success && afterColon.Success)
                     {
                         Node createdNode = NodeFactory.CreateNode(beforeColon.ToString(), afterColon.ToString().Trim());
-                        //add INode to list of all nodes. 
+                       
+                        //Add Node to list of all nodes. 
                         Circuit.AllNodes.Add(createdNode.Identifier, createdNode);
-                        //voor visualisatie
-                        //a.AddNode(createdNode.Identifier, createdNode.Identifier);
+                        //Add firsts to Circuit
                         if (createdNode.GetType() == typeof(Input)) Circuit.Firsts.Add(createdNode);
                     }
                 }

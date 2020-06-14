@@ -25,7 +25,6 @@ namespace CircuitLogic.controllers.Composite_pattern
             foreach (var node in ComponentList)
             {
                 var n = (Node)node;
-                Console.WriteLine(n.Identifier);
                 n.Run(Value);
             }
         }
