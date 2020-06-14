@@ -32,7 +32,7 @@ namespace CircuitLogic.controllers
                     var composite = (Composite) node.Value;
                     if (composite.Loop())
                     {
-                        Circuit.State = new Loop();
+                        Circuit.State = new LoopCircuit();
                     }
                 }
             }
@@ -44,7 +44,7 @@ namespace CircuitLogic.controllers
 
             if (Circuit.AllNodes.Any(circuit => !circuit.Value.Accept(validNodeVisitor)))
             {
-                Circuit.State = new UnreachableProbes(); 
+                Circuit.State = new UnreachableProbesCircuit(); 
             }
         }
 

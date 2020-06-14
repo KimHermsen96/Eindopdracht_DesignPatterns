@@ -28,13 +28,11 @@ namespace CircuitLogic.models.Nodes
             CalculateOutput(input);
         }
 
-        public void Clear()
+        public virtual void Clear()
         {
             NumberOfInputNodes = 0;
             SavedValues.Clear();
             Finished = false;
         }
-
-       
     }
 }

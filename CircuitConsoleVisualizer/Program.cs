@@ -1,6 +1,7 @@
 ﻿using CircuitLogic.controllers;
 using CircuitLogic.models;
 using System;
+using System.Collections.Generic;
 using CircuitLogic.controllers.State_pattern;
 using CircuitLogic.models.Nodes;
 
@@ -10,7 +11,15 @@ namespace CircuitConsoleVisualizer
     {
         static void Main(string[] args)
         {
+            
+            SingleCircuit circuit = new SingleCircuit();
+           
+            circuit.AllNodes.Add("and", new And(){Finished = true});
 
+            circuit.Clear();
+
+            
+            
             CachedCircuitValidator proxyCircuitValidator = new CachedCircuitValidator();
 
             var endProgram = false;

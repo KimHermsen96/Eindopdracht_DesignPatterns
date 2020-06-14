@@ -63,7 +63,7 @@ namespace CuircuitVisualizer.ViewModel
             visualizer.Render();
 
             //clear circuit 
-            Singlecir.ClearCircuit();
+            Singlecir.Clear();
         }
 
         private void CreateNodeInGraph(string name,  Node node, GraphVisualizer visualizer)

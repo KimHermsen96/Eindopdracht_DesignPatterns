@@ -4,12 +4,11 @@ using CircuitLogic.models.interfaces;
 
 namespace CircuitLogic.controllers.State_pattern
 {
-    public class UnreachableProbes : IState
+    public class LoopCircuit : IState
     {
         public void DoAction(Circuit circuit)
         {
-
-            Console.WriteLine("Invalid Circuit due to unreachable probes ");
+            Console.WriteLine("Invalid Circuit due to loop"); 
         }
     }
 }

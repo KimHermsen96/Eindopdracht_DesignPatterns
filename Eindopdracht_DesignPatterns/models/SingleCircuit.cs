@@ -27,9 +27,10 @@ namespace CircuitLogic.models
 
         public override void CalculateOutput(int value)
         {
+            Value = value;
         }
 
-        public override void ClearCircuit()
+        public override void Clear()
         {
             foreach (var node in AllNodes) node.Value.Clear();
         }

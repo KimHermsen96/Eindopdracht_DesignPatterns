@@ -85,8 +85,6 @@ namespace CircuitLogic.controllers.Builder_pattern
                         foreach (var e in allEdges)
                         {
                             string edge = e.Trim();
-                            //dit is code voor de visualisatie
-                            //a.AddEdge(beforeColon.ToString(), edge);
 
                             IComponent edgeNode = Circuit.AllNodes[edge.ToString()];
                             edgeNode.NumberOfInputNodes++;

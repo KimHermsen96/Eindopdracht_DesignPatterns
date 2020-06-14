@@ -5,7 +5,6 @@ namespace CircuitLogic.controllers.State_pattern
 {
     public class ValidCircuit : IState
     {
-
         public void DoAction(Circuit circuit)
         {
             foreach (var node in circuit.Firsts)

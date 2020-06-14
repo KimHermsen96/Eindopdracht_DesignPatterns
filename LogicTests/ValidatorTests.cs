@@ -40,7 +40,7 @@ namespace LogicTests
             ProxyCircuitValidator.CircuitValidator = validator;
             ProxyCircuitValidator.SetState();
 
-            Assert.IsInstanceOfType(singlecir.State, typeof(Loop));
+            Assert.IsInstanceOfType(singlecir.State, typeof(LoopCircuit));
         }
         [TestMethod]
         public void File5_IsNotConnected()
@@ -53,7 +53,7 @@ namespace LogicTests
             ProxyCircuitValidator.CircuitValidator = validator;
             ProxyCircuitValidator.SetState();
 
-            Assert.IsInstanceOfType(singlecir.State, typeof(UnreachableProbes));
+            Assert.IsInstanceOfType(singlecir.State, typeof(UnreachableProbesCircuit));
         }
     }
 }
