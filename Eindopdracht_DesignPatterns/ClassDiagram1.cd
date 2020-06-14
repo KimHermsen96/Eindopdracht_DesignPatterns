@@ -1,0 +1,269 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="CircuitLogic.controllers.Adapter_pattern.JsonToListAdapter" BaseTypeListCollapsed="true">
+    <Position X="24.5" Y="7.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAA=</HashCode>
+      <FileName>controllers\Adapter_pattern\JsonToListAdapter.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="CircuitLogic.controllers.Adapter_pattern.XmlToListAdapter" BaseTypeListCollapsed="true">
+    <Position X="26.5" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAA=</HashCode>
+      <FileName>controllers\Adapter_pattern\XmlToListAdapter.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="CircuitLogic.controllers.Builder_pattern.CircuitBuilder">
+    <Position X="0.75" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAIAAAAAAAAEQAAAIAAAAAAAAAAAAAAAAAI=</HashCode>
+      <FileName>controllers\Builder_pattern\CircuitBuilder.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="Circuit" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="CircuitLogic.controllers.Builder_pattern.Director" Collapsed="true">
+    <Position X="33.25" Y="13.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAACAAAAAAAAQAAAAAAAAAAAAAAAAAAABAI=</HashCode>
+      <FileName>controllers\Builder_pattern\Director.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CircuitLogic.controllers.Builder_pattern.SingleCircuitBuilder">
+    <Position X="2.75" Y="9.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAAIAAAAAAAIAABBAIAAAAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>controllers\Builder_pattern\SingleCircuitBuilder.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="NodeFactory" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="CircuitLogic.controllers.CachedCircuitValidator" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="33.25" Y="11" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAABAABAAAAAAAAgAAEAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>controllers\CachedCircuitValidator.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="CircuitLogic.controllers.CircuitMaker">
+    <Position X="31.5" Y="13.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEgAAAAAAAAAAEAAAAAAAgAAAAAAAAAAAAA=</HashCode>
+      <FileName>controllers\CircuitMaker.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CircuitLogic.controllers.CircuitValidator" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="31.5" Y="11" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAIAAAAAACAAAAEACAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>controllers\CircuitValidator.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="CircuitLogic.controllers.NodeFactory">
+    <Position X="5.5" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAAAAAAQAAAEAAAAAAAAAAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>controllers\NodeFactory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CircuitLogic.controllers.ValidNodeVisitor" BaseTypeListCollapsed="true">
+    <Position X="31.5" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>controllers\ValidNodeVisitor.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="CircuitLogic.controllers.Composite_pattern.Composite">
+    <Position X="9.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAACIAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>controllers\Composite_pattern\Composite.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CircuitLogic.controllers.Composite_pattern.Leaf" Collapsed="true">
+    <Position X="18" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>controllers\Composite_pattern\Leaf.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CircuitLogic.controllers.State_pattern.LoopCircuit" BaseTypeListCollapsed="true">
+    <Position X="24.5" Y="14.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>controllers\State_pattern\LoopCircuit.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="CircuitLogic.controllers.State_pattern.UnreachableProbesCircuit" BaseTypeListCollapsed="true">
+    <Position X="26.25" Y="14.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>controllers\State_pattern\UnreachableProbesCircuit.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="CircuitLogic.controllers.State_pattern.ValidCircuit" BaseTypeListCollapsed="true">
+    <Position X="28.5" Y="14.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>controllers\State_pattern\ValidCircuit.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Eindopdracht_DesignPatterns.controllers.Strategy_pattern.JsonFileReaderStrategy" BaseTypeListCollapsed="true">
+    <Position X="24.5" Y="10.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>controllers\Strategy_pattern\JsonFileReaderStrategy.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Eindopdracht_DesignPatterns.controllers.Strategy_pattern.TextFileReaderStrategy" BaseTypeListCollapsed="true">
+    <Position X="27" Y="10.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>controllers\Strategy_pattern\TextFileReaderStrategy.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="CircuitLogic.models.Circuit">
+    <Position X="8" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAQAAAAAAAAQAAAAAAAAAAAAABAAAAAE=</HashCode>
+      <FileName>models\Circuit.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="AllNodes" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="CircuitLogic.models.SingleCircuit">
+    <Position X="8" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAAAAQAAAAAAAAQAAAAAAAAAAAAABABQAAE=</HashCode>
+      <FileName>models\SingleCircuit.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CircuitLogic.models.Nodes.And" Collapsed="true">
+    <Position X="15.5" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAA=</HashCode>
+      <FileName>models\Nodes\And.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CircuitLogic.models.Nodes.Input" Collapsed="true">
+    <Position X="2.25" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAA=</HashCode>
+      <FileName>models\Nodes\Input.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CircuitLogic.models.Nodes.Nand" Collapsed="true">
+    <Position X="5.75" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAA=</HashCode>
+      <FileName>models\Nodes\Nand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CircuitLogic.models.Nodes.Node">
+    <Position X="12.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAAAAAAAAAQAAAAAAAAAQAAAAAAgQAFQAAI=</HashCode>
+      <FileName>models\Nodes\Node.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="CircuitLogic.models.Nodes.Nor" Collapsed="true">
+    <Position X="10.25" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAA=</HashCode>
+      <FileName>models\Nodes\Nor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CircuitLogic.models.Nodes.Not" Collapsed="true">
+    <Position X="12" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAA=</HashCode>
+      <FileName>models\Nodes\Not.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CircuitLogic.models.Nodes.Or" Collapsed="true">
+    <Position X="13.75" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAA=</HashCode>
+      <FileName>models\Nodes\Or.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CircuitLogic.models.Nodes.Probe">
+    <Position X="18" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAA=</HashCode>
+      <FileName>models\Nodes\Probe.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CircuitLogic.models.Nodes.Xor" Collapsed="true">
+    <Position X="4" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAA=</HashCode>
+      <FileName>models\Nodes\Xor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="CircuitLogic.models.interfaces.IComponent">
+    <Position X="14.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>models\interfaces\IComponent.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="CircuitLogic.models.interfaces.INodeStrategy">
+    <Position X="16" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAA=</HashCode>
+      <FileName>models\interfaces\INodeStrategy.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="CircuitLogic.models.interfaces.INodeVisitor">
+    <Position X="31.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>models\interfaces\INodeVisitor.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="CircuitLogic.models.interfaces.IState">
+    <Position X="24.5" Y="12.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>models\interfaces\IState.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="CircuitLogic.models.interfaces.IToListAdapter">
+    <Position X="24.5" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAA=</HashCode>
+      <FileName>models\interfaces\IToListAdapter.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="CircuitLogic.models.interfaces.IValidator">
+    <Position X="31.5" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>models\interfaces\IValidator.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Eindopdracht_DesignPatterns.models.interfaces.IFileReaderStrategy">
+    <Position X="24.5" Y="9.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>models\interfaces\IFileReaderStrategy.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
