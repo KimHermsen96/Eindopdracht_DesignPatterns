@@ -11,14 +11,6 @@ namespace CircuitConsoleVisualizer
         static void Main(string[] args)
         {
             
-            SingleCircuit circuit = new SingleCircuit();
-           
-            circuit.AllNodes.Add("and", new And(){Finished = true});
-
-            circuit.Clear();
-
-            
-            
             CachedCircuitValidator proxyCircuitValidator = new CachedCircuitValidator();
 
             var endProgram = false;
