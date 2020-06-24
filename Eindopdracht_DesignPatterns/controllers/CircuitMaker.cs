@@ -30,7 +30,7 @@ namespace CircuitLogic.controllers
             return director.GetCircuit();
         }
 
-
+        //Strategy chooses strategy based on the file
         private void ChooseFileReader()
         {
             var MatchJson = new Regex(@".json$");

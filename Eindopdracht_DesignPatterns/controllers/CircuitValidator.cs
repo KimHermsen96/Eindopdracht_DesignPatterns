@@ -38,6 +38,7 @@ namespace CircuitLogic.controllers
             }
         }
 
+        //Visitor pattern
         private void UnreachableNodes()
         {
             ValidNodeVisitor validNodeVisitor = new ValidNodeVisitor();

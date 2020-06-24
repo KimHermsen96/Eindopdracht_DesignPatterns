@@ -9,6 +9,7 @@ namespace CircuitLogic.controllers
         private readonly Dictionary<string, Type> _types;
         private static NodeFactory _instance;
 
+        //Singleton
         public static NodeFactory Instance
         {
             get
